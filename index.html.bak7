@@ -615,8 +615,8 @@
     </header>
 
     <div class="aud scene rv" data-d="1">
-      <!-- EDIT: video/web/audition.mp4 -->
-      <div class="player player--short tilt" data-tilt="5" data-video="video/web/audition.mp4" data-poster="images/p02.jpg">
+      <!-- EDIT: video/audition.mp4 -->
+      <div class="player player--short tilt" data-tilt="5" data-video="video/audition.mp4" data-poster="images/p02.jpg">
         <span class="player__glow" aria-hidden="true"></span>
         <div class="player__in">
           <img width="1186" height="1612" src="images/p02.jpg" alt="" loading="lazy">
@@ -725,9 +725,9 @@
       <h2 class="ttl h3d rv" data-d="1">BEHIND THE FRAME</h2>
       <p class="lede rv" data-d="2">Camera, light, preparation — the work before the take.</p>
     </header>
-    <!-- EDIT: video/web/bts.mp4 -->
+    <!-- EDIT: video/making-of.mp4 -->
     <div class="scene rv" data-d="2">
-      <div class="player player--short tilt" data-tilt="4" data-video="video/web/bts.mp4" data-poster="images/p21.jpg">
+      <div class="player player--short tilt" data-tilt="4" data-video="video/bts.mp4" data-poster="images/p21.jpg">
         <span class="player__glow" aria-hidden="true"></span>
         <div class="player__in">
           <img width="838" height="1280" src="images/p07.jpg" alt="" loading="lazy">
@@ -821,7 +821,7 @@
     </header>
 
     <div class="mgrid scene">
-      <article class="mc tilt rv" data-tilt="9" data-video="video/web/media1.mp4" data-poster="images/p02.jpg">
+      <article class="mc tilt rv" data-tilt="9" data-video="video/media1.mp4" data-poster="images/p02.jpg">
         <div class="mc__img"><img width="1186" height="1612" src="images/p02.jpg" alt="" loading="lazy">
           <button class="mc__p" data-sfx="enter" aria-label="Play"><svg class="ico"><use href="#i-play"/></svg></button>
           <button class="mc__f" data-sfx="tap" aria-label="Fullscreen"><svg class="ico"><use href="#i-expand"/></svg></button></div>
@@ -842,7 +842,7 @@
         <div class="mc__b"><span class="mc__n">03</span><h3>Dance Reel 02</h3><p><i>MOVEMENT</i><i>01:20</i></p></div>
       </article>
 
-      <article class="mc tilt rv" data-d="3" data-tilt="9" data-video="video/web/bts2.mp4" data-poster="images/p07.jpg">
+      <article class="mc tilt rv" data-d="3" data-tilt="9" data-video="video/bts2.mp4" data-poster="images/p07.jpg">
         <div class="mc__img"><img width="838" height="1280" src="images/p07.jpg" alt="" loading="lazy">
           <button class="mc__p" data-sfx="enter" aria-label="Play"><svg class="ico"><use href="#i-play"/></svg></button>
           <button class="mc__f" data-sfx="tap" aria-label="Fullscreen"><svg class="ico"><use href="#i-expand"/></svg></button></div>
