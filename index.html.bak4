@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yorvik Sharjith Shaank — Actor · Dancer · Choreographer</title>
+
+<meta name="description" content="Yorvik Sharjith Shaank — Actor, Dancer and Choreographer based in Hyderabad, India. Acting, movement, storytelling.">
+<meta name="author" content="Yorvik Sharjith Shaank">
+<meta name="theme-color" content="#0b1f1a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yorvik Sharjith Shaank — Actor · Dancer · Choreographer">
+<meta property="og:description" content="Acting · Movement · Storytelling. Hyderabad, India.">
+<meta property="og:image" content="images/p01.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><rect width='48' height='48' rx='10' fill='%230b1f1a'/><g fill='none' stroke='%23d4af37' stroke-width='2.6' stroke-linecap='round'><path d='M14 12 L24 23 M34 12 L24 23'/><path d='M29 25.5C29 23 19 23 19 27c0 4 10 3 10 7 0 3.5-8.5 3.5-9.5 1'/></g></svg>">
+</head>
+
+<body class="lock-init">
+
+<!-- ================= SVG SPRITE ================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <linearGradient id="gMulti" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#D4AF37"/><stop offset="34%" stop-color="#B71C1C"/>
+    <stop offset="62%" stop-color="#0B1F1A"/><stop offset="86%" stop-color="#0D1B3D"/>
+    <stop offset="100%" stop-color="#050F0C"/>
+  </linearGradient>
+  <symbol id="ys" viewBox="0 0 48 48">
+    <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 12 L24 23 M34 12 L24 23"/>
+      <path d="M29 25.5C29 23 19 23 19 27c0 4 10 3 10 7 0 3.5-8.5 3.5-9.5 1"/>
+    </g>
+  </symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4l13 8-13 8V4z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></symbol>
+  <symbol id="i-prev" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-next" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+  <symbol id="i-sound" viewBox="0 0 24 24"><path d="M5 9v6h4l5 4V5L9 9H5z"/><path d="M17 8.5a5 5 0 0 1 0 7"/><path d="M19.5 6a8.5 8.5 0 0 1 0 12"/></symbol>
+  <symbol id="i-mute" viewBox="0 0 24 24"><path d="M5 9v6h4l5 4V5L9 9H5z"/><path d="M17 9.5l5 5m0-5l-5 5"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v12m0 0 5-5m-5 5-5-5M5 19h14"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+</defs></svg>
+
+<!-- ================= 01 · INTRO — rotating 3D cube ================= -->
+<div class="intro" id="intro">
+  <div class="intro__box">
+    <div class="cubewrap" aria-hidden="true">
+      <div class="cube">
+        <span class="cube__f cube__f--fr"><svg class="ys"><use href="#ys"/></svg></span>
+        <span class="cube__f cube__f--bk"><svg class="ys"><use href="#ys"/></svg></span>
+        <span class="cube__f cube__f--ri">YS</span>
+        <span class="cube__f cube__f--le">YS</span>
+        <span class="cube__f cube__f--tp"></span>
+        <span class="cube__f cube__f--bt"></span>
+      </div>
+    </div>
+
+    <p class="intro__name h3d">YORVIK</p>
+    <p class="intro__sub">SHARJITH SHAANK</p>
+    <p class="intro__role">ACTOR &nbsp;·&nbsp; DANCER &nbsp;·&nbsp; CHOREOGRAPHER</p>
+
+    <div class="intro__btns">
+      <button class="btn btn--gold" data-mag id="introEnter" data-sfx="enter">ENTER <svg class="ico"><use href="#i-arrow"/></svg></button>
+      <button class="btn btn--ghost" data-mag id="introSound" data-sfx="tap"><svg class="ico"><use href="#i-sound"/></svg> PLAY WITH SOUND</button>
+    </div>
+    <p class="intro__loc">YS &nbsp;/&nbsp; HYDERABAD,MANIKONDA, INDIA</p>
+  </div>
+</div>
+
+<!-- EDIT: audio/intro-voice.mp3 — "Yorvik Sharjith Shaank. Actor. Dancer. Choreographer." -->
+<audio id="voice" preload="none" playsinline><source src="audio/intro-voice.mp3" type="audio/mpeg"></audio>
+<audio id="ambience" preload="none" loop playsinline><source src="audio/ambience.mp3" type="audio/mpeg"></audio>
+
+<div class="prog" id="prog" aria-hidden="true"></div>
+<div class="aura" id="aura" aria-hidden="true"></div>
+<span class="grain" aria-hidden="true"></span>
+
+<!-- ================= HEADER ================= -->
+<header class="hdr" id="hdr">
+  <div class="wrap hdr__in">
+    <a href="#home" class="logo" data-sfx="tap" aria-label="Home">
+      <span class="logo__cube"><svg class="ys"><use href="#ys"/></svg></span>
+      <span class="logo__t">YORVIK<em>SHARJITH SHAANK</em></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main"><ul>
+      <li><a href="#casting"   class="nav__a" data-sfx="tap">Casting</a></li>
+      <li><a href="#theatre"   class="nav__a" data-sfx="tap">Theatre</a></li>
+      <li><a href="#acting"    class="nav__a" data-sfx="tap">Acting</a></li>
+      <li><a href="#screen"    class="nav__a" data-sfx="tap">Screen</a></li>
+      <li><a href="#reel"      class="nav__a" data-sfx="tap">Reel</a></li>
+      <li><a href="#frames"    class="nav__a" data-sfx="tap">Frames</a></li>
+      <li><a href="#movement"  class="nav__a" data-sfx="tap">Movement</a></li>
+      <li><a href="#media"     class="nav__a" data-sfx="tap">Media</a></li>
+      <li><a href="#gallery"   class="nav__a" data-sfx="tap">Gallery</a></li>
+      <li><a href="#contact"   class="nav__a" data-sfx="tap">Contact</a></li>
+    </ul></nav>
+    <button class="snd" id="sndBtn" data-sfx="tap" aria-label="Toggle sound" aria-pressed="false"><svg class="ico"><use href="#i-mute" id="sndIcon"/></svg></button>
+    <button class="brg" id="brg" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<!-- ================= 02 · HERO ================= -->
+<section class="hero" id="home" data-code="YS / HOME 01">
+  <span class="orb orb--a" aria-hidden="true"></span>
+  <span class="orb orb--b" aria-hidden="true"></span>
+
+  <div class="wrap hero__in scene">
+    <div class="hero__txt">
+      <p class="eyebrow rv"><i></i>HYDERABAD,MANIKONDA, INDIA — AVAILABLE FOR CASTING</p>
+      <h1 class="hero__name h3d rv" data-d="1">YORVIK</h1>
+      <p class="hero__sur rv" data-d="2">SHARJITH SHAANK</p>
+      <p class="hero__role rv" data-d="2">ACTOR &nbsp;·&nbsp; DANCER &nbsp;·&nbsp; CHOREOGRAPHER &nbsp;·&nbsp; SIGNING </p>
+      <p class="hero__tag rv" data-d="3">ACTING &nbsp;·&nbsp; MOVEMENT &nbsp;·&nbsp; STORYTELLING &nbsp;·&nbsp; BACKGROUND SINGER</p>
+
+      <div class="hero__cta rv" data-d="4">
+        <a href="#reel" class="btn btn--gold" data-mag data-sfx="enter"><svg class="ico"><use href="./images/p02.jpg"/></svg> WATCH SHOWREEL</a>
+        <a href="#casting" class="btn btn--navy" data-mag data-sfx="tap">CASTING PROFILE</a>
+      </div>
+
+      <ul class="facts rv" data-d="5">
+        <li class="chip3d"><b>22</b><span>Age</span></li>
+        <li class="chip3d"><b>5'8"</b><span>Height</span></li>
+        <li class="chip3d"><b>70<i>kg</i></b><span>Weight</span></li>
+        <li class="chip3d"><b>3</b><span>Languages</span></li>
+        <li class="chip3d"><b>9<i>yr</i></b><span>Dance</span></li>
+      </ul>
+    </div>
+
+    <!-- 3D stacked portrait: planes at different depths -->
+    <div class="hero__art rv" data-d="3">
+      <div class="stack tilt" data-tilt="9">
+        <span class="stack__glow" aria-hidden="true"></span>
+        <span class="stack__back" aria-hidden="true"></span>
+        <span class="stack__mid" aria-hidden="true"></span>
+        <figure class="stack__face">
+          <img width="1186" height="1612" src="images/p02.jpg" alt="Yorvik Sharjith Shaank">
+        </figure>
+        <span class="stack__tag">01 / ACTOR</span>
+      </div>
+    </div>
+  </div>
+
+  <a href="#reel" class="cue" aria-label="Scroll"><span></span>SCROLL</a>
+</section>
+
+<!-- ================= 15 · CASTING PROFILE — 3D flip cards ================= -->
+<section class="sec sec--white" id="casting" data-code="YS / CASTING 14">
+  <div class="wrap">
+    <header class="sh sh--mid">
+      <p class="eyebrow rv"><i></i>Casting</p>
+      <h2 class="ttl h3d h3d--dark rv" data-d="1">CASTING PROFILE</h2>
+      <p class="lede rv" data-d="2">Hover or tap any card to turn it.</p>
+    </header>
+
+    <!-- Front = label, back = value. Every supplied attribute is here. -->
+    <div class="flips scene rv" data-d="1">
+      <div class="flip" tabindex="0"><div class="flip__in"><div class="flip__f"><span>Name</span></div><div class="flip__b"><b>Yorvik Sharjith Shaank</b></div></div></div>
+      <div class="flip" tabindex="0"><div class="flip__in"><div class="flip__f"><span>Date of Birth</span></div><div class="flip__b"><b>2 October 2003</b></div></div></div>
+      <div class="flip" tabindex="0"><div class="flip__in"><div class="flip__f"><span>Age</span></div><div class="flip__b"><b>22</b></div></div></div>
+      <div class="flip" tabindex="0"><div class="flip__in"><div class="flip__f"><span>Height</span></div><div class="flip__b"><b>5'8"<i>approx. 173 cm</i></b></div></div></div>
+      <div class="flip" tabindex="0"><div class="flip__in"><div class="flip__f"><span>Weight</span></div><div class="flip__b"><b>70 kg</b></div></div></div>
+      <div class="flip" tabindex="0"><div class="flip__in"><div class="flip__f"><span>Eyes</span></div><div class="flip__b"><b>Brown</b></div></div></div>
+      <div class="flip" tabindex="0"><div class="flip__in"><div class="flip__f"><span>Hair</span></div><div class="flip__b"><b>Black</b></div></div></div>
+      <div class="flip" tabindex="0"><div class="flip__in"><div class="flip__f"><span>Hair Type</span></div><div class="flip__b"><b>Silky</b></div></div></div>
+      <div class="flip" tabindex="0"><div class="flip__in"><div class="flip__f"><span>Complexion</span></div><div class="flip__b"><b>Olive</b></div></div></div>
+      <div class="flip" tabindex="0"><div class="flip__in"><div class="flip__f"><span>Nationality</span></div><div class="flip__b"><b>Indian</b></div></div></div>
+      <div class="flip" tabindex="0"><div class="flip__in"><div class="flip__f"><span>Base</span></div><div class="flip__b"><b>Hyderabad, India</b></div></div></div>
+      <div class="flip" tabindex="0"><div class="flip__in"><div class="flip__f"><span>Passport</span></div><div class="flip__b"><b>Indian passport</b></div></div></div>
+      <div class="flip" tabindex="0"><div class="flip__in"><div class="flip__f"><span>Int. Travel</span></div><div class="flip__b"><b>Available</b></div></div></div>
+    </div>
+
+    <div class="wboxes scene">
+      <div class="wbox tilt rv" data-tilt="5">
+        <h3>SPECIAL SKILLS</h3>
+        <ul class="range">
+          <li class="chip3d chip3d--dark">Acting</li><li class="chip3d chip3d--dark">Dance</li>
+          <li class="chip3d chip3d--dark">Choreography</li><li class="chip3d chip3d--dark">Theatre</li>
+          <li class="chip3d chip3d--dark">Different Accents</li><li class="chip3d chip3d--dark">Car Driving</li>
+          <li class="chip3d chip3d--dark">Fitness / Gym</li><li class="chip3d chip3d--dark">Background Singer</li>
+        </ul>
+      </div>
+      <div class="wbox tilt rv" data-d="1" data-tilt="5">
+        <h3>LANGUAGES</h3>
+        <ul class="range"><li class="chip3d chip3d--dark">TELUGU</li><li class="chip3d chip3d--dark">HINDI</li><li class="chip3d chip3d--dark">ENGLISH</li><li class="chip3d chip3d--dark">TAMIL</li></ul>
+      </div>
+      <div class="wbox tilt rv" data-d="2" data-tilt="5">
+        <h3>EDUCATION</h3>
+        <dl class="kv kv--dark">
+          <div><dt>Course</dt><dd>BHM — Hotel Management</dd></div>
+          <div><dt>Institution</dt><dd>Sun International Institute</dd></div>
+          <div><dt>Location</dt><dd>Vizag — Sagar Nagar</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="ctas rv">
+      <button class="btn btn--dark" data-mag id="printPdf" data-sfx="enter"><svg class="ico"><use href="#i-down"/></svg> DOWNLOAD A4 PDF PORTFOLIO</button>
+      <a href="#contact" class="btn btn--red" data-mag data-sfx="tap">CONTACT FOR CASTING</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 07 · THEATRE ================= -->
+<section class="sec sec--red" id="theatre" data-code="YS / THEATRE 06">
+  <div class="wrap">
+    <header class="sh sh--mid">
+      <p class="eyebrow rv"><i></i>Stage</p>
+      <h2 class="ttl h3d rv" data-d="1">THEATRE</h2>
+    </header>
+
+    <div class="scene rv" data-d="1">
+      <div class="bill tilt" data-tilt="5">
+        <span class="bill__glow" aria-hidden="true"></span>
+        <p class="bill__pre">SAMHARA THEATRE PRESENTS</p>
+        <h3 class="bill__t h3d">DARYAPTU<br>ADHIKARI</h3>
+        <p class="bill__d">DIRECTED BY <b>SANDEEP SAHOO</b></p>
+        <div class="bill__g">
+          <div><span>YEAR</span><b>2026</b></div>
+          <div><span>VENUE</span><b>Samhara Theatre<br>Banjara Hills, Hyderabad</b></div>
+          <div><span>PERFORMANCES</span><b>1</b></div>
+        </div>
+        <p class="bill__rl">ROLES PERFORMED</p>
+        <ul class="bill__r">
+          <li class="chip3d chip3d--red"><b>POSTMASTER</b><i>10</i></li>
+          <li class="chip3d chip3d--red"><b>BUSINESSMAN</b><i>11</i></li>
+          <li class="chip3d chip3d--red"><b>WAITER</b><i>12</i></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EDIT: each card turns over its own three photographs, on its own, every
+         5.2s. Slot 1 is the current still; drop slots 2 and 3 into /images as
+         postmaster-2.jpg / -3.jpg, farmer-2.jpg / -3.jpg, waiter-2.jpg / -3.jpg. -->
+    <div class="cards cards--3 scene">
+      <figure class="pc tilt rv" data-tilt="11" data-rot="5200">
+        <span class="pc__stack">
+          <img class="on" width="515" height="856" src="images/p11.jpg" alt="Postmaster on stage" data-ph="POSTMASTER 1">
+          <img width="716" height="1600" src="images/p12.jpg" alt="Postmaster on stage" loading="lazy" data-ph="POSTMASTER 2">
+          <img width="1152" height="768" src="images/p13.jpg" alt="Postmaster on stage" loading="lazy" data-ph="POSTMASTER 3">
+        </span>
+        <figcaption><b>Postmaster</b></figcaption>
+      </figure>
+      <figure class="pc tilt rv" data-d="1" data-tilt="11" data-rot="5200">
+        <span class="pc__stack">
+          <img class="on" width="1152" height="768" src="images/p29.jpeg" alt="Businessman on stage" data-ph="BUSINESSMAN 1">
+          <img width="1152" height="768" src="images/p38.jpeg" alt="Businessman on stage" loading="lazy" data-ph="BUSINESSMAN 2">
+          <img width="1152" height="768" src="images/p37.jpeg" alt="Businessman on stage" loading="lazy" data-ph="BUSINESSMAN 3">
+        </span>
+        <figcaption><b>Businessman</b></figcaption>
+      </figure>
+      <figure class="pc tilt rv" data-d="2" data-tilt="11" data-rot="5200">
+        <span class="pc__stack">
+          <img class="on" width="716" height="1600" src="images/p10.jpg" alt="Waiter on stage" data-ph="WAITER 1">
+          <img width="716" height="1600" src="images/p40.jpeg" alt="Waiter on stage" loading="lazy" data-ph="WAITER 2">
+          <img width="1152" height="768" src="images/p41.jpeg" alt="Waiter on stage" loading="lazy" data-ph="WAITER 3">
+        </span>
+        <figcaption><b>Waiter</b></figcaption>
+      </figure>
+    </div>
+
+    <!-- EDIT: one block per role, three empty slots each. Drop the files into
+         /images with these exact names and they appear here automatically. -->
+    <div class="roles">
+      <article class="role rv">
+        <header class="role__h">
+          <b>Role 01</b>
+          <h3 class="role__t h3d">POSTMASTER</h3>
+        </header>
+        <div class="cards cards--3 scene">
+          <figure class="pc tilt rv" data-tilt="11"><img width="1120" height="747" src="images/p42.jpeg" alt="Postmaster — frame 01" loading="lazy" data-ph="POSTMASTER 01"><figcaption><b>Postmaster</b></figcaption></figure>
+          <figure class="pc tilt rv" data-d="1" data-tilt="11"><img width="716" height="1600" src="images/p43.jpeg" alt="Postmaster — frame 02" loading="lazy" data-ph="POSTMASTER 02"><figcaption><b>Postmaster</b></figcaption></figure>
+          <figure class="pc tilt rv" data-d="2" data-tilt="11"><img width="716" height="957" src="images/p44.jpeg" alt="Postmaster — frame 03" loading="lazy" data-ph="POSTMASTER 03"><figcaption><b>Postmaster</b></figcaption></figure>
+        </div>
+      </article>
+      <article class="role rv">
+        <header class="role__h">
+          <b>Role 02</b>
+          <h3 class="role__t h3d">BUSINESSMAN</h3>
+        </header>
+        <div class="cards cards--3 scene">
+          <figure class="pc tilt rv" data-tilt="11"><img width="576" height="1024" src="images/p50.jpg" alt="Businessman — frame 01" loading="lazy" data-ph="BUSINESSMAN 01"><figcaption><b>Businessman</b></figcaption></figure>
+          <figure class="pc tilt rv" data-d="1" data-tilt="11"><img width="727" height="959" src="images/p45.jpeg" alt="Businessman — frame 02" loading="lazy" data-ph="BUSINESSMAN 02"><figcaption><b>Businessman</b></figcaption></figure>
+          <figure class="pc tilt rv" data-d="2" data-tilt="11"><img width="576" height="1024" src="images/p49.jpg" alt="Businessman — frame 03" loading="lazy" data-ph="BUSINESSMAN 03"><figcaption><b>Businessman</b></figcaption></figure>
+        </div>
+      </article>
+      <article class="role rv">
+        <header class="role__h">
+          <b>Role 03</b>
+          <h3 class="role__t h3d">WAITER</h3>
+        </header>
+        <div class="cards cards--3 scene">
+          <figure class="pc tilt rv" data-tilt="11"><img width="458" height="1024" src="images/p46.jpg" alt="Waiter — frame 01" loading="lazy" data-ph="WAITER 01"><figcaption><b>Waiter</b></figcaption></figure>
+          <figure class="pc tilt rv" data-d="1" data-tilt="11"><img width="458" height="1024" src="images/p47.jpg" alt="Waiter — frame 02" loading="lazy" data-ph="WAITER 02"><figcaption><b>Waiter</b></figcaption></figure>
+          <figure class="pc tilt rv" data-d="2" data-tilt="11"><img width="458" height="1024" src="images/p48.jpg" alt="Waiter — frame 03" loading="lazy" data-ph="WAITER 03"><figcaption><b>Waiter</b></figcaption></figure>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 · ACTING · NAVARASA ================= -->
+<section class="sec sec--red" id="acting" data-code="YS / ACTING 04">
+  <div class="wrap">
+    <header class="sh">
+      <p class="eyebrow rv"><i></i>Acting</p>
+      <h2 class="ttl h3d rv" data-d="1">NAVARASA · THE NINE RASAS</h2>
+      <p class="lede rv" data-d="2">The Natyashastra names nine rasas — the nine states a performer must be able to hold and hand to an audience. I train each one on its own, then carry it into the scene. Below, four frames for every rasa — bring the pointer to any frame and it lifts out of the row, enlarged.</p>
+    </header>
+
+    <p class="mini rv">NAVARASA / THE NINE EMOTIONS OF PERFORMANCE</p>
+    <ul class="range scene rv" data-d="1">
+      <li class="chip3d chip3d--red"><b>Shringara</b><i>Love</i></li>
+      <li class="chip3d chip3d--red"><b>Hasya</b><i>Laughter</i></li>
+      <li class="chip3d chip3d--red"><b>Karuna</b><i>Compassion</i></li>
+      <li class="chip3d chip3d--red"><b>Raudra</b><i>Fury</i></li>
+      <li class="chip3d chip3d--red"><b>Veera</b><i>Valour</i></li>
+      <li class="chip3d chip3d--red"><b>Bhayanaka</b><i>Fear</i></li>
+      <li class="chip3d chip3d--red"><b>Bibhatsa</b><i>Aversion</i></li>
+      <li class="chip3d chip3d--red"><b>Adbhuta</b><i>Wonder</i></li>
+      <li class="chip3d chip3d--red"><b>Shanta</b><i>Peace</i></li>
+    </ul>
+
+    <!-- EDIT: ONE card per rasa, four frames inside that card. To swap a
+         picture, change the src only — the frame, its number and the pop-up
+         all follow the picture. Hover (or tab to) a frame and it lifts out
+         of the card, enlarged. -->
+    <div class="rasas">
+
+      <article class="rcard rv" id="rasa-shringara">
+        <header class="rcard__h">
+          <b>01</b>
+          <h3 class="rcard__t">Shringara</h3>
+          <span class="rcard__e">Love</span>
+        </header>
+        <div class="rquad scene">
+          <figure class="pc rpc" tabindex="0">
+            <img width="1011" height="1556" src="images/p01.jpg" alt="Shringara — Love, frame 01" loading="lazy" data-ph="SHRINGARA 01">
+            <figcaption><b>Shringara</b><i>01</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="1280" height="1600" src="images/p22.jpeg" alt="Shringara — Love, frame 02" loading="lazy" data-ph="SHRINGARA 02">
+            <figcaption><b>Shringara</b><i>02</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="1080" height="1350" src="images/p34.jpeg" alt="Shringara — Love, frame 03" loading="lazy" data-ph="SHRINGARA 03">
+            <figcaption><b>Shringara</b><i>03</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="727" height="959" src="images/p45.jpeg" alt="Shringara — Love, frame 04" loading="lazy" data-ph="SHRINGARA 04">
+            <figcaption><b>Shringara</b><i>04</i></figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="rcard rv" id="rasa-hasya">
+        <header class="rcard__h">
+          <b>02</b>
+          <h3 class="rcard__t">Hasya</h3>
+          <span class="rcard__e">Laughter</span>
+        </header>
+        <div class="rquad scene">
+          <figure class="pc rpc" tabindex="0">
+            <img width="911" height="1440" src="images/p33.jpeg" alt="Hasya — Laughter, frame 01" loading="lazy" data-ph="HASYA 01">
+            <figcaption><b>Hasya</b><i>01</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="1152" height="768" src="images/p13.jpg" alt="Hasya — Laughter, frame 02" loading="lazy" data-ph="HASYA 02">
+            <figcaption><b>Hasya</b><i>02</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="1120" height="747" src="images/p42.jpeg" alt="Hasya — Laughter, frame 03" loading="lazy" data-ph="HASYA 03">
+            <figcaption><b>Hasya</b><i>03</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="716" height="957" src="images/p44.jpeg" alt="Hasya — Laughter, frame 04" loading="lazy" data-ph="HASYA 04">
+            <figcaption><b>Hasya</b><i>04</i></figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="rcard rv" id="rasa-karuna">
+        <header class="rcard__h">
+          <b>03</b>
+          <h3 class="rcard__t">Karuna</h3>
+          <span class="rcard__e">Compassion</span>
+        </header>
+        <div class="rquad scene">
+          <figure class="pc rpc" tabindex="0">
+            <img width="756" height="1280" src="images/p06.jpg" alt="Karuna — Compassion, frame 01" loading="lazy" data-ph="KARUNA 01">
+            <figcaption><b>Karuna</b><i>01</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="716" height="1600" src="images/p10.jpg" alt="Karuna — Compassion, frame 02" loading="lazy" data-ph="KARUNA 02">
+            <figcaption><b>Karuna</b><i>02</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="768" height="1024" src="images/p31.jpeg" alt="Karuna — Compassion, frame 03" loading="lazy" data-ph="KARUNA 03">
+            <figcaption><b>Karuna</b><i>03</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="960" height="1280" src="images/p27.jpeg" alt="Karuna — Compassion, frame 04" loading="lazy" data-ph="KARUNA 04">
+            <figcaption><b>Karuna</b><i>04</i></figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="rcard rv" id="rasa-raudra">
+        <header class="rcard__h">
+          <b>04</b>
+          <h3 class="rcard__t">Raudra</h3>
+          <span class="rcard__e">Fury</span>
+        </header>
+        <div class="rquad scene">
+          <figure class="pc rpc" tabindex="0">
+            <img width="601" height="963" src="images/p26.jpeg" alt="Raudra — Fury, frame 01" loading="lazy" data-ph="RAUDRA 01">
+            <figcaption><b>Raudra</b><i>01</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="838" height="1280" src="images/p07.jpg" alt="Raudra — Fury, frame 02" loading="lazy" data-ph="RAUDRA 02">
+            <figcaption><b>Raudra</b><i>02</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="717" height="1280" src="images/p21.jpg" alt="Raudra — Fury, frame 03" loading="lazy" data-ph="RAUDRA 03">
+            <figcaption><b>Raudra</b><i>03</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="1152" height="768" src="images/p37.jpeg" alt="Raudra — Fury, frame 04" loading="lazy" data-ph="RAUDRA 04">
+            <figcaption><b>Raudra</b><i>04</i></figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="rcard rv" id="rasa-veera">
+        <header class="rcard__h">
+          <b>05</b>
+          <h3 class="rcard__t">Veera</h3>
+          <span class="rcard__e">Valour</span>
+        </header>
+        <div class="rquad scene">
+          <figure class="pc rpc" tabindex="0">
+            <img width="1070" height="1338" src="images/p08.jpg" alt="Veera — Valour, frame 01" loading="lazy" data-ph="VEERA 01">
+            <figcaption><b>Veera</b><i>01</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="959" height="1280" src="images/p16.jpg" alt="Veera — Valour, frame 02" loading="lazy" data-ph="VEERA 02">
+            <figcaption><b>Veera</b><i>02</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="931" height="1280" src="images/p20.jpg" alt="Veera — Valour, frame 03" loading="lazy" data-ph="VEERA 03">
+            <figcaption><b>Veera</b><i>03</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="1152" height="768" src="images/p41.jpeg" alt="Veera — Valour, frame 04" loading="lazy" data-ph="VEERA 04">
+            <figcaption><b>Veera</b><i>04</i></figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="rcard rv" id="rasa-bhayanaka">
+        <header class="rcard__h">
+          <b>06</b>
+          <h3 class="rcard__t">Bhayanaka</h3>
+          <span class="rcard__e">Fear</span>
+        </header>
+        <div class="rquad scene">
+          <figure class="pc rpc" tabindex="0">
+            <img width="720" height="1280" src="images/p17.jpg" alt="Bhayanaka — Fear, frame 01" loading="lazy" data-ph="BHAYANAKA 01">
+            <figcaption><b>Bhayanaka</b><i>01</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="619" height="1280" src="images/p30.jpeg" alt="Bhayanaka — Fear, frame 02" loading="lazy" data-ph="BHAYANAKA 02">
+            <figcaption><b>Bhayanaka</b><i>02</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="598" height="1280" src="images/p32.jpeg" alt="Bhayanaka — Fear, frame 03" loading="lazy" data-ph="BHAYANAKA 03">
+            <figcaption><b>Bhayanaka</b><i>03</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="495" height="1024" src="images/p36.jpeg" alt="Bhayanaka — Fear, frame 04" loading="lazy" data-ph="BHAYANAKA 04">
+            <figcaption><b>Bhayanaka</b><i>04</i></figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="rcard rv" id="rasa-bibhatsa">
+        <header class="rcard__h">
+          <b>07</b>
+          <h3 class="rcard__t">Bibhatsa</h3>
+          <span class="rcard__e">Aversion</span>
+        </header>
+        <div class="rquad scene">
+          <figure class="pc rpc" tabindex="0">
+            <img width="713" height="1280" src="images/p24.jpeg" alt="Bibhatsa — Aversion, frame 01" loading="lazy" data-ph="BIBHATSA 01">
+            <figcaption><b>Bibhatsa</b><i>01</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="716" height="1600" src="images/p12.jpg" alt="Bibhatsa — Aversion, frame 02" loading="lazy" data-ph="BIBHATSA 02">
+            <figcaption><b>Bibhatsa</b><i>02</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="1152" height="768" src="images/p29.jpeg" alt="Bibhatsa — Aversion, frame 03" loading="lazy" data-ph="BIBHATSA 03">
+            <figcaption><b>Bibhatsa</b><i>03</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="458" height="1024" src="images/p46.jpg" alt="Bibhatsa — Aversion, frame 04" loading="lazy" data-ph="BIBHATSA 04">
+            <figcaption><b>Bibhatsa</b><i>04</i></figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="rcard rv" id="rasa-adbhuta">
+        <header class="rcard__h">
+          <b>08</b>
+          <h3 class="rcard__t">Adbhuta</h3>
+          <span class="rcard__e">Wonder</span>
+        </header>
+        <div class="rquad scene">
+          <figure class="pc rpc" tabindex="0">
+            <img width="853" height="1280" src="images/p04.jpg" alt="Adbhuta — Wonder, frame 01" loading="lazy" data-ph="ADBHUTA 01">
+            <figcaption><b>Adbhuta</b><i>01</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="900" height="1600" src="images/p14.jpg" alt="Adbhuta — Wonder, frame 02" loading="lazy" data-ph="ADBHUTA 02">
+            <figcaption><b>Adbhuta</b><i>02</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="763" height="1097" src="images/p19.jpg" alt="Adbhuta — Wonder, frame 03" loading="lazy" data-ph="ADBHUTA 03">
+            <figcaption><b>Adbhuta</b><i>03</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="720" height="1488" src="images/p35.jpeg" alt="Adbhuta — Wonder, frame 04" loading="lazy" data-ph="ADBHUTA 04">
+            <figcaption><b>Adbhuta</b><i>04</i></figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="rcard rv" id="rasa-shanta">
+        <header class="rcard__h">
+          <b>09</b>
+          <h3 class="rcard__t">Shanta</h3>
+          <span class="rcard__e">Peace</span>
+        </header>
+        <div class="rquad scene">
+          <figure class="pc rpc" tabindex="0">
+            <img width="960" height="1280" src="images/p23.jpeg" alt="Shanta — Peace, frame 01" loading="lazy" data-ph="SHANTA 01">
+            <figcaption><b>Shanta</b><i>01</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="979" height="1075" src="images/p03.jpg" alt="Shanta — Peace, frame 02" loading="lazy" data-ph="SHANTA 02">
+            <figcaption><b>Shanta</b><i>02</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="572" height="1280" src="images/p15.jpg" alt="Shanta — Peace, frame 03" loading="lazy" data-ph="SHANTA 03">
+            <figcaption><b>Shanta</b><i>03</i></figcaption>
+          </figure>
+          <figure class="pc rpc" tabindex="0">
+            <img width="1009" height="1754" src="images/p25.jpeg" alt="Shanta — Peace, frame 04" loading="lazy" data-ph="SHANTA 04">
+            <figcaption><b>Shanta</b><i>04</i></figcaption>
+          </figure>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 11 · CHOREOGRAPHY ================= -->
+<section class="sec sec--forest sec--flat" id="choreo" data-code="YS / CHOREO 10">
+  <div class="wrap duo duo--rev scene">
+    <div class="cards cards--3">
+      <figure class="pc tilt rv" data-tilt="11"><img width="1070" height="1338" src="images/p08.jpg" alt="Portrait" loading="lazy"><figcaption><b>Portrait</b></figcaption></figure>
+      <figure class="pc tilt rv" data-d="1" data-tilt="11"><img width="572" height="1280" src="images/p53.jpg" alt="Studio" loading="lazy"><figcaption><b>Studio</b></figcaption></figure>
+      <figure class="pc tilt rv" data-d="2" data-tilt="11"><img width="979" height="1075" src="images/p54.jpg" alt="Evening" loading="lazy"><figcaption><b>Evening</b></figcaption></figure>
+    </div>
+    <div>
+      <p class="eyebrow rv"><i></i>Direction</p>
+      <h2 class="ttl h3d rv" data-d="1">CHOREOGRAPHY</h2>
+      <p class="lede rv" data-d="2">Six years directing movement — building routines on other bodies, reading a room, and teaching a step until it looks like instinct.</p>
+      <ul class="range rv" data-d="3">
+        <li class="chip3d chip3d--green">SCHOOLS</li><li class="chip3d chip3d--green">STUDIOS</li><li class="chip3d chip3d--green">EVENTS</li>
+      </ul>
+      <div class="slab tilt rv" data-d="3" data-tilt="6">
+        <span class="slab__no">02</span>
+        <dl class="kv">
+          <div><dt>Experience</dt><dd>Approximately 6 years</dd></div>
+          <div><dt>Worked with</dt><dd>Schools, studios and event productions</dd></div>
+          
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 09 · AUDITION ================= -->
+<section class="sec sec--green" id="audition" data-code="YS / AUDITION 08">
+  <div class="wrap">
+    <header class="sh">
+      <p class="eyebrow rv"><i></i>Casting Material</p>
+      <h2 class="ttl h3d rv" data-d="1">AUDITION</h2>
+    </header>
+
+    <div class="aud scene rv" data-d="1">
+      <!-- EDIT: video/audition.mp4 -->
+      <div class="player tilt" data-tilt="5" data-video="video/audition.mp4" data-poster="images/p02.jpg">
+        <span class="player__glow" aria-hidden="true"></span>
+        <div class="player__in">
+          <img width="1186" height="1612" src="images/p02.jpg" alt="" loading="lazy">
+          <button class="pbtn" data-sfx="enter" aria-label="Play audition clip"><span></span><svg class="ico"><use href="#i-play"/></svg></button>
+        </div>
+      </div>
+      <div class="slab tilt" data-tilt="6">
+        <p class="aud__n">YORVIK SHARJITH SHAANK</p>
+        <dl class="kv">
+          <!-- EDIT: scene / character / date once the clip is recorded -->
+          <div><dt>Scene</dt><dd>Self-tape — dramatic</dd></div>
+          <div><dt>Language</dt><dd>Telugu / Hindi / English</dd></div>
+          <div><dt>Recorded</dt><dd>2026</dd></div>
+        </dl>
+        <div class="aud__b">
+          <a href="#reel" class="btn btn--navy btn--sm" data-mag data-sfx="tap">SHOWREEL</a>
+          <a href="#contact" class="btn btn--red btn--sm" data-mag data-sfx="tap">CONTACT FOR CASTING</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 08 · SCREEN ================= -->
+<section class="sec sec--navy" id="screen" data-code="YS / SCREEN 07">
+  <div class="wrap">
+    <header class="sh">
+      <p class="eyebrow rv"><i></i>Screen</p>
+      <h2 class="ttl h3d rv" data-d="1">SCREEN CREDIT</h2>
+    </header>
+
+    <article class="cred scene rv" data-d="1">
+      <figure class="cred__art tilt" data-tilt="10">
+        <img width="1186" height="1612" src="images/p02.jpg" alt="" loading="lazy">
+        <span class="cred__badge">RELEASED</span>
+      </figure>
+      <div class="cred__body slab tilt" data-tilt="5">
+        <h3 class="cred__t h3d">PRIYA NEE PREMALO<br><span>PART 2</span></h3>
+        <p class="cred__sub">TELUGU SHORT FILM</p>
+        <p class="cred__role"><span>ROLE</span><b>Second Lead</b></p>
+        <dl class="kv">
+          <div><dt>Released</dt><dd>7 October 2020</dd></div>
+          <div><dt>Directors</dt><dd>Lakshmi Narayana &amp; Sravani</dd></div>
+          <div><dt>Producer</dt><dd>Bhavani</dd></div>
+          <div><dt>DOP</dt><dd>Karthik</dd></div>
+          <div><dt>Story</dt><dd>Geetha Savithri Devi</dd></div>
+        </dl>
+        <a class="btn btn--gold" data-mag data-sfx="enter" target="_blank" rel="noopener" href="https://youtu.be/-tt4F9uqRDA?si=U87-07Q3n5VeMEsZ"><svg class="ico"><use href="#i-play"/></svg> WATCH FILM</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= 06 · ACTING TRAINING ================= -->
+<section class="sec sec--green" id="training" data-code="YS / TRAINING 05">
+  <div class="wrap duo scene">
+    <div>
+      <p class="eyebrow rv"><i></i>Training</p>
+      <h2 class="ttl h3d rv" data-d="1">TRAINED  ACTOR </h2>
+      <div class="slab tilt rv" data-d="2" data-tilt="6">
+        <span class="slab__no">01</span>
+        <h3>SAMHARA THEATRE</h3>
+        <dl class="kv">
+          <div><dt>Location</dt><dd>Banjara Hills Road no 11, Hyderabad, Telangana, India</dd></div>
+          <div><dt>Duration</dt><dd>4 months (Jun - Sep)</dd></div>
+          <div><dt>Creative Trainer</dt><dd>Sandeep Sahoo</dd></div>
+          <div><dt>Focus</dt><dd>Stage craft, character build, voice, movement</dd></div>
+        </dl>
+      </div>
+    </div>
+    <figure class="pc pc--tall tilt rv" data-d="1" data-tilt="9">
+      <img width="716" height="1600" src="images/p10.jpg" alt="Theatre portrait" loading="lazy">
+      <figcaption><b>Theatre</b></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= 03 · SHOWREEL ================= -->
+<section class="sec sec--green" id="reel" data-code="YS / REEL 02">
+  <div class="wrap">
+    <header class="sh">
+      <p class="eyebrow rv"><i></i>Reel</p>
+      <h2 class="ttl h3d rv" data-d="1">SHOWREEL</h2>
+      <p class="lede rv" data-d="2">Acting, movement and character in one continuous cut — the fastest way to know whether I belong in your frame.</p>
+    </header>
+
+    <!-- EDIT: video/showreel.mp4 -->
+    <div class="scene rv" data-d="2">
+      <div class="player player--short tilt" data-tilt="5" data-video="video/showreel.mp4" data-poster="images/p08.jpg">
+        <span class="player__glow" aria-hidden="true"></span>
+        <div class="player__in">
+          <img width="1070" height="1338" src="images/p08.jpg" alt="">
+          <button class="pbtn" data-sfx="enter" aria-label="Play showreel"><span></span><svg class="ico"><use href="#i-play"/></svg></button>
+          <span class="player__bar"><b>SHOWREEL 2026</b><i>02:00</i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 12 · BEHIND THE FRAME ================= -->
+<section class="sec sec--deep" id="behind" data-code="YS / BEHIND 11">
+  <div class="wrap">
+    <header class="sh sh--mid">
+      <p class="eyebrow rv"><i></i>Making Of</p>
+      <h2 class="ttl h3d rv" data-d="1">BEHIND THE FRAME</h2>
+      <p class="lede rv" data-d="2">Camera, light, preparation — the work before the take.</p>
+    </header>
+    <!-- EDIT: video/making-of.mp4 -->
+    <div class="scene rv" data-d="2">
+      <div class="player player--short tilt" data-tilt="4" data-video="video/making-of.mp4" data-poster="images/p21.jpg">
+        <span class="player__glow" aria-hidden="true"></span>
+        <div class="player__in">
+          <img width="838" height="1280" src="images/p07.jpg" alt="" loading="lazy">
+          <button class="pbtn" data-sfx="enter" aria-label="Play behind the scenes"><span></span><svg class="ico"><use href="#i-play"/></svg></button>
+          <span class="player__bar"><b>BEHIND THE FRAME</b><i>RECENT SHOOT</i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 · 3D COVERFLOW — the 25 frames ================= -->
+<section class="sec sec--deep" id="frames" data-code="YS / FRAMES 03">
+  <div class="wrap">
+    <header class="sh sh--mid">
+      <p class="eyebrow rv"><i></i>The Collection</p>
+      <h2 class="ttl h3d rv" data-d="1">SELECTED FRAMES</h2>
+      <p class="lede rv" data-d="2">Drag, swipe, scroll or use the arrow keys. The photographs rotate through 3D space — the stage stays still.</p>
+    </header>
+  </div>
+
+  <!-- built by JS from the gallery below: one source of truth -->
+  <div class="cf rv" data-d="2">
+    <div class="cf__stage" id="cfStage" tabindex="0" role="region" aria-label="Photograph collection, arrow keys to browse"></div>
+    <span class="cf__floor" aria-hidden="true"></span>
+  </div>
+
+  <div class="wrap">
+    <div class="cf__bar rv">
+      <button class="rnd" id="cfPrev" data-sfx="tap" aria-label="Previous"><svg class="ico"><use href="#i-prev"/></svg></button>
+      <div class="cf__meta">
+        <span class="cf__n"><b id="cfNum">01</b> / <span id="cfTot">25</span></span>
+        <span class="cf__cap" id="cfCap">Signature cinematic headshot</span>
+        <span class="cf__cat" id="cfCat">ACTOR</span>
+      </div>
+      <button class="rnd" id="cfNext" data-sfx="tap" aria-label="Next"><svg class="ico"><use href="#i-next"/></svg></button>
+    </div>
+    <div class="cf__track" aria-hidden="true"><i id="cfFill"></i></div>
+  </div>
+</section>
+
+<!-- ================= 10 · MOVEMENT / DANCE ================= -->
+<section class="sec sec--forest" id="movement" data-code="YS / MOVEMENT 09">
+  <div class="wrap">
+    <header class="sh">
+      <p class="eyebrow rv"><i></i>Movement</p>
+      <h2 class="ttl h3d rv" data-d="1">MOVEMENT</h2>
+      <p class="lede rv" data-d="2">Nine years of dance. Musicality, body control and performance energy — the part of the craft that reads before a single word is spoken.</p>
+    </header>
+
+    <div class="yrs scene rv" data-d="1">
+      <div class="slab slab--num tilt" data-tilt="8"><b class="cnt" data-count="9">0</b><span>Years of dance</span></div>
+      <div class="slab slab--num tilt" data-tilt="8"><b class="cnt" data-count="6">0</b><span>Years choreographing</span></div>
+      <div class="slab slab--num tilt" data-tilt="8"><b class="cnt" data-count="5">0</b><span>Dance styles</span></div>
+    </div>
+
+    <ul class="range scene rv" data-d="2">
+      <li class="chip3d chip3d--green">BOLLYWOOD</li><li class="chip3d chip3d--green">WESTERN</li>
+      <li class="chip3d chip3d--green">FOLK</li><li class="chip3d chip3d--green">SALSA</li>
+      <li class="chip3d chip3d--green">CONTEMPORARY</li>
+    </ul>
+
+    <!-- EDIT: video/dance-01.mp4 · video/dance-02.mp4 -->
+    <div class="reels scene">
+      <div class="player player--short tilt rv" data-tilt="6" data-video="video/dance-01.mp4" data-poster="images/p21.jpg">
+        <span class="player__glow" aria-hidden="true"></span>
+        <div class="player__in">
+          <img width="1152" height="768" src="images/p13.jpg" alt="" loading="lazy">
+          <button class="pbtn pbtn--sm" data-sfx="enter" aria-label="Play dance reel 01"><span></span><svg class="ico"><use href="#i-play"/></svg></button>
+          <span class="player__bar"><b>DANCE REEL 01</b><i>BOLLYWOOD</i></span>
+        </div>
+      </div>
+      <div class="player player--short tilt rv" data-d="1" data-tilt="6" data-video="video/dance-02.mp4" data-poster="images/p08.jpg">
+        <span class="player__glow" aria-hidden="true"></span>
+        <div class="player__in">
+          <img width="959" height="1280" src="images/p16.jpg" alt="" loading="lazy">
+          <button class="pbtn pbtn--sm" data-sfx="enter" aria-label="Play dance reel 02"><span></span><svg class="ico"><use href="#i-play"/></svg></button>
+          <span class="player__bar"><b>DANCE REEL 02</b><i>SALSA / CONTEMPORARY</i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 13 · MEDIA ================= -->
+<section class="sec sec--green" id="media" data-code="YS / MEDIA 12">
+  <div class="wrap">
+    <header class="sh sh--split">
+      <div><p class="eyebrow rv"><i></i>Watch</p><h2 class="ttl h3d rv" data-d="1">MEDIA</h2></div>
+      <p class="lede rv" data-d="2">Five pieces. Acting, movement and the work behind both.</p>
+    </header>
+
+    <div class="mgrid scene">
+      <article class="mc tilt rv" data-tilt="9" data-video="video/audition.mp4" data-poster="images/p02.jpg">
+        <div class="mc__img"><img width="1186" height="1612" src="images/p02.jpg" alt="" loading="lazy">
+          <button class="mc__p" data-sfx="enter" aria-label="Play"><svg class="ico"><use href="#i-play"/></svg></button>
+          <button class="mc__f" data-sfx="tap" aria-label="Fullscreen"><svg class="ico"><use href="#i-expand"/></svg></button></div>
+        <div class="mc__b"><span class="mc__n">01</span><h3>Acting / Audition Clip</h3><p><i>ACTING</i><i>02:10</i></p></div>
+      </article>
+
+      <article class="mc tilt rv" data-d="1" data-tilt="9" data-video="video/dance-01.mp4" data-poster="images/p21.jpg">
+        <div class="mc__img"><img width="717" height="1280" src="images/p21.jpg" alt="" loading="lazy">
+          <button class="mc__p" data-sfx="enter" aria-label="Play"><svg class="ico"><use href="#i-play"/></svg></button>
+          <button class="mc__f" data-sfx="tap" aria-label="Fullscreen"><svg class="ico"><use href="#i-expand"/></svg></button></div>
+        <div class="mc__b"><span class="mc__n">02</span><h3>Dance Reel 01</h3><p><i>MOVEMENT</i><i>01:30</i></p></div>
+      </article>
+
+      <article class="mc tilt rv" data-d="2" data-tilt="9" data-video="video/dance-02.mp4" data-poster="images/p08.jpg">
+        <div class="mc__img"><img width="1070" height="1338" src="images/p08.jpg" alt="" loading="lazy">
+          <button class="mc__p" data-sfx="enter" aria-label="Play"><svg class="ico"><use href="#i-play"/></svg></button>
+          <button class="mc__f" data-sfx="tap" aria-label="Fullscreen"><svg class="ico"><use href="#i-expand"/></svg></button></div>
+        <div class="mc__b"><span class="mc__n">03</span><h3>Dance Reel 02</h3><p><i>MOVEMENT</i><i>01:20</i></p></div>
+      </article>
+
+      <article class="mc tilt rv" data-d="3" data-tilt="9" data-video="video/making-of.mp4" data-poster="images/p07.jpg">
+        <div class="mc__img"><img width="838" height="1280" src="images/p07.jpg" alt="" loading="lazy">
+          <button class="mc__p" data-sfx="enter" aria-label="Play"><svg class="ico"><use href="#i-play"/></svg></button>
+          <button class="mc__f" data-sfx="tap" aria-label="Fullscreen"><svg class="ico"><use href="#i-expand"/></svg></button></div>
+        <div class="mc__b"><span class="mc__n">04</span><h3>Recent Shoot / Making Video</h3><p><i>BEHIND</i><i>02:40</i></p></div>
+      </article>
+
+      <article class="mc tilt rv" data-d="4" data-tilt="9" data-href="https://youtu.be/-tt4F9uqRDA?si=U87-07Q3n5VeMEsZ" data-poster="images/p09.jpg">
+        <div class="mc__img"><img width="1019" height="704" src="images/p09.jpg" alt="" loading="lazy">
+          <button class="mc__p" data-sfx="enter" aria-label="Watch on YouTube"><svg class="ico"><use href="#i-play"/></svg></button></div>
+        <div class="mc__b"><span class="mc__n">05</span><h3>Priya Nee Premalo — Part 2</h3><p><i>SHORT FILM</i><i>YOUTUBE</i></p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 14 · GALLERY — the 25, source of truth ================= -->
+<section class="sec sec--deep" id="gallery" data-code="YS / GALLERY 13">
+  <div class="wrap">
+    <header class="sh sh--split">
+      <div><p class="eyebrow rv"><i></i>Photography</p><h2 class="ttl h3d rv" data-d="1">GALLERY</h2></div>
+      <p class="lede rv" data-d="2">Every photograph in the collection. Click any frame to enlarge.</p>
+    </header>
+
+    <div class="fil rv" data-d="2">
+      <button class="fb on" data-f="all" data-sfx="tap">All</button>
+      <button class="fb" data-f="actor" data-sfx="tap">Actor</button>
+      <button class="fb" data-f="character" data-sfx="tap">Character</button>
+      <button class="fb" data-f="theatre" data-sfx="tap">Theatre</button>
+      <button class="fb" data-f="editorial" data-sfx="tap">Editorial</button>
+    </div>
+
+    <!-- EDIT: swap src / data-full. Keep data-n, data-cat, data-cap. -->
+    <div class="gg scene" id="gg">
+      <figure class="gi tilt gi--xl" data-tilt="8" data-n="01" data-cat="actor" data-cap="Signature cinematic portrait" data-full="images/p01.jpg"><img width="1011" height="1556" src="images/p01.jpg" alt="Signature cinematic portrait" loading="lazy"></figure>
+      <figure class="gi tilt" data-tilt="10" data-n="02" data-cat="actor" data-cap="Casting headshot" data-full="images/p02.jpg"><img width="1186" height="1612" src="images/p02.jpg" alt="Casting headshot" loading="lazy"></figure>
+      <figure class="gi tilt" data-tilt="10" data-n="03" data-cat="actor" data-cap="Portrait — evening light" data-full="images/p03.jpg"><img width="979" height="1075" src="images/p03.jpg" alt="Portrait — evening light" loading="lazy"></figure>
+      <figure class="gi tilt gi--t" data-tilt="10" data-n="04" data-cat="actor" data-cap="Monochrome portrait" data-full="images/p04.jpg"><img width="853" height="1280" src="images/p04.jpg" alt="Monochrome portrait" loading="lazy"></figure>
+      <figure class="gi tilt" data-tilt="10" data-n="05" data-cat="character" data-cap="Intense character" data-full="images/p05.jpg"><img width="589" height="1024" src="images/p05.jpg" alt="Intense character" loading="lazy"></figure>
+      <figure class="gi tilt" data-tilt="10" data-n="06" data-cat="character" data-cap="Brooding character" data-full="images/p06.jpg"><img width="756" height="1280" src="images/p06.jpg" alt="Brooding character" loading="lazy"></figure>
+      <figure class="gi tilt gi--t" data-tilt="10" data-n="07" data-cat="character" data-cap="Still — black" data-full="images/p07.jpg"><img width="838" height="1280" src="images/p07.jpg" alt="Still — black" loading="lazy"></figure>
+      <figure class="gi tilt" data-tilt="10" data-n="08" data-cat="character" data-cap="Motion study" data-full="images/p08.jpg"><img width="1070" height="1338" src="images/p08.jpg" alt="Motion study" loading="lazy"></figure>
+      <aside class="gnote"><b>Casting</b><p>A face is the first line of any script.</p></aside>
+      <figure class="gi tilt gi--w" data-tilt="8" data-n="09" data-cat="character" data-cap="Scene still" data-full="images/p09.jpg"><img width="1019" height="704" src="images/p09.jpg" alt="Scene still" loading="lazy"></figure>
+      <figure class="gi tilt gi--t" data-tilt="10" data-n="10" data-cat="theatre" data-cap="Daryaptu Adhikari — on stage" data-full="images/p10.jpg"><img width="716" height="1600" src="images/p10.jpg" alt="Daryaptu Adhikari — on stage" loading="lazy"></figure>
+      <figure class="gi tilt" data-tilt="10" data-n="11" data-cat="theatre" data-cap="Postmaster" data-full="images/p11.jpg"><img width="515" height="856" src="images/p11.jpg" alt="Postmaster" loading="lazy"></figure>
+      <figure class="gi tilt" data-tilt="10" data-n="12" data-cat="theatre" data-cap="Postmaster — the letter" data-full="images/p12.jpg"><img width="716" height="1600" src="images/p12.jpg" alt="Postmaster — the letter" loading="lazy"></figure>
+      <figure class="gi tilt gi--w" data-tilt="8" data-n="13" data-cat="theatre" data-cap="Ensemble scene" data-full="images/p13.jpg"><img width="1152" height="768" src="images/p13.jpg" alt="Ensemble scene" loading="lazy"></figure>
+      <figure class="gi tilt gi--t" data-tilt="10" data-n="14" data-cat="editorial" data-cap="Traditional — burgundy" data-full="images/p14.jpg"><img width="900" height="1600" src="images/p14.jpg" alt="Traditional — burgundy" loading="lazy"></figure>
+      <figure class="gi tilt" data-tilt="10" data-n="15" data-cat="editorial" data-cap="Ivory editorial" data-full="images/p15.jpg"><img width="572" height="1280" src="images/p15.jpg" alt="Ivory editorial" loading="lazy"></figure>
+      <figure class="gi tilt" data-tilt="10" data-n="16" data-cat="editorial" data-cap="Green editorial" data-full="images/p16.jpg"><img width="959" height="1280" src="images/p16.jpg" alt="Green editorial" loading="lazy"></figure>
+      <figure class="gi tilt gi--t" data-tilt="10" data-n="17" data-cat="editorial" data-cap="Night — full length" data-full="images/p17.jpg"><img width="720" height="1280" src="images/p17.jpg" alt="Night — full length" loading="lazy"></figure>
+      <aside class="gnote"><b>Stage</b><p>The stage teaches size. The camera teaches truth.</p></aside>
+      <figure class="gi tilt" data-tilt="10" data-n="18" data-cat="editorial" data-cap="Colour block" data-full="images/p18.jpg"><img width="569" height="1024" src="images/p18.jpg" alt="Colour block" loading="lazy"></figure>
+      <figure class="gi tilt" data-tilt="10" data-n="19" data-cat="editorial" data-cap="Print — full length" data-full="images/p19.jpg"><img width="763" height="1097" src="images/p19.jpg" alt="Print — full length" loading="lazy"></figure>
+      <figure class="gi tilt gi--w" data-tilt="8" data-n="20" data-cat="editorial" data-cap="Coastal evening" data-full="images/p20.jpg"><img width="931" height="1280" src="images/p20.jpg" alt="Coastal evening" loading="lazy"></figure>
+      <aside class="gnote gnote--tall"><b>The Work</b><p>Nine rasas, one instrument — the body that has to carry them all.</p></aside>
+      <figure class="gi tilt" data-tilt="10" data-n="21" data-cat="editorial" data-cap="Outdoor — movement" data-full="images/p21.jpg"><img width="717" height="1280" src="images/p21.jpg" alt="Outdoor — movement" loading="lazy"></figure>
+      <aside class="gnote"><b>Editorial</b><p>Every frame is a rehearsal for the one that matters.</p></aside>
+    </div>
+    <p class="none" id="ggNone" hidden>No photographs in this category.</p>
+  </div>
+</section>
+
+<!-- ================= 16 · INTERNATIONAL ================= -->
+<section class="sec sec--navy" id="world" data-code="YS / WORLD 15">
+  <div class="wrap">
+    <header class="sh sh--mid">
+      <p class="eyebrow rv"><i></i>Availability</p>
+      <h2 class="ttl h3d rv" data-d="1">FROM HYDERABAD TO THE WORLD</h2>
+      <p class="lede rv" data-d="2">Open to selected professional opportunities across India and international markets in film, television, theatre, dance, choreography, advertising and performance.</p>
+    </header>
+
+    <ul class="regions scene rv" data-d="2">
+      <li class="chip3d chip3d--navy"><b>INDIA</b><i>Base</i></li>
+      <li class="chip3d chip3d--navy"><b>ASIA</b><i>Open</i></li>
+      <li class="chip3d chip3d--navy"><b>MIDDLE EAST</b><i>Open</i></li>
+      <li class="chip3d chip3d--navy"><b>EUROPE</b><i>Open</i></li>
+      <li class="chip3d chip3d--navy"><b>NORTH AMERICA</b><i>Open</i></li>
+      <li class="chip3d chip3d--navy"><b>AUSTRALIA</b><i>Open</i></li>
+      <li class="chip3d chip3d--navy"><b>AFRICA</b><i>Open</i></li>
+    </ul>
+    <p class="note rv">Indian passport held. No international credits or representation claimed.</p>
+  </div>
+</section>
+
+<!-- ================= 17 · CONTACT ================= -->
+<section class="sec sec--green" id="contact" data-code="YS / CONTACT 16">
+  <div class="wrap">
+    <header class="sh">
+      <p class="eyebrow rv"><i></i>Contact</p>
+      <h2 class="ttl h3d rv" data-d="1">LET'S CREATE SOMETHING WORTH WATCHING.</h2>
+      <p class="lede rv" data-d="2">Casting &nbsp;·&nbsp; Film &nbsp;·&nbsp; Theatre &nbsp;·&nbsp; Dance &nbsp;·&nbsp; Choreography &nbsp;·&nbsp; Creative collaboration</p>
+    </header>
+
+    <div class="ct scene">
+      <div class="card3d tilt rv" data-tilt="10">
+        <span class="card3d__glow" aria-hidden="true"></span>
+        <span class="card3d__cube"><svg class="ys"><use href="#ys"/></svg></span>
+        <p class="card3d__n">YORVIK<br>SHARJITH SHAANK</p>
+        <p class="card3d__r">ACTOR &nbsp;·&nbsp; DANCER &nbsp;·&nbsp; CHOREOGRAPHER</p>
+        <p class="card3d__c">HYDERABAD, INDIA</p>
+        <ul class="card3d__l">
+          <li><svg class="ico"><use href="#i-mail"/></svg><a href="mailto:sharjithshank@gmail.com">sharjithshank@gmail.com</a></li>
+          <li><svg class="ico"><use href="#i-phone"/></svg><a href="tel:+916305068693">+91 63050 68693</a></li>
+          <li><svg class="ico"><use href="#i-pin"/></svg><span>Hyderabad, Telangana, India</span></li>
+        </ul>
+        <button class="btn btn--gold btn--full" data-mag id="saveContact" data-sfx="enter"><svg class="ico"><use href="#i-down"/></svg> SAVE CONTACT (.VCF)</button>
+        <p class="card3d__sl">SOCIAL</p>
+        <!-- EDIT: replace each href="#" with the real profile URL -->
+        <ul class="socs">
+          <li><a href="#" data-sfx="tap" data-nourl>Instagram</a></li><li><a href="#" data-sfx="tap" data-nourl>LinkedIn</a></li>
+          <li><a href="#" data-sfx="tap" data-nourl>Facebook</a></li><li><a href="#" data-sfx="tap" data-nourl>X / Twitter</a></li>
+          <li><a href="#" data-sfx="tap" data-nourl>Snapchat</a></li><li><a href="#" data-sfx="tap" data-nourl>Telegram</a></li>
+        </ul>
+      </div>
+
+      <form class="form slab rv" data-d="1" id="form" novalidate>
+        <div class="f"><label for="cn">Your Name <i>*</i></label><input type="text" id="cn" name="name" placeholder="Casting director, producer, choreographer…" required><small class="e"></small></div>
+        <div class="f2">
+          <div class="f"><label for="ce">Email <i>*</i></label><input type="email" id="ce" name="email" placeholder="you@production.com" required><small class="e"></small></div>
+          <div class="f"><label for="cp">Phone</label><input type="tel" id="cp" name="phone" placeholder="+91 00000 00000"><small class="e"></small></div>
+        </div>
+        <div class="f2">
+          <div class="f"><label for="ctp">Enquiry <i>*</i></label>
+            <select id="ctp" name="type" required>
+              <option value="">Select…</option><option>Casting / Audition</option><option>Film</option>
+              <option>Television</option><option>Theatre</option><option>Dance</option>
+              <option>Choreography</option><option>Advertising</option><option>Creative Collaboration</option>
+            </select><small class="e"></small></div>
+          <div class="f"><label for="cd">Audition / Shoot Date</label><input type="date" id="cd" name="date"><small class="e"></small></div>
+        </div>
+        <div class="f"><label for="cm">Project Details <i>*</i></label><textarea id="cm" name="message" rows="5" placeholder="Role, character brief, dates, location, language…" required></textarea><small class="e"></small></div>
+        <button type="submit" class="btn btn--red btn--full" data-mag id="sendBtn" data-sfx="enter"><span class="btn__l">SEND ENQUIRY</span> <svg class="ico"><use href="#i-arrow"/></svg></button>
+        <p class="fnote" id="fnote" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot__s h3d rv">FROM STAGE TO SCREEN.</p>
+    <div class="foot__b">
+      <a href="#home" class="logo" data-sfx="tap"><span class="logo__cube"><svg class="ys"><use href="#ys"/></svg></span><span class="logo__t">YORVIK<em>SHARJITH SHAANK</em></span></a>
+      <nav class="foot__n" aria-label="Footer"><a href="#reel">Reel</a><a href="#acting">Acting</a><a href="#movement">Movement</a><a href="#casting">Casting</a><a href="#contact">Contact</a></nav>
+      <p class="foot__c">© <span id="yr">2026</span> Yorvik Sharjith Shaank</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= OVERLAYS ================= -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photograph viewer" hidden>
+  <button class="lb__x" id="lbX" data-sfx="tap" aria-label="Close">&times;</button>
+  <button class="rnd lb__p" id="lbP" data-sfx="tap" aria-label="Previous"><svg class="ico"><use href="#i-prev"/></svg></button>
+  <figure class="lb__s"><img src="" alt="" id="lbImg"><figcaption id="lbCap"></figcaption></figure>
+  <button class="rnd lb__n" id="lbN" data-sfx="tap" aria-label="Next"><svg class="ico"><use href="#i-next"/></svg></button>
+  <span class="lb__c" id="lbC"></span>
+</div>
+
+<div class="vm" id="vm" role="dialog" aria-modal="true" aria-label="Video player" hidden>
+  <button class="vm__x" id="vmX" data-sfx="tap" aria-label="Close">&times;</button>
+  <div class="vm__b"><video id="vmV" controls playsinline preload="none"></video>
+    <p class="vm__f" id="vmF">This clip is not in the project yet. Drop the file at the path shown in <code>README.txt</code> and it will play here.</p></div>
+</div>
+
+<button class="totop" id="toTop" data-sfx="tap" aria-label="Back to top"><svg class="ico"><use href="#i-arrow"/></svg></button>
+
+<script src="js/script.js"></script>
+</body>
+</html>

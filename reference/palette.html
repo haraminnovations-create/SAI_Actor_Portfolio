@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colour Palette — Yorvik Sharjith Shaank</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* The supplied swatch sheet, rebuilt as a live reference page.
+   Every value here is the same one used in ../css/style.css */
+:root{
+  --silver:#c0c0c0; --gold:#d4af37; --green:#0b1f1a;
+  --navy:#0d1b3d;   --white:#ffffff; --red:#b71c1c;
+  --black:#04100c;  --char:#0e2620;
+  --gold-metal:linear-gradient(158deg,#efd882 0%,#d4af37 44%,#a8842a 100%);
+  --hair:rgba(212,175,55,.3);
+  --f-d:'Bodoni Moda',Georgia,serif;
+  --f-b:'Inter',system-ui,sans-serif;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+body{
+  margin:0; padding:48px 26px 70px;
+  background:linear-gradient(180deg,var(--green),var(--black));
+  color:var(--white); font-family:var(--f-b); font-weight:300; line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{ max-width:1180px; margin-inline:auto; }
+
+h1{ font-family:var(--f-d); font-weight:400; font-size:clamp(1.9rem,5vw,3.2rem);
+    letter-spacing:.06em; text-transform:uppercase; text-align:center; margin:0; }
+h1 em{ font-style:italic; text-transform:none; color:var(--gold); }
+.sub{ text-align:center; font-size:.66rem; font-weight:600; letter-spacing:.4em;
+      text-transform:uppercase; color:var(--silver); margin:12px 0 0; }
+
+/* the — ★ — divider from the border system */
+.rule{ height:11px; margin:34px 0 40px;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.6 6.8L21.5 11l-6.9 2.2L12 20l-2.6-6.8L2.5 11l6.9-2.2z' fill='%23d4af37'/%3E%3C/svg%3E") center/11px no-repeat,
+    linear-gradient(90deg,transparent,var(--hair) 18%,var(--hair) 47%,
+      transparent 47.5%,transparent 52.5%,var(--hair) 53%,var(--hair) 82%,transparent)
+      center/100% 1px no-repeat;
+}
+
+h2{ font-family:var(--f-d); font-weight:400; font-size:1.5rem; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--gold); text-align:center; margin:0 0 26px; }
+
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:18px; }
+
+.sw__chip{ height:150px; border:1px solid var(--hair); border-radius:6px; }
+.sw__name{ display:block; font-family:var(--f-d); font-size:1.05rem; letter-spacing:.14em;
+           text-transform:uppercase; margin-top:14px; }
+.sw__hex{ display:block; font-size:.76rem; letter-spacing:.12em; color:var(--silver);
+          font-variant-numeric:tabular-nums; }
+.sw__use{ display:block; font-size:.6rem; font-weight:600; letter-spacing:.2em;
+          text-transform:uppercase; color:var(--gold); margin-top:6px; }
+.sw{ text-align:center; }
+
+.block{ margin-top:64px; }
+
+.use{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px; }
+.use div{ border:1px solid var(--hair); border-radius:6px; padding:20px 18px; }
+.use b{ display:block; font-size:.6rem; font-weight:700; letter-spacing:.22em;
+        text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+.use span{ font-size:.86rem; color:var(--silver); }
+
+.grads{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px; }
+.grad{ height:80px; border:1px solid var(--hair); border-radius:6px; }
+.g1{ background:linear-gradient(90deg,var(--green),var(--black)); }
+.g2{ background:linear-gradient(90deg,var(--navy),var(--green)); }
+.g3{ background:linear-gradient(90deg,var(--gold),var(--green)); }
+.g4{ background:linear-gradient(90deg,var(--red),var(--black)); }
+.gl{ display:block; font-size:.58rem; font-weight:600; letter-spacing:.16em;
+     text-transform:uppercase; color:var(--silver); margin-top:9px; text-align:center; }
+
+.btns{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; }
+.btn{ display:inline-flex; align-items:center; justify-content:center;
+      padding:15px 32px; border:1px solid transparent; border-radius:0;
+      font-size:.66rem; font-weight:600; letter-spacing:.24em; text-transform:uppercase; }
+.b-gold{ background:var(--gold-metal); border-color:var(--gold); color:var(--black); }
+.b-navy{ background:var(--navy); border-color:var(--navy); color:var(--white); }
+.b-red { background:var(--red);  border-color:var(--red);  color:var(--white); }
+.b-ghost{ border-color:rgba(255,255,255,.14); color:var(--white); }
+.cap{ text-align:center; font-size:.76rem; color:var(--silver); margin-top:20px; }
+
+table{ width:100%; border-collapse:collapse; margin-top:8px; font-size:.86rem; }
+th,td{ text-align:left; padding:11px 12px; border-bottom:1px solid rgba(255,255,255,.1); }
+th{ font-size:.58rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--gold); }
+td:first-child{ font-family:var(--f-d); letter-spacing:.06em; }
+code{ font-family:ui-monospace,Menlo,monospace; font-size:.82rem; color:var(--gold); }
+.scroll{ overflow-x:auto; }
+
+.foot{ text-align:center; margin-top:66px; font-size:.6rem; font-weight:600;
+       letter-spacing:.34em; text-transform:uppercase; color:var(--silver); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Colour <em>Palette</em></h1>
+  <p class="sub">Yorvik Sharjith Shaank &nbsp;·&nbsp; Actor Portfolio</p>
+  <div class="rule"></div>
+
+  <!-- THE SIX -->
+  <div class="grid">
+    <div class="sw">
+      <div class="sw__chip" style="background:linear-gradient(150deg,#e9e9e9,#c0c0c0 50%,#9d9d9d)"></div>
+      <span class="sw__name">Silver</span><span class="sw__hex">#C0C0C0</span>
+      <span class="sw__use">Text / Icons</span>
+    </div>
+    <div class="sw">
+      <div class="sw__chip" style="background:linear-gradient(158deg,#efd882,#d4af37 44%,#a8842a)"></div>
+      <span class="sw__name">Gold</span><span class="sw__hex">#D4AF37</span>
+      <span class="sw__use">Primary Accent</span>
+    </div>
+    <div class="sw">
+      <div class="sw__chip" style="background:#0b1f1a"></div>
+      <span class="sw__name">Black Green</span><span class="sw__hex">#0B1F1A</span>
+      <span class="sw__use">Background</span>
+    </div>
+    <div class="sw">
+      <div class="sw__chip" style="background:#0d1b3d"></div>
+      <span class="sw__name">Navy Blue</span><span class="sw__hex">#0D1B3D</span>
+      <span class="sw__use">Secondary Accent</span>
+    </div>
+    <div class="sw">
+      <div class="sw__chip" style="background:#ffffff"></div>
+      <span class="sw__name">White</span><span class="sw__hex">#FFFFFF</span>
+      <span class="sw__use">Neutral / Light</span>
+    </div>
+    <div class="sw">
+      <div class="sw__chip" style="background:#b71c1c"></div>
+      <span class="sw__name">Red</span><span class="sw__hex">#B71C1C</span>
+      <span class="sw__use">Highlight / CTA</span>
+    </div>
+  </div>
+
+  <!-- USAGE -->
+  <div class="block">
+    <h2>Usage Guide</h2>
+    <div class="use">
+      <div><b>Background</b><span>Black green, ramped to near-black on long sections.</span></div>
+      <div><b>Primary Accent</b><span>Gold — every hairline, all micro-type, the star dividers.</span></div>
+      <div><b>Secondary Accent</b><span>Navy — screen credit, international, secondary buttons.</span></div>
+      <div><b>Highlight / CTA</b><span>Red — casting contact and the enquiry submit only.</span></div>
+      <div><b>Text / Icons</b><span>White for body, silver for labels and captions.</span></div>
+      <div><b>Card / Surface</b><span>#0E2620 raised, #081814 recessed for inputs.</span></div>
+      <div><b>Borders / Dividers</b><span>1px gold at 30% opacity, broken by a gold star.</span></div>
+      <div><b>Neutral / Light</b><span>White — the casting profile section inverts to it.</span></div>
+    </div>
+  </div>
+
+  <!-- GRADIENTS -->
+  <div class="block">
+    <h2>Gradients</h2>
+    <div class="grads">
+      <div><div class="grad g1"></div><span class="gl">Black Green → Black</span></div>
+      <div><div class="grad g2"></div><span class="gl">Navy → Black Green</span></div>
+      <div><div class="grad g3"></div><span class="gl">Gold → Black Green</span></div>
+      <div><div class="grad g4"></div><span class="gl">Red → Black</span></div>
+    </div>
+  </div>
+
+  <!-- CTA LEVELS -->
+  <div class="block">
+    <h2>Button Hierarchy</h2>
+    <div class="btns">
+      <span class="btn b-gold">Watch Showreel</span>
+      <span class="btn b-navy">View Casting Profile</span>
+      <span class="btn b-red">Contact For Casting</span>
+      <span class="btn b-ghost">Secondary</span>
+    </div>
+    <p class="cap">Gold leads · navy supports · red is reserved for casting contact,
+       so it never competes with itself.</p>
+  </div>
+
+  <!-- MAPPING -->
+  <div class="block">
+    <h2>Where Each Colour Lives</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Section</th><th>Dominant</th><th>Supporting</th><th>Accent</th></tr></thead>
+        <tbody>
+          <tr><td>Hero</td><td>Black green</td><td>White</td><td>Gold</td></tr>
+          <tr><td>Showreel</td><td>Black green</td><td>Silver</td><td>Gold</td></tr>
+          <tr><td>25-Frame</td><td>Green → black</td><td>Silver</td><td>Gold</td></tr>
+          <tr><td>Acting</td><td>Red → black</td><td>White</td><td>Gold</td></tr>
+          <tr><td>Theatre</td><td>Red → black</td><td>White</td><td>Gold</td></tr>
+          <tr><td>Screen</td><td>Navy → black</td><td>Silver</td><td>Gold</td></tr>
+          <tr><td>Movement</td><td>Black green</td><td>Navy</td><td>Gold</td></tr>
+          <tr><td>Casting Profile</td><td>White</td><td>Black green</td><td>Gold</td></tr>
+          <tr><td>International</td><td>Navy</td><td>White</td><td>Gold</td></tr>
+          <tr><td>Contact</td><td>Green → black</td><td>White</td><td>Gold + Red</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cap">Never all six at once. One dominant, one supporting, one accent —
+       set in <code>:root</code> at the top of <code>../css/style.css</code>.</p>
+  </div>
+
+  <p class="foot">Elegant &nbsp;★&nbsp; Bold &nbsp;★&nbsp; Cinematic &nbsp;★&nbsp; Timeless</p>
+</div>
+</body>
+</html>
