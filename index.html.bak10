@@ -224,35 +224,22 @@
     </header>
 
     <div class="scene rv" data-d="1">
-      <!-- The poster the play was actually sold on, set beside the bill that
-           lists it - the same pairing the screen credit uses further down.
-           The artwork already carries the date, the venue and the ticketing,
-           so the bill beside it is left to the roles. -->
-      <div class="playbill">
-        <figure class="pl__art tilt" data-tilt="8">
-          <img width="1280" height="1600" src="images/p22.jpeg" loading="lazy"
-               alt="Daryaptu Adhikari, a Telugu play by Nikolai Gogol - poster"
-               data-ph="DARYAPTU ADHIKARI">
-          <span class="pl__badge">STAGED</span>
-        </figure>
-
-        <div class="bill tilt" data-tilt="5">
-          <span class="bill__glow" aria-hidden="true"></span>
-          <p class="bill__pre">SAMHARA THEATRE PRESENTS</p>
-          <h3 class="bill__t h3d">DARYAPTU<br>ADHIKARI</h3>
-          <p class="bill__d">DIRECTED BY <b>SANDEEP SAHOO</b></p>
-          <div class="bill__g">
-            <div><span>YEAR</span><b>2026</b></div>
-            <div><span>VENUE</span><b>Samhara Theatre<br>Banjara Hills, Hyderabad</b></div>
-            <div><span>PERFORMANCES</span><b>1</b></div>
-          </div>
-          <p class="bill__rl">ROLES PERFORMED</p>
-          <ul class="bill__r">
-            <li class="chip3d chip3d--red"><b>POSTMASTER</b><i>10</i></li>
-            <li class="chip3d chip3d--red"><b>BUSINESSMAN</b><i>11</i></li>
-            <li class="chip3d chip3d--red"><b>WAITER</b><i>12</i></li>
-          </ul>
+      <div class="bill tilt" data-tilt="5">
+        <span class="bill__glow" aria-hidden="true"></span>
+        <p class="bill__pre">SAMHARA THEATRE PRESENTS</p>
+        <h3 class="bill__t h3d">DARYAPTU<br>ADHIKARI</h3>
+        <p class="bill__d">DIRECTED BY <b>SANDEEP SAHOO</b></p>
+        <div class="bill__g">
+          <div><span>YEAR</span><b>2026</b></div>
+          <div><span>VENUE</span><b>Samhara Theatre<br>Banjara Hills, Hyderabad</b></div>
+          <div><span>PERFORMANCES</span><b>1</b></div>
         </div>
+        <p class="bill__rl">ROLES PERFORMED</p>
+        <ul class="bill__r">
+          <li class="chip3d chip3d--red"><b>POSTMASTER</b><i>10</i></li>
+          <li class="chip3d chip3d--red"><b>BUSINESSMAN</b><i>11</i></li>
+          <li class="chip3d chip3d--red"><b>WAITER</b><i>12</i></li>
+        </ul>
       </div>
     </div>
 

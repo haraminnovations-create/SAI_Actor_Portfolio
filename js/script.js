@@ -87,7 +87,7 @@
      ====================================================================== */
   const FIT_FRAMES = [
     '.stack__face', '.pc__stack', '.pc', '.cf__i',
-    '.cred__art', '.mc__img', '.gi', '.player__in'
+    '.cred__art', '.pl__art', '.mc__img', '.gi', '.player__in'
   ].join(',');
 
   /** Paint the fill behind `frame` from the picture currently showing in it. */
@@ -207,7 +207,7 @@
       the screen-credit print, each reel poster — take that picture's shape
       too, so nothing is left standing in a box cut for something else. */
   function trueShape() {
-    $$('.stack, .cred__art, .mc__img, .player__in').forEach((frame) => {
+    $$('.stack, .cred__art, .pl__art, .mc__img, .player__in').forEach((frame) => {
       const r = shapeOf(frame);
       if (r) frame.style.setProperty('--ar', r.toFixed(4));
     });
