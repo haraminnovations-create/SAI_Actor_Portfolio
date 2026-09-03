@@ -103,6 +103,7 @@
       <li><a href="#acting"    class="nav__a" data-sfx="tap">Acting</a></li>
       <li><a href="#reel"      class="nav__a" data-sfx="tap">Reel</a></li>
       <li><a href="#frames"    class="nav__a" data-sfx="tap">Frames</a></li>
+      <li><a href="#movement"  class="nav__a" data-sfx="tap">Movement</a></li>
       <li><a href="#media"     class="nav__a" data-sfx="tap">Media</a></li>
       <li><a href="#gallery"   class="nav__a" data-sfx="tap">Gallery</a></li>
       <li><a href="#contact"   class="nav__a" data-sfx="tap">Contact</a></li>
@@ -770,6 +771,49 @@
   </div>
 </section>
 
+<!-- ================= 10 · MOVEMENT / DANCE ================= -->
+<section class="sec sec--forest" id="movement" data-code="YS / MOVEMENT 09">
+  <div class="wrap">
+    <header class="sh">
+      <p class="eyebrow rv"><i></i>Movement</p>
+      <h2 class="ttl h3d rv" data-d="1">MOVEMENT</h2>
+      <p class="lede rv" data-d="2">Nine years of dance. Musicality, body control and performance energy — the part of the craft that reads before a single word is spoken.</p>
+    </header>
+
+    <div class="yrs scene rv" data-d="1">
+      <div class="slab slab--num tilt" data-tilt="8"><b class="cnt" data-count="9">0</b><span>Years of dance</span></div>
+      <div class="slab slab--num tilt" data-tilt="8"><b class="cnt" data-count="6">0</b><span>Years choreographing</span></div>
+      <div class="slab slab--num tilt" data-tilt="8"><b class="cnt" data-count="5">0</b><span>Dance styles</span></div>
+    </div>
+
+    <ul class="range scene rv" data-d="2">
+      <li class="chip3d chip3d--green">BOLLYWOOD</li><li class="chip3d chip3d--green">WESTERN</li>
+      <li class="chip3d chip3d--green">FOLK</li><li class="chip3d chip3d--green">SALSA</li>
+      <li class="chip3d chip3d--green">CONTEMPORARY</li>
+    </ul>
+
+    <!-- EDIT: video/dance-01.mp4 · video/dance-02.mp4 -->
+    <div class="reels scene">
+      <div class="player player--short tilt rv" data-tilt="6" data-video="video/dance2.mp4" data-poster="images/p21.jpg">
+        <span class="player__glow" aria-hidden="true"></span>
+        <div class="player__in">
+          <img width="1152" height="768" src="images/p13.jpg" alt="" loading="lazy">
+          <button class="pbtn pbtn--sm" data-sfx="enter" aria-label="Play dance reel 01"><span></span><svg class="ico"><use href="#i-play"/></svg></button>
+          <span class="player__bar"><b>DANCE REEL 01</b><i>BOLLYWOOD</i></span>
+        </div>
+      </div>
+      <div class="player player--short tilt rv" data-d="1" data-tilt="6" data-video="video/dance-01.mp4" data-poster="images/p08.jpg">
+        <span class="player__glow" aria-hidden="true"></span>
+        <div class="player__in">
+          <img width="959" height="1280" src="images/p16.jpg" alt="" loading="lazy">
+          <button class="pbtn pbtn--sm" data-sfx="enter" aria-label="Play dance reel 02"><span></span><svg class="ico"><use href="#i-play"/></svg></button>
+          <span class="player__bar"><b>DANCE REEL 02</b><i>SALSA / CONTEMPORARY</i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= 13 · MEDIA ================= -->
 <section class="sec sec--green" id="media" data-code="YS / MEDIA 12">
   <div class="wrap">
@@ -952,7 +996,7 @@
     <p class="foot__s h3d rv">FROM STAGE TO SCREEN.</p>
     <div class="foot__b">
       <a href="#home" class="logo" data-sfx="tap"><span class="logo__cube"><svg class="ys"><use href="#ys"/></svg></span><span class="logo__t">YORVIK<em>SHARJITH SHAANK</em></span></a>
-      <nav class="foot__n" aria-label="Footer"><a href="#reel">Reel</a><a href="#acting">Acting</a><a href="#casting">Casting</a><a href="#contact">Contact</a></nav>
+      <nav class="foot__n" aria-label="Footer"><a href="#reel">Reel</a><a href="#acting">Acting</a><a href="#movement">Movement</a><a href="#casting">Casting</a><a href="#contact">Contact</a></nav>
       <p class="foot__c">© <span id="yr">2026</span> Yorvik Sharjith Shaank</p>
     </div>
   </div>
