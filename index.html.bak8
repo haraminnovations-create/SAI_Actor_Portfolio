@@ -99,8 +99,8 @@
     <nav class="nav" id="nav" aria-label="Main"><ul>
       <li><a href="#casting"   class="nav__a" data-sfx="tap">Casting</a></li>
       <li><a href="#theatre"   class="nav__a" data-sfx="tap">Theatre</a></li>
-      <li><a href="#screen"    class="nav__a" data-sfx="tap">Screen</a></li>
       <li><a href="#acting"    class="nav__a" data-sfx="tap">Acting</a></li>
+      <li><a href="#screen"    class="nav__a" data-sfx="tap">Screen</a></li>
       <li><a href="#reel"      class="nav__a" data-sfx="tap">Reel</a></li>
       <li><a href="#frames"    class="nav__a" data-sfx="tap">Frames</a></li>
       <li><a href="#movement"  class="nav__a" data-sfx="tap">Movement</a></li>
@@ -311,94 +311,6 @@
         </div>
       </article>
     </div>
-  </div>
-</section>
-
-<!-- ================= 09 · AUDITION ================= -->
-<section class="sec sec--green" id="audition" data-code="YS / AUDITION 08">
-  <div class="wrap">
-    <header class="sh">
-      <p class="eyebrow rv"><i></i>Casting Material</p>
-      <h2 class="ttl h3d rv" data-d="1">AUDITION</h2>
-    </header>
-
-    <div class="aud scene rv" data-d="1">
-      <!-- EDIT: video/web/audition.mp4 -->
-      <div class="player player--short tilt" data-tilt="5" data-video="video/web/audition.mp4" data-poster="images/p02.jpg">
-        <span class="player__glow" aria-hidden="true"></span>
-        <div class="player__in">
-          <img width="1186" height="1612" src="images/p02.jpg" alt="" loading="lazy">
-          <button class="pbtn" data-sfx="enter" aria-label="Play audition clip"><span></span><svg class="ico"><use href="#i-play"/></svg></button>
-        </div>
-      </div>
-      <div class="slab tilt" data-tilt="6">
-        <p class="aud__n">YORVIK SHARJITH SHAANK</p>
-        <dl class="kv">
-          <!-- EDIT: scene / character / date once the clip is recorded -->
-          <div><dt>Scene</dt><dd>Self-tape — dramatic</dd></div>
-          <div><dt>Language</dt><dd>Telugu / Hindi / English</dd></div>
-          <div><dt>Recorded</dt><dd>2026</dd></div>
-        </dl>
-        <div class="aud__b">
-          <a href="#reel" class="btn btn--navy btn--sm" data-mag data-sfx="tap">SHOWREEL</a>
-          <a href="#contact" class="btn btn--red btn--sm" data-mag data-sfx="tap">CONTACT FOR CASTING</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 08 · SCREEN ================= -->
-<section class="sec sec--navy" id="screen" data-code="YS / SCREEN 07">
-  <div class="wrap">
-    <header class="sh">
-      <p class="eyebrow rv"><i></i>Screen</p>
-      <h2 class="ttl h3d rv" data-d="1">SCREEN CREDIT</h2>
-    </header>
-
-    <article class="cred scene rv" data-d="1">
-      <figure class="cred__art tilt" data-tilt="10">
-        <img width="1186" height="1612" src="images/p55.jpg" alt="Priya Nee Premalo Part 2 — still" loading="lazy">
-        <span class="cred__badge">RELEASED</span>
-      </figure>
-      <div class="cred__body slab tilt" data-tilt="5">
-        <h3 class="cred__t h3d">PRIYA NEE PREMALO<br><span>PART 2</span></h3>
-        <p class="cred__sub">TELUGU SHORT FILM</p>
-        <p class="cred__role"><span>ROLE</span><b>Second Lead</b></p>
-        <dl class="kv">
-          <div><dt>Released</dt><dd>7 October 2020</dd></div>
-          <div><dt>Directors</dt><dd>Lakshmi Narayana &amp; Sravani</dd></div>
-          <div><dt>Producer</dt><dd>Bhavani</dd></div>
-          <div><dt>DOP</dt><dd>Karthik</dd></div>
-          <div><dt>Story</dt><dd>Geetha Savithri Devi</dd></div>
-        </dl>
-        <a class="btn btn--gold" data-mag data-sfx="enter" target="_blank" rel="noopener" href="https://youtu.be/-tt4F9uqRDA?si=U87-07Q3n5VeMEsZ"><svg class="ico"><use href="#i-play"/></svg> WATCH FILM</a>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- ================= 06 · ACTING TRAINING ================= -->
-<section class="sec sec--green" id="training" data-code="YS / TRAINING 05">
-  <div class="wrap duo scene">
-    <div>
-      <p class="eyebrow rv"><i></i>Training</p>
-      <h2 class="ttl h3d rv" data-d="1">TRAINED  ACTOR </h2>
-      <div class="slab tilt rv" data-d="2" data-tilt="6">
-        <span class="slab__no">01</span>
-        <h3>SAMHARA THEATRE</h3>
-        <dl class="kv">
-          <div><dt>Location</dt><dd>Banjara Hills Road no 11, Hyderabad, Telangana, India</dd></div>
-          <div><dt>Duration</dt><dd>4 months (Jun - Sep)</dd></div>
-          <div><dt>Creative Trainer</dt><dd>Sandeep Sahoo</dd></div>
-          <div><dt>Focus</dt><dd>Stage craft, character build, voice, movement</dd></div>
-        </dl>
-      </div>
-    </div>
-    <figure class="pc pc--tall tilt rv" data-d="1" data-tilt="9">
-      <img width="716" height="1600" src="images/p58.jpg" alt="Theatre portrait" loading="lazy">
-      <figcaption><b>Theatre</b></figcaption>
-    </figure>
   </div>
 </section>
 
@@ -693,6 +605,94 @@
         </dl>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ================= 09 · AUDITION ================= -->
+<section class="sec sec--green" id="audition" data-code="YS / AUDITION 08">
+  <div class="wrap">
+    <header class="sh">
+      <p class="eyebrow rv"><i></i>Casting Material</p>
+      <h2 class="ttl h3d rv" data-d="1">AUDITION</h2>
+    </header>
+
+    <div class="aud scene rv" data-d="1">
+      <!-- EDIT: video/web/audition.mp4 -->
+      <div class="player player--short tilt" data-tilt="5" data-video="video/web/audition.mp4" data-poster="images/p02.jpg">
+        <span class="player__glow" aria-hidden="true"></span>
+        <div class="player__in">
+          <img width="1186" height="1612" src="images/p02.jpg" alt="" loading="lazy">
+          <button class="pbtn" data-sfx="enter" aria-label="Play audition clip"><span></span><svg class="ico"><use href="#i-play"/></svg></button>
+        </div>
+      </div>
+      <div class="slab tilt" data-tilt="6">
+        <p class="aud__n">YORVIK SHARJITH SHAANK</p>
+        <dl class="kv">
+          <!-- EDIT: scene / character / date once the clip is recorded -->
+          <div><dt>Scene</dt><dd>Self-tape — dramatic</dd></div>
+          <div><dt>Language</dt><dd>Telugu / Hindi / English</dd></div>
+          <div><dt>Recorded</dt><dd>2026</dd></div>
+        </dl>
+        <div class="aud__b">
+          <a href="#reel" class="btn btn--navy btn--sm" data-mag data-sfx="tap">SHOWREEL</a>
+          <a href="#contact" class="btn btn--red btn--sm" data-mag data-sfx="tap">CONTACT FOR CASTING</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 08 · SCREEN ================= -->
+<section class="sec sec--navy" id="screen" data-code="YS / SCREEN 07">
+  <div class="wrap">
+    <header class="sh">
+      <p class="eyebrow rv"><i></i>Screen</p>
+      <h2 class="ttl h3d rv" data-d="1">SCREEN CREDIT</h2>
+    </header>
+
+    <article class="cred scene rv" data-d="1">
+      <figure class="cred__art tilt" data-tilt="10">
+        <img width="1186" height="1612" src="images/p55.jpg" alt="Priya Nee Premalo Part 2 — still" loading="lazy">
+        <span class="cred__badge">RELEASED</span>
+      </figure>
+      <div class="cred__body slab tilt" data-tilt="5">
+        <h3 class="cred__t h3d">PRIYA NEE PREMALO<br><span>PART 2</span></h3>
+        <p class="cred__sub">TELUGU SHORT FILM</p>
+        <p class="cred__role"><span>ROLE</span><b>Second Lead</b></p>
+        <dl class="kv">
+          <div><dt>Released</dt><dd>7 October 2020</dd></div>
+          <div><dt>Directors</dt><dd>Lakshmi Narayana &amp; Sravani</dd></div>
+          <div><dt>Producer</dt><dd>Bhavani</dd></div>
+          <div><dt>DOP</dt><dd>Karthik</dd></div>
+          <div><dt>Story</dt><dd>Geetha Savithri Devi</dd></div>
+        </dl>
+        <a class="btn btn--gold" data-mag data-sfx="enter" target="_blank" rel="noopener" href="https://youtu.be/-tt4F9uqRDA?si=U87-07Q3n5VeMEsZ"><svg class="ico"><use href="#i-play"/></svg> WATCH FILM</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= 06 · ACTING TRAINING ================= -->
+<section class="sec sec--green" id="training" data-code="YS / TRAINING 05">
+  <div class="wrap duo scene">
+    <div>
+      <p class="eyebrow rv"><i></i>Training</p>
+      <h2 class="ttl h3d rv" data-d="1">TRAINED  ACTOR </h2>
+      <div class="slab tilt rv" data-d="2" data-tilt="6">
+        <span class="slab__no">01</span>
+        <h3>SAMHARA THEATRE</h3>
+        <dl class="kv">
+          <div><dt>Location</dt><dd>Banjara Hills Road no 11, Hyderabad, Telangana, India</dd></div>
+          <div><dt>Duration</dt><dd>4 months (Jun - Sep)</dd></div>
+          <div><dt>Creative Trainer</dt><dd>Sandeep Sahoo</dd></div>
+          <div><dt>Focus</dt><dd>Stage craft, character build, voice, movement</dd></div>
+        </dl>
+      </div>
+    </div>
+    <figure class="pc pc--tall tilt rv" data-d="1" data-tilt="9">
+      <img width="716" height="1600" src="images/p58.jpg" alt="Theatre portrait" loading="lazy">
+      <figcaption><b>Theatre</b></figcaption>
+    </figure>
   </div>
 </section>
 

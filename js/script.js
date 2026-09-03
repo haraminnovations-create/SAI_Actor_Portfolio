@@ -426,9 +426,20 @@
       if (prog) prog.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
       if (toTop) toTop.classList.toggle('show', y > 700);
 
+      /* The live section is the one starting nearest above the probe,
+         found by comparing tops. Reading it off the end of the list
+         instead would quietly light the wrong link whenever the menu is
+         written in a different order from the page — which is exactly
+         what the audition, screen credit and training blocks moving up
+         behind the theatre would have caused. */
       const probe = y + innerHeight * 0.3;
-      let cur = secs[0];
-      secs.forEach((s) => { if (s.offsetTop <= probe) cur = s; });
+      let cur = null, best = -Infinity, first = null, top = Infinity;
+      secs.forEach((s) => {
+        const t = s.offsetTop;
+        if (t < top) { top = t; first = s; }
+        if (t <= probe && t > best) { best = t; cur = s; }
+      });
+      cur = cur || first;
       if (cur) links.forEach((a) => a.classList.toggle('on', a.getAttribute('href') === '#' + cur.id));
     });
     addEventListener('scroll', onScroll, { passive: true });
