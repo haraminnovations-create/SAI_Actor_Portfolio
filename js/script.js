@@ -640,10 +640,13 @@
     stage.addEventListener('touchstart', (e) => down(e.changedTouches[0].clientX), { passive: true });
     stage.addEventListener('touchend', (e) => up(e.changedTouches[0].clientX), { passive: true });
 
-    // click a side card to bring it forward; click the middle to enlarge
+    /* Any frame enlarges on click, the front one included, so a picture
+       behaves the same here as it does everywhere else on the page. The
+       carousel still turns by drag, swipe, scroll and arrow key, which is
+       what the section tells the visitor to reach for. */
     slides.forEach((s, k) => {
       s.addEventListener('click', () => {
-        if (k === i) { if (window.__ysLightbox) window.__ysLightbox(i); }
+        if (window.__ysLightbox) window.__ysLightbox(k);
         else go(k);
       });
     });
@@ -737,27 +740,58 @@
 
     let list = [], i = 0, lastFocus = null;
 
+    /* One viewer serves every surface on the page, so it is fed plain
+       descriptions rather than gallery figures. A stage card, a lone
+       portrait and a gallery tile all reduce to the same four fields. */
+    function describe(el) {
+      const im  = el.tagName === 'IMG' ? el : el.querySelector('img');
+      const fig = (el.closest && el.closest('figure')) || el;
+      const fc  = fig.querySelector && fig.querySelector('figcaption');
+      /* A caption is written as <b>Shringara</b><i>01</i> with nothing
+         between the tags, so reading textContent straight off the node
+         returns "Shringara01". Each part is taken on its own and joined. */
+      const fcText = fc
+        ? [...fc.childNodes].map((n) => n.textContent.trim()).filter(Boolean).join(' ')
+        : '';
+      const text = fig.dataset.cap || fcText || (im && im.alt) || '';
+      return {
+        src: fig.dataset.full || (im ? (im.currentSrc || im.src) : ''),
+        ph:  (im && im.dataset.ph) || 'IMAGE',
+        n:   fig.dataset.n || '',
+        cap: text
+      };
+    }
+
     function render() {
       if (!list.length) return;
       i = ((i % list.length) + list.length) % list.length;
-      const f = list[i], inner = f.querySelector('img');
+      const d = list[i];
       img.classList.remove('ph');
       img.dataset.phDone = '';
-      img.dataset.ph = inner ? (inner.dataset.ph || 'IMAGE') : 'IMAGE';
-      img.alt = f.dataset.cap || '';
+      img.dataset.ph = d.ph;
+      img.alt = d.cap;
       img.onerror = () => makePlaceholder(img);
-      img.src = f.dataset.full || (inner ? inner.src : '');
-      cap.textContent = (f.dataset.n ? f.dataset.n + ' — ' : '') + (f.dataset.cap || '');
+      img.src = d.src;
+      cap.textContent = (d.n ? d.n + ' — ' : '') + d.cap;
       cnt.textContent = pad2(i + 1) + ' / ' + pad2(list.length);
     }
 
-    function open(target) {
-      list = items.filter((s) => !s.classList.contains('hide'));
-      i = typeof target === 'number' ? target : Math.max(0, list.indexOf(target));
+    /* Descriptions are taken at the moment of opening, never at wiring
+       time: the role cards turn their photographs over by themselves, so
+       a list built earlier would enlarge whatever happened to be face up
+       when the page loaded. */
+    function openList(els, start) {
+      list = els.map(describe);
+      i = start || 0;
       lastFocus = document.activeElement;
       box.hidden = false;
       requestAnimationFrame(() => box.classList.add('open'));
       lock(true); render(); $('#lbX').focus();
+    }
+
+    function open(target) {
+      const vis = items.filter((s) => !s.classList.contains('hide'));
+      openList(vis, typeof target === 'number' ? target : Math.max(0, vis.indexOf(target)));
     }
     function close() {
       box.classList.remove('open'); lock(false);
@@ -765,8 +799,8 @@
       if (lastFocus) lastFocus.focus();
     }
 
-    // the coverflow uses this to enlarge the front frame
-    window.__ysLightbox = (index) => { list = items.slice(); open(index); };
+    // the coverflow uses this to enlarge a frame
+    window.__ysLightbox = (index) => openList(items.slice(), index);
 
     items.forEach((s) => {
       s.setAttribute('tabindex', '0');
@@ -777,6 +811,63 @@
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(s); }
       });
     });
+
+    /* ---- every other photograph on the page --------------------------
+       Enlarging used to belong to the gallery alone. Everywhere else a
+       picture either grew under the cursor or did nothing at all, and
+       the hover growth is switched off on touch hardware — so on a phone
+       most of this site's photographs could not be looked at properly.
+       Each section becomes its own reel, so the arrows walk the pictures
+       that sit together instead of all hundred-odd at once. Video
+       posters and outbound links keep the behaviour they already had. */
+    function initEveryImage() {
+      const skip = (im) =>
+        !im.getAttribute('src') ||
+        im.closest('#lb') || im.closest('#gg') || im.closest('.cf__stage') ||
+        im.closest('[data-video]') || im.closest('[data-href]') ||
+        im.closest('a') || im.closest('nav') || im.closest('header.nav');
+
+      $$('section').forEach((sec) => {
+        const imgs = $$('img', sec).filter((im) => !skip(im));
+        if (!imgs.length) return;
+
+        imgs.forEach((im) => {
+          /* the frame around the picture, so the mark and the ring sit on
+             a box that is already positioned and already clipped */
+          const hit = im.closest('figure, .stack__face, .cred__art, .pc')
+                   || im.parentElement || im;
+          if (hit.dataset.lbOn) return;      // a stack shares one frame
+          hit.dataset.lbOn = '1';
+          hit.classList.add('zoomable');
+          if (!hit.hasAttribute('tabindex')) hit.setAttribute('tabindex', '0');
+          if (!hit.hasAttribute('role')) hit.setAttribute('role', 'button');
+          hit.setAttribute('aria-label', 'Enlarge photograph' + (im.alt ? ' — ' + im.alt : ''));
+
+          /* .pc already spends both its pseudo-elements on the frame
+             lines, so the mark is a real node rather than a ::after */
+          if (hit.tagName !== 'IMG' && !$('.zi', hit)) {
+            const zi = document.createElement('span');
+            zi.className = 'zi';
+            zi.setAttribute('aria-hidden', 'true');
+            hit.appendChild(zi);
+          }
+
+          const fire = (e) => {
+            e.preventDefault(); e.stopPropagation();
+            // open on the face that is actually showing, not the first one
+            const own   = $$('img', hit).filter((z) => !skip(z));
+            const shown = own.find((z) => z.classList.contains('on')) || own[0] || im;
+            openList(imgs, Math.max(0, imgs.indexOf(shown)));
+            Sound.blip('tap');
+          };
+          hit.addEventListener('click', fire);
+          hit.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') fire(e);
+          });
+        });
+      });
+    }
+    initEveryImage();
 
     $('#lbX').addEventListener('click', close);
     $('#lbP').addEventListener('click', () => { i--; render(); });
