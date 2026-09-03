@@ -535,20 +535,8 @@
      ====================================================================== */
   function initCoverflow() {
     const stage = $('#cfStage');
-    const all = $$('#gg .gi');
-    if (!stage || !all.length) return;
-
-    /* The wall now carries every photograph in the collection. A carousel
-       is not a wall: eighty-seven frames is a long drag, and the section
-       calls itself SELECTED FRAMES. The deck therefore takes an even
-       stride through the gallery rather than its first two dozen - the
-       wall is grouped by category, so the first two dozen would all be
-       portraits, and a stride shows the whole range instead. */
-    const DECK = 24;
-    const step = Math.max(1, Math.ceil(all.length / DECK));
-    const src  = all.length > DECK
-      ? all.filter((_, k) => k % step === 0).slice(0, DECK)
-      : all;
+    const src = $$('#gg .gi');
+    if (!stage || !src.length) return;
 
     const numEl = $('#cfNum'), capEl = $('#cfCap'), catEl = $('#cfCat');
     const totEl = $('#cfTot'), fill = $('#cfFill');
@@ -560,9 +548,7 @@
         w:   img ? Number(img.getAttribute('width'))  : 0,
         h:   img ? Number(img.getAttribute('height')) : 0,
         ph:  img ? (img.dataset.ph || 'IMAGE') : 'IMAGE',
-        n:   f.dataset.n, cap: f.dataset.cap, cat: f.dataset.cat,
-        // where this frame sits on the wall, so the viewer opens the right one
-        gi:  all.indexOf(f)
+        n:   f.dataset.n, cap: f.dataset.cap, cat: f.dataset.cat
       };
     });
 
@@ -585,7 +571,6 @@
       const num = document.createElement('span');
       num.className = 'cf__num';
       num.textContent = d.n || pad2(k + 1);
-      fig.dataset.gi = d.gi;
       fig.append(img, num);
       stage.appendChild(fig);
     });
@@ -672,9 +657,7 @@
        what the section tells the visitor to reach for. */
     slides.forEach((s, k) => {
       s.addEventListener('click', () => {
-        // the deck is a stride through the wall, so k is not the wall index
-        const gi = Number(s.dataset.gi);
-        if (window.__ysLightbox) window.__ysLightbox(Number.isFinite(gi) ? gi : k);
+        if (window.__ysLightbox) window.__ysLightbox(k);
         else go(k);
       });
     });
@@ -823,18 +806,7 @@
     }
     function close() {
       box.classList.remove('open'); lock(false);
-      /* The picture is released only once the viewer is really shut. Open
-         another photograph inside the closing animation - easy to do on a
-         wall this size - and this timer would otherwise fire late and pull
-         the src out from under the frame that had just been asked for,
-         which reads to makePlaceholder as a picture that failed to load.
-         Removing the attribute rather than blanking it also stops the
-         browser resolving '' against the page and reporting an error. */
-      setTimeout(() => {
-        if (box.classList.contains('open')) return;   // reopened meanwhile
-        box.hidden = true;
-        img.removeAttribute('src');
-      }, 360);
+      setTimeout(() => { box.hidden = true; img.src = ''; }, 360);
       if (lastFocus) lastFocus.focus();
     }
 
