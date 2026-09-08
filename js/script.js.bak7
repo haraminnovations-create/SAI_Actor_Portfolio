@@ -1178,7 +1178,7 @@
   const CONTACT = {
     name: 'Yorvik Sharjith Shaank', first: 'Yorvik', last: 'Sharjith Shaank',
     role: 'Actor · Dancer · Choreographer',
-    email: 'yorviksharjithshaank@gmail.com', phone: '+916305068693',
+    email: 'sharjithshank@gmail.com', phone: '+916305068693',
     city: 'Hyderabad', state: 'Telangana', land: 'India',
     // the profiles, in one place: the contact card in index.html links to
     // these and the saved .vcf carries them too

@@ -984,7 +984,7 @@
         <p class="card3d__r">ACTOR &nbsp;·&nbsp; DANCER &nbsp;·&nbsp; CHOREOGRAPHER</p>
         <p class="card3d__c">HYDERABAD, INDIA</p>
         <ul class="card3d__l">
-          <li><svg class="ico"><use href="#i-mail"/></svg><a href="mailto:yorviksharjithshaank@gmail.com">yorviksharjithshaank@gmail.com</a></li>
+          <li><svg class="ico"><use href="#i-mail"/></svg><a href="mailto:sharjithshank@gmail.com">sharjithshank@gmail.com</a></li>
           <li><svg class="ico"><use href="#i-phone"/></svg><a href="tel:+916305068693">+91 63050 68693</a></li>
           <li><svg class="ico"><use href="#i-pin"/></svg><span>Hyderabad, Telangana, India</span></li>
         </ul>
