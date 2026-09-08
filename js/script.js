@@ -159,7 +159,12 @@
       const ih = Number(img.getAttribute('height')) || img.naturalHeight;
       const w = tile.getBoundingClientRect().width;
       if (!w || !iw || !ih) return;                     // filtered out of sight
-      const want = w * ih / iw;
+      /* A tile with a shape of its own is measured from that shape, not from
+         the picture in it. The wall is laid out as a wall - bands, halves,
+         squares, columns - and the picture is cropped to the frame it was
+         given, which is what keeps the rows from all being the same. */
+      const ar = parseFloat(tile.dataset.ar);
+      const want = ar > 0 ? w / ar : w * ih / iw;
       const rows = clamp(Math.round((want + gap) / (row + gap)), 3, 44);
       tile.style.gridRow = 'span ' + rows;   // shorthand, as the sheet writes it
     });

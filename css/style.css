@@ -1889,3 +1889,50 @@ html[data-theme="light"] .gi__e{
           border:0 !important; box-shadow:none !important; padding:0 0 4px; }
   .gi__e::before{ display:none; }
 }
+
+/* ======================================================================
+   THE WALL AS A WALL, NOT A CONTACT SHEET
+   Every tile used to take the shape of the picture inside it, and since
+   sixty of the eighty-seven photographs are upright, the wall came out as
+   column after column of the same tall rectangle. The frames are now
+   designed - full-width bands, half-width landscapes, squares, uprights,
+   and a narrow strip for the nine emotions - and the photograph is cropped
+   to the frame it is given. Widths above one column belong to landscape
+   frames only, so the wall never grows a hero.
+   ====================================================================== */
+.gi--band { grid-column:span 12; }   /* the cinematic frame, edge to edge */
+.gi--wide { grid-column:span 6;  }   /* half the wall, 16:9              */
+.gi--sq,
+.gi--port,
+.gi--tallx,
+.gi--xtall{ grid-column:span 3;  }   /* square, upright, tall, 9:20      */
+.gi--strip{ grid-column:span 2;  }   /* six across: the nine emotions    */
+
+/* A designed frame crops. The bias is high on the face because these are
+   portraits: centred, a square taken out of a 2:3 upright cuts the head. */
+.gi[data-ar] img{ object-fit:cover; object-position:center 30%; }
+.gi--wide[data-ar] img,
+.gi--band[data-ar] img{ object-position:center 40%; }
+
+/* six columns: the band and the landscape frame both run the full width,
+   uprights go half, and the strip drops from six across to three */
+@media (max-width:900px){
+  .gi--band,.gi--wide{ grid-column:span 6; }
+  .gi--sq,.gi--port,.gi--tallx,.gi--xtall{ grid-column:span 3; }
+  .gi--strip{ grid-column:span 2; }
+}
+
+/* four columns: two uprights to a row, the strip likewise, and a band
+   that would otherwise be a slot rather than a frame */
+@media (max-width:640px){
+  .gi--band,.gi--wide{ grid-column:span 4; }
+  .gi--sq,.gi--port,.gi--tallx,.gi--xtall,.gi--strip{ grid-column:span 2; }
+}
+
+/* A photograph can be cropped to the frame it is given; a poster cannot.
+   The artwork carries the date, the venue and the ticketing along its own
+   edges, and the row height is quantised to whole grid rows, so even a
+   frame cut to the poster's exact ratio lands a couple of per cent out.
+   This one is contained instead, and the blurred fill behind covers the
+   remainder the way it does everywhere else on the page. */
+.gi--whole[data-ar] img{ object-fit:contain; object-position:center; }
