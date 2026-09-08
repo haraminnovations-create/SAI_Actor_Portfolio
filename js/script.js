@@ -1422,7 +1422,7 @@
         btn.title = light ? 'Dark theme' : 'Light theme';
       }
       if (icon) icon.setAttribute('href', light ? '#i-moon' : '#i-sun');
-      if (meta) meta.setAttribute('content', light ? '#0b1f1a' : '#0C0C0D');
+      if (meta) meta.setAttribute('content', light ? '#FFFFFF' : '#0C0C0D');
       if (window.__ysAuraPaint) window.__ysAuraPaint();   // the pointer's tail changes tint with the ground
       if (remember) { try { localStorage.setItem('ys-theme', light ? 'light' : 'dark'); } catch (e) {} }
     }
