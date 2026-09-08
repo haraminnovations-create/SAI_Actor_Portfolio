@@ -587,8 +587,11 @@
       if (d.w && d.h) { img.width = d.w; img.height = d.h; }
       img.addEventListener('error', () => makePlaceholder(img), { once: true });
       img.src = d.src;
+      const num = document.createElement('span');
+      num.className = 'cf__num';
+      num.textContent = d.n || pad2(k + 1);
       fig.dataset.gi = d.gi;
-      fig.append(img);
+      fig.append(img, num);
       stage.appendChild(fig);
     });
 
@@ -802,7 +805,7 @@
       img.alt = d.cap;
       img.onerror = () => makePlaceholder(img);
       img.src = d.src;
-      cap.textContent = d.cap;
+      cap.textContent = (d.n ? d.n + ' — ' : '') + d.cap;
       cnt.textContent = pad2(i + 1) + ' / ' + pad2(list.length);
     }
 
@@ -846,7 +849,7 @@
     items.forEach((s) => {
       s.setAttribute('tabindex', '0');
       s.setAttribute('role', 'button');
-      s.setAttribute('aria-label', 'View photograph' + (s.dataset.cap ? ' — ' + s.dataset.cap : ''));
+      s.setAttribute('aria-label', 'View photograph ' + (s.dataset.n || ''));
       s.addEventListener('click', () => { open(s); Sound.blip('tap'); });
       s.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(s); }

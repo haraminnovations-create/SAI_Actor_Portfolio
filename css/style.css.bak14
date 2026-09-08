@@ -497,7 +497,7 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
 .cf__i.mid{ border-color:var(--gold);
             box-shadow:0 40px 70px -20px rgba(0,0,0,.95), 0 0 60px rgba(212,175,55,.25); }
 .cf__i.mid::after{ opacity:.25; }
-.cf__i.mid .cf__num{ opacity:1; }   /* unused: frames carry no number */
+.cf__i.mid .cf__num{ opacity:1; }
 .cf__num{ position:absolute; left:12px; bottom:10px; z-index:3; opacity:0;
           font-family:var(--fd); font-weight:800; font-size:.9rem;
           letter-spacing:.14em; color:var(--gold); transition:opacity .5s var(--e); }
@@ -919,7 +919,7 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
 .gi:hover img{ filter:saturate(1.08) contrast(1.02) brightness(1.06); }
 /* the frame's number rests in the corner and the caption arrives with the
    pointer, so a quiet wall still tells you what you are looking at */
-.gi::after{ content:attr(data-cat);
+.gi::after{ content:attr(data-n) ' / ' attr(data-cat);
             position:absolute; left:12px; bottom:11px; z-index:4;
             font-size:.53rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase;
             color:var(--gold); opacity:.34; transform:translateZ(24px);
@@ -1567,7 +1567,7 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
    corner now reads "07 · Karuna — Compassion" and the wall can be read
    without opening anything. */
 .gi::after{
-  content:attr(data-cap);
+  content:attr(data-n) ' \00b7 ' attr(data-cap);
   right:12px; max-width:calc(100% - 24px);
   overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
 }

@@ -151,7 +151,7 @@
         <figure class="stack__face">
           <img width="1186" height="1612" src="images/p02.jpg" alt="Yorvik Sharjith Shaank">
         </figure>
-        <span class="stack__tag">ACTOR</span>
+        <span class="stack__tag">01 / ACTOR</span>
       </div>
     </div>
   </div>
@@ -454,19 +454,19 @@
         <div class="rquad scene">
           <figure class="pc rpc" tabindex="0">
             <img width="1024" height="1536" src="images/Shringara1.jpg" alt="Shringara — Love, frame 01" loading="lazy" data-ph="SHRINGARA 01">
-            <figcaption><b>Shringara</b></figcaption>
+            <figcaption><b>Shringara</b><i>01</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="1086" height="1448" src="images/Shringara2.jpg" alt="Shringara — Love, frame 02" loading="lazy" data-ph="SHRINGARA 02">
-            <figcaption><b>Shringara</b></figcaption>
+            <figcaption><b>Shringara</b><i>02</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="1122" height="1402" src="images/Shringara3.jpg" alt="Shringara — Love, frame 03" loading="lazy" data-ph="SHRINGARA 03">
-            <figcaption><b>Shringara</b></figcaption>
+            <figcaption><b>Shringara</b><i>03</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="1122" height="1402" src="images/Shringara4.jpg" alt="Shringara — Love, frame 04" loading="lazy" data-ph="SHRINGARA 04">
-            <figcaption><b>Shringara</b></figcaption>
+            <figcaption><b>Shringara</b><i>04</i></figcaption>
           </figure>
         </div>
       </article>
@@ -480,19 +480,19 @@
         <div class="rquad scene">
           <figure class="pc rpc" tabindex="0">
             <img width="1087" height="1446" src="images/Hasyam1.jpg" alt="Hasya — Laughter, frame 01" loading="lazy" data-ph="HASYA 01">
-            <figcaption><b>Hasya</b></figcaption>
+            <figcaption><b>Hasya</b><i>01</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="1024" height="1536" src="images/Hasyam2.jpg" alt="Hasya — Laughter, frame 02" loading="lazy" data-ph="HASYA 02">
-            <figcaption><b>Hasya</b></figcaption>
+            <figcaption><b>Hasya</b><i>02</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="1053" height="1493" src="images/Hasyam3.jpg" alt="Hasya — Laughter, frame 03" loading="lazy" data-ph="HASYA 03">
-            <figcaption><b>Hasya</b></figcaption>
+            <figcaption><b>Hasya</b><i>03</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="1122" height="1402" src="images/Hasyam4.jpg" alt="Hasya — Laughter, frame 04" loading="lazy" data-ph="HASYA 04">
-            <figcaption><b>Hasya</b></figcaption>
+            <figcaption><b>Hasya</b><i>04</i></figcaption>
           </figure>
         </div>
       </article>
@@ -506,19 +506,19 @@
         <div class="rquad scene">
           <figure class="pc rpc" tabindex="0">
             <img width="1122" height="1402" src="images/Karna1.jpg" alt="Karuna — Compassion, frame 01" loading="lazy" data-ph="KARUNA 01">
-            <figcaption><b>Karuna</b></figcaption>
+            <figcaption><b>Karuna</b><i>01</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="1024" height="1536" src="images/Karna2.jpg" alt="Karuna — Compassion, frame 02" loading="lazy" data-ph="KARUNA 02">
-            <figcaption><b>Karuna</b></figcaption>
+            <figcaption><b>Karuna</b><i>02</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="1537" height="1023" src="images/Karna3.jpg" alt="Karuna — Compassion, frame 03" loading="lazy" data-ph="KARUNA 03">
-            <figcaption><b>Karuna</b></figcaption>
+            <figcaption><b>Karuna</b><i>03</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="1023" height="1537" src="images/Karna4.jpg" alt="Karuna — Compassion, frame 04" loading="lazy" data-ph="KARUNA 04">
-            <figcaption><b>Karuna</b></figcaption>
+            <figcaption><b>Karuna</b><i>04</i></figcaption>
           </figure>
         </div>
       </article>
@@ -532,19 +532,19 @@
         <div class="rquad scene">
           <figure class="pc rpc" tabindex="0">
             <img width="1536" height="1024" src="images/Raudra1.jpg" alt="Raudra — Fury, frame 01" loading="lazy" data-ph="RAUDRA 01">
-            <figcaption><b>Raudra</b></figcaption>
+            <figcaption><b>Raudra</b><i>01</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="1536" height="1024" src="images/Raudra2.jpg" alt="Raudra — Fury, frame 02" loading="lazy" data-ph="RAUDRA 02">
-            <figcaption><b>Raudra</b></figcaption>
+            <figcaption><b>Raudra</b><i>02</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="1024" height="1536" src="images/Raudra3.jpg" alt="Raudra — Fury, frame 03" loading="lazy" data-ph="RAUDRA 03">
-            <figcaption><b>Raudra</b></figcaption>
+            <figcaption><b>Raudra</b><i>03</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="1280" height="720" src="images/Raudra4.jpg" alt="Raudra — Fury, frame 04" loading="lazy" data-ph="RAUDRA 04">
-            <figcaption><b>Raudra</b></figcaption>
+            <figcaption><b>Raudra</b><i>04</i></figcaption>
           </figure>
         </div>
       </article>
@@ -558,19 +558,19 @@
         <div class="rquad scene">
           <figure class="pc rpc" tabindex="0">
             <img width="1024" height="1536" src="images/veera1.jpeg" alt="Veera — Valour, frame 01" loading="lazy" data-ph="VEERA 01">
-            <figcaption><b>Veera</b></figcaption>
+            <figcaption><b>Veera</b><i>01</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="1536" height="1024" src="images/veera2.jpg" alt="Veera — Valour, frame 02" loading="lazy" data-ph="VEERA 02">
-            <figcaption><b>Veera</b></figcaption>
+            <figcaption><b>Veera</b><i>02</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="1536" height="1024" src="images/veera3.jpg" alt="Veera — Valour, frame 03" loading="lazy" data-ph="VEERA 03">
-            <figcaption><b>Veera</b></figcaption>
+            <figcaption><b>Veera</b><i>03</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="1280" height="720" src="images/veera4.jpg" alt="Veera — Valour, frame 04" loading="lazy" data-ph="VEERA 04">
-            <figcaption><b>Veera</b></figcaption>
+            <figcaption><b>Veera</b><i>04</i></figcaption>
           </figure>
         </div>
       </article>
@@ -584,19 +584,19 @@
         <div class="rquad scene">
           <figure class="pc rpc" tabindex="0">
             <img width="720" height="1280" src="images/p17.jpg" alt="Bhayanaka — Fear, frame 01" loading="lazy" data-ph="BHAYANAKA 01">
-            <figcaption><b>Bhayanaka</b></figcaption>
+            <figcaption><b>Bhayanaka</b><i>01</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="619" height="1280" src="images/p30.jpeg" alt="Bhayanaka — Fear, frame 02" loading="lazy" data-ph="BHAYANAKA 02">
-            <figcaption><b>Bhayanaka</b></figcaption>
+            <figcaption><b>Bhayanaka</b><i>02</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="598" height="1280" src="images/p32.jpeg" alt="Bhayanaka — Fear, frame 03" loading="lazy" data-ph="BHAYANAKA 03">
-            <figcaption><b>Bhayanaka</b></figcaption>
+            <figcaption><b>Bhayanaka</b><i>03</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="495" height="1024" src="images/p36.jpeg" alt="Bhayanaka — Fear, frame 04" loading="lazy" data-ph="BHAYANAKA 04">
-            <figcaption><b>Bhayanaka</b></figcaption>
+            <figcaption><b>Bhayanaka</b><i>04</i></figcaption>
           </figure>
         </div>
       </article>
@@ -610,19 +610,19 @@
         <div class="rquad scene">
           <figure class="pc rpc" tabindex="0">
             <img width="713" height="1280" src="images/p24.jpeg" alt="Bibhatsa — Aversion, frame 01" loading="lazy" data-ph="BIBHATSA 01">
-            <figcaption><b>Bibhatsa</b></figcaption>
+            <figcaption><b>Bibhatsa</b><i>01</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="716" height="1600" src="images/p12.jpg" alt="Bibhatsa — Aversion, frame 02" loading="lazy" data-ph="BIBHATSA 02">
-            <figcaption><b>Bibhatsa</b></figcaption>
+            <figcaption><b>Bibhatsa</b><i>02</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="1152" height="768" src="images/p29.jpeg" alt="Bibhatsa — Aversion, frame 03" loading="lazy" data-ph="BIBHATSA 03">
-            <figcaption><b>Bibhatsa</b></figcaption>
+            <figcaption><b>Bibhatsa</b><i>03</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="458" height="1024" src="images/p46.jpg" alt="Bibhatsa — Aversion, frame 04" loading="lazy" data-ph="BIBHATSA 04">
-            <figcaption><b>Bibhatsa</b></figcaption>
+            <figcaption><b>Bibhatsa</b><i>04</i></figcaption>
           </figure>
         </div>
       </article>
@@ -636,19 +636,19 @@
         <div class="rquad scene">
           <figure class="pc rpc" tabindex="0">
             <img width="853" height="1280" src="images/p04.jpg" alt="Adbhuta — Wonder, frame 01" loading="lazy" data-ph="ADBHUTA 01">
-            <figcaption><b>Adbhuta</b></figcaption>
+            <figcaption><b>Adbhuta</b><i>01</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="900" height="1600" src="images/p14.jpg" alt="Adbhuta — Wonder, frame 02" loading="lazy" data-ph="ADBHUTA 02">
-            <figcaption><b>Adbhuta</b></figcaption>
+            <figcaption><b>Adbhuta</b><i>02</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="763" height="1097" src="images/p19.jpg" alt="Adbhuta — Wonder, frame 03" loading="lazy" data-ph="ADBHUTA 03">
-            <figcaption><b>Adbhuta</b></figcaption>
+            <figcaption><b>Adbhuta</b><i>03</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="720" height="1488" src="images/p35.jpeg" alt="Adbhuta — Wonder, frame 04" loading="lazy" data-ph="ADBHUTA 04">
-            <figcaption><b>Adbhuta</b></figcaption>
+            <figcaption><b>Adbhuta</b><i>04</i></figcaption>
           </figure>
         </div>
       </article>
@@ -662,19 +662,19 @@
         <div class="rquad scene">
           <figure class="pc rpc" tabindex="0">
             <img width="831" height="1331" src="images/Shanta1.jpg" alt="Shanta — Peace, frame 01" loading="lazy" data-ph="SHANTA 01">
-            <figcaption><b>Shanta</b></figcaption>
+            <figcaption><b>Shanta</b><i>01</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="1024" height="1536" src="images/Shanta2.jpg" alt="Shanta — Peace, frame 02" loading="lazy" data-ph="SHANTA 02">
-            <figcaption><b>Shanta</b></figcaption>
+            <figcaption><b>Shanta</b><i>02</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="687" height="1023" src="images/Shanta3.jpg" alt="Shanta — Peace, frame 03" loading="lazy" data-ph="SHANTA 03">
-            <figcaption><b>Shanta</b></figcaption>
+            <figcaption><b>Shanta</b><i>03</i></figcaption>
           </figure>
           <figure class="pc rpc" tabindex="0">
             <img width="601" height="963" src="images/Shanta4.jpg" alt="Shanta — Peace, frame 04" loading="lazy" data-ph="SHANTA 04">
-            <figcaption><b>Shanta</b></figcaption>
+            <figcaption><b>Shanta</b><i>04</i></figcaption>
           </figure>
         </div>
       </article>
@@ -797,34 +797,34 @@
         <div class="mc__img"><img width="1186" height="1612" src="images/p02.jpg" alt="" loading="lazy">
           <button class="mc__p" data-sfx="enter" aria-label="Play"><svg class="ico"><use href="#i-play"/></svg></button>
           <button class="mc__f" data-sfx="tap" aria-label="Fullscreen"><svg class="ico"><use href="#i-expand"/></svg></button></div>
-        <div class="mc__b"><h3>Acting / Audition Clip</h3><p><i>ACTING</i><i>02:10</i></p></div>
+        <div class="mc__b"><span class="mc__n">01</span><h3>Acting / Audition Clip</h3><p><i>ACTING</i><i>02:10</i></p></div>
       </article>
 
       <article class="mc tilt rv" data-d="1" data-tilt="9" data-video="video/dance3.mp4" data-poster="images/p21.jpg">
         <div class="mc__img"><img width="717" height="1280" src="images/p21.jpg" alt="" loading="lazy">
           <button class="mc__p" data-sfx="enter" aria-label="Play"><svg class="ico"><use href="#i-play"/></svg></button>
           <button class="mc__f" data-sfx="tap" aria-label="Fullscreen"><svg class="ico"><use href="#i-expand"/></svg></button></div>
-        <div class="mc__b"><h3>Dance Reel 01</h3><p><i>MOVEMENT</i><i>01:30</i></p></div>
+        <div class="mc__b"><span class="mc__n">02</span><h3>Dance Reel 01</h3><p><i>MOVEMENT</i><i>01:30</i></p></div>
       </article>
 
       <article class="mc tilt rv" data-d="2" data-tilt="9" data-video="video/dance4.mp4" data-poster="images/p08.jpg">
         <div class="mc__img"><img width="1070" height="1338" src="images/p08.jpg" alt="" loading="lazy">
           <button class="mc__p" data-sfx="enter" aria-label="Play"><svg class="ico"><use href="#i-play"/></svg></button>
           <button class="mc__f" data-sfx="tap" aria-label="Fullscreen"><svg class="ico"><use href="#i-expand"/></svg></button></div>
-        <div class="mc__b"><h3>Dance Reel 02</h3><p><i>MOVEMENT</i><i>01:20</i></p></div>
+        <div class="mc__b"><span class="mc__n">03</span><h3>Dance Reel 02</h3><p><i>MOVEMENT</i><i>01:20</i></p></div>
       </article>
 
       <article class="mc tilt rv" data-d="3" data-tilt="9" data-video="video/web/bts2.mp4" data-poster="images/p07.jpg">
         <div class="mc__img"><img width="838" height="1280" src="images/p07.jpg" alt="" loading="lazy">
           <button class="mc__p" data-sfx="enter" aria-label="Play"><svg class="ico"><use href="#i-play"/></svg></button>
           <button class="mc__f" data-sfx="tap" aria-label="Fullscreen"><svg class="ico"><use href="#i-expand"/></svg></button></div>
-        <div class="mc__b"><h3>Recent Shoot / Making Video</h3><p><i>BEHIND</i><i>02:40</i></p></div>
+        <div class="mc__b"><span class="mc__n">04</span><h3>Recent Shoot / Making Video</h3><p><i>BEHIND</i><i>02:40</i></p></div>
       </article>
 
       <article class="mc tilt rv" data-d="4" data-tilt="9" data-href="https://youtu.be/-tt4F9uqRDA?si=U87-07Q3n5VeMEsZ" data-poster="images/p09.jpg">
         <div class="mc__img"><img width="1019" height="704" src="images/p09.jpg" alt="" loading="lazy">
           <button class="mc__p" data-sfx="enter" aria-label="Watch on YouTube"><svg class="ico"><use href="#i-play"/></svg></button></div>
-        <div class="mc__b"><h3>Priya Nee Premalo — Part 2</h3><p><i>SHORT FILM</i><i>YOUTUBE</i></p></div>
+        <div class="mc__b"><span class="mc__n">05</span><h3>Priya Nee Premalo — Part 2</h3><p><i>SHORT FILM</i><i>YOUTUBE</i></p></div>
       </article>
     </div>
   </div>
