@@ -1080,14 +1080,13 @@
 
     /* the tail's glow is the one part of the pointer that cannot live in the
        stylesheet — each bead's shadow is written here, per bead — so it is
-       repainted when the theme changes: antique brass over obsidian,
-       gold over the forest ground */
+       repainted when the theme changes: gold light on the dark ground, royal
+       blue ink on the light one */
     function paintTail() {
-      const forest = document.documentElement.getAttribute('data-theme') === 'light';
-      // gold over the forest ground, antique brass over the obsidian one
-      const tint = forest ? '212,175,55' : '180,151,90';
+      const light = document.documentElement.getAttribute('data-theme') === 'light';
+      const tint = light ? '30,58,138' : '212,175,55';
       beads.forEach(({ el, i }) => {
-        el.style.boxShadow = '0 0 ' + (18 - i) + 'px rgba(' + tint + ',.85)';
+        el.style.boxShadow = '0 0 ' + (18 - i) + 'px rgba(' + tint + ',' + (light ? '.5' : '.85') + ')';
       });
     }
     paintTail();
@@ -1120,11 +1119,16 @@
                               (1 + energy * 0.22).toFixed(3) + ')';
 
       /* On the light ground there is no bloom — the trail IS the pointer — so
-         both grounds are dark, so the bloom is steady in either. */
-      /* Both grounds are dark now - obsidian and forest - so the bloom
-         keeps its steady glow in either. The stylesheet is handed the
-         opacity back in case a previous session left it driven. */
-      if (driven) { box.style.opacity = ''; driven = false; }
+         it is shown only while the pointer is actually moving and fades out
+         as it comes to rest. The dark theme keeps its steady glow, and the
+         stylesheet is handed the opacity back the moment we switch away. */
+      if (document.documentElement.getAttribute('data-theme') === 'light') {
+        box.style.opacity = Math.min(1, energy * 6).toFixed(2);
+        driven = true;
+      } else if (driven) {
+        box.style.opacity = '';
+        driven = false;
+      }
 
       // each bead chases the one ahead of it, the first chases the pointer
       let tx = mx, ty = my;
@@ -1399,7 +1403,7 @@
   }
 
   /* ======================================================================
-     11b. THEME — obsidian by default, forest on request
+     11b. THEME — dark by default, light on request
      The inline script in <head> has already written data-theme on <html>
      before the first paint, so the page never flashes the wrong ground.
      This wires the header button to it, keeps the icon and the labels
@@ -1422,7 +1426,7 @@
         btn.title = light ? 'Dark theme' : 'Light theme';
       }
       if (icon) icon.setAttribute('href', light ? '#i-moon' : '#i-sun');
-      if (meta) meta.setAttribute('content', light ? '#0b1f1a' : '#0C0C0D');
+      if (meta) meta.setAttribute('content', light ? '#fbf8f2' : '#0b1f1a');
       if (window.__ysAuraPaint) window.__ysAuraPaint();   // the pointer's tail changes tint with the ground
       if (remember) { try { localStorage.setItem('ys-theme', light ? 'light' : 'dark'); } catch (e) {} }
     }
