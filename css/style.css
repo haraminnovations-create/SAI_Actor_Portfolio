@@ -701,11 +701,14 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
   box-shadow:0 3px 0 #071612, 0 40px 66px -16px rgba(0,0,0,.96),
              0 0 0 1px rgba(212,175,55,.22); }
 
-/* the name sits out of the way until its frame is the one being read */
+/* the name sits out of the way until its frame is the one being read, and
+   the camera angle the frame was shot from reads on the line under it */
 .rpc figcaption{ opacity:0; padding:22px 8px 7px; transition:opacity .4s var(--e);
+                 flex-direction:column; align-items:flex-start; gap:1px;
                  background:linear-gradient(transparent,rgba(5,15,12,.55) 38%,rgba(5,15,12,.96)); }
 .rpc figcaption b{ font-size:.5rem; letter-spacing:.14em; }
-.rpc figcaption i{ font-size:.62rem; }
+.rpc figcaption i{ font-family:var(--fb); font-weight:600; font-size:.4rem;
+                   letter-spacing:.09em; text-transform:uppercase; line-height:1.4; }
 .rpc:hover figcaption,
 .rpc:focus-visible figcaption{ opacity:1; }
 
@@ -2175,6 +2178,10 @@ html[data-theme="light"] .rcard{ box-shadow:0 1px 0 rgba(255,255,255,.09) inset,
 html[data-theme="light"] .rpc{ box-shadow:0 2px 0 #CBD5E1, 0 10px 16px -10px rgba(0,0,0,.85); }
 html[data-theme="light"] .rpc:focus-visible{ box-shadow:0 3px 0 #CBD5E1, 0 40px 66px -16px rgba(0,0,0,.96),
              0 0 0 1px rgba(212,175,55,.22); }
+/* the caption still lies on a dark scrim over the photograph, so it keeps
+   light ink in this theme rather than taking the page's dark body colour */
+html[data-theme="light"] .rpc figcaption b{ color:#F5F1E8; }
+html[data-theme="light"] .rpc figcaption i{ color:#E0B872; }
 html[data-theme="light"] .player__in{ box-shadow:0 3px 0 #CBD5E1, 0 8px 0 #CBD5E1, 0 40px 60px -20px rgba(0,0,0,.95); }
 html[data-theme="light"] .mc{ box-shadow:0 3px 0 #CBD5E1, 0 22px 36px -14px rgba(0,0,0,.9); }
 html[data-theme="light"] .gi{ box-shadow:0 3px 0 #CBD5E1, 0 20px 34px -14px rgba(0,0,0,.9); }
