@@ -1015,6 +1015,21 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
             letter-spacing:.2em; color:var(--white); }
 .regions i{ margin-top:6px; }
 
+/* REGION EMBLEM — one slot, two kinds of mark. A flag fills the slot and
+   is given an edge, the way a flag hung on a wall has one. A globe stands
+   inside the same slot in the chip's own gold, so the row reads as a set
+   even where no flag exists. */
+.rem{ display:block; width:34px; height:23px; margin-bottom:13px;
+      border-radius:4px; overflow:hidden; transform:translateZ(20px);
+      border:1px solid rgba(255,255,255,.34);
+      box-shadow:0 2px 6px -1px rgba(0,0,0,.7); }
+.rem svg{ display:block; width:100%; height:100%; }
+/* .chip3d span already claims a muted colour, so the globe has to out-rank
+   it to take the accent the rest of the chip is lit with */
+.regions .chip3d .rem--globe{ border:0; border-radius:0; box-shadow:none;
+                              color:var(--gold); }
+.chip3d:hover .rem{ box-shadow:0 4px 9px -2px rgba(0,0,0,.75); }
+
 /* --- contact --- */
 .ct{ display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1fr);
      gap:clamp(24px,4vw,48px); align-items:start; }
@@ -2200,6 +2215,8 @@ html[data-theme="light"] .rpc:focus-visible{ box-shadow:0 3px 0 #CBD5E1, 0 40px 
    light ink in this theme rather than taking the page's dark body colour */
 html[data-theme="light"] .rpc figcaption b{ color:#F5F1E8; }
 html[data-theme="light"] .rpc figcaption i{ color:#E0B872; }
+/* a white edge disappears on a pale chip, so the flag is outlined in ink here */
+html[data-theme="light"] .rem{ border-color:rgba(15,23,42,.3); }
 html[data-theme="light"] .player__in{ box-shadow:0 3px 0 #CBD5E1, 0 8px 0 #CBD5E1, 0 40px 60px -20px rgba(0,0,0,.95); }
 html[data-theme="light"] .mc{ box-shadow:0 3px 0 #CBD5E1, 0 22px 36px -14px rgba(0,0,0,.9); }
 html[data-theme="light"] .gi{ box-shadow:0 3px 0 #CBD5E1, 0 20px 34px -14px rgba(0,0,0,.9); }
