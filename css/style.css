@@ -501,8 +501,7 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
 
 /* --- the reading column, which sits over every plane --- */
 .hero__in{ position:relative; z-index:4; width:100%;
-           display:flex; align-items:flex-end; justify-content:space-between;
-           gap:28px; flex-wrap:wrap; }
+           display:flex; align-items:flex-end; gap:28px; flex-wrap:wrap; }
 .hero__lead{ max-width:min(44ch,100%); }
 .hero__kicker{ margin:14px 0 0; font-size:.66rem; font-weight:700; letter-spacing:.32em;
                text-transform:uppercase; color:var(--ink); }
@@ -511,19 +510,6 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
 .hero__rule{ display:block; width:64px; height:3px; margin-top:24px; border-radius:2px;
              background:var(--gold); }
 .hero__cta{ display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
-
-/* the pointer hint, which says what the stage does before it is touched */
-.hero__hint{ display:flex; align-items:center; gap:12px; margin:0;
-             font-size:.72rem; font-weight:600; color:var(--ink); }
-.hero__hint b{ display:block; font-size:.66rem; font-weight:400; color:var(--mute); }
-.hero__hint-a{ display:flex; align-items:center; gap:3px; flex:none; color:var(--gold); }
-.hero__hint-a i{ width:15px; height:7px; border-top:1.4px solid currentColor; position:relative; }
-.hero__hint-a i::before{ content:''; position:absolute; width:6px; height:6px;
-                         border-top:1.4px solid currentColor; border-left:1.4px solid currentColor;
-                         top:-3.4px; }
-.hero__hint-a i:first-child::before{ left:-1px; transform:rotate(-45deg); }
-.hero__hint-a i:last-child::before { right:-1px; transform:rotate(135deg); }
-@media (pointer:coarse){ .hero__hint{ display:none; } }
 
 .cue{ position:absolute; left:50%; bottom:26px; transform:translateX(-50%); z-index:6;
       display:flex; flex-direction:column; align-items:center; gap:10px;
@@ -1418,7 +1404,7 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
     background:none !important; -webkit-text-fill-color:#111 !important;
     color:#111 !important; white-space:normal; }
   .hero__stage{ position:static; }
-  .hero__cut,.hero__script,.hero__hint,.orb{ display:none !important; }
+  .hero__cut,.hero__script,.orb{ display:none !important; }
   .eyebrow,.eyebrow i,.cf__cat,.slab__no,.mc__n,.card3d__r,.gnote b{ color:#8a6c2f !important; background:none !important; }
   .lede,.kv dd{ color:#333 !important; } .kv dt{ color:#777 !important; }
   .gi img,.pc img,.player__in img{ filter:none !important; }
