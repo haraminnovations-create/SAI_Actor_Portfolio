@@ -313,7 +313,6 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
 .range{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:36px; }
 .range .chip3d{ flex-direction:row; align-items:baseline; gap:8px; }
 
-.facts{ display:flex; flex-wrap:wrap; gap:10px; margin-top:34px; }
 
 .fil{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:30px; }
 .fb{ padding:10px 18px; min-height:44px; border-radius:11px;
@@ -430,12 +429,14 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
 .brg.on span:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
 
 /* --- hero --- */
-.hero{ position:relative; min-height:100svh; display:flex; align-items:center;
-       padding:calc(var(--hh) + 54px) 0 90px;
-       background:radial-gradient(ellipse at 22% 34%,#143a32 0%,var(--green) 46%,var(--black) 100%);
-       overflow:hidden; }
+.hero{ position:relative; min-height:100svh; display:flex; align-items:flex-end;
+       padding:calc(var(--hh) + 40px) 0 clamp(74px,11vh,116px);
+       background:
+         radial-gradient(ellipse 62% 52% at 50% 40%, rgba(201,164,92,.10), transparent 70%),
+         radial-gradient(ellipse at 22% 34%,#143a32 0%,var(--green) 46%,var(--black) 100%);
+       overflow:hidden; isolation:isolate; }
 .hero[data-code]::after{ content:attr(data-code); position:absolute; right:var(--gut); top:96px;
-       z-index:4; font-size:.56rem; font-weight:600; letter-spacing:.32em;
+       z-index:6; font-size:.56rem; font-weight:600; letter-spacing:.32em;
        color:var(--gold); opacity:.5; }
 
 .orb{ position:absolute; border-radius:50%; filter:blur(90px); pointer-events:none; z-index:0; }
@@ -445,50 +446,120 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
          animation:float 19s ease-in-out infinite alternate-reverse; }
 @keyframes float{ from{ transform:translate3d(0,0,0); } to{ transform:translate3d(4vw,3vw,0); } }
 
-.hero__in{ position:relative; z-index:2;
-           display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,.8fr);
-           gap:clamp(30px,5vw,64px); align-items:center; }
+/* --------------------------------------------------------------------------
+   THE HERO STAGE — three planes, back to front
 
-.hero__name{ font-size:clamp(2.6rem,7.4vw,6.2rem); margin:8px 0 4px;
-             overflow-wrap:break-word; }
-.hero__sur { font-family:var(--fd); font-weight:700; font-size:clamp(.9rem,2.6vw,1.6rem);
-             letter-spacing:.3em; color:var(--gold); margin-bottom:18px; }
-.hero__role{ font-size:.68rem; font-weight:600; letter-spacing:.3em;
-             text-transform:uppercase; color:var(--ink); }
-.hero__tag { font-size:.62rem; font-weight:500; letter-spacing:.28em;
-             text-transform:uppercase; color:var(--gold); margin-top:8px; }
-.hero__cta { display:flex; flex-wrap:wrap; gap:12px; margin-top:32px; }
+   The name is set once, very large, and lies flat at the back. The portrait
+   stands in front of it and hides the middle of it, which is what makes the
+   two read as separate depths rather than as one flat picture. The signature
+   sits closest of all.
 
-/* --- the stacked 3D portrait --- */
-.hero__art{ display:grid; place-items:center; }
-.stack{ position:relative; width:100%; max-width:410px; aspect-ratio:var(--ar,3/4);
-        transform-style:preserve-3d; }
-.stack__glow{ position:absolute; inset:6%; border-radius:50%; z-index:0;
-              background:rgba(212,175,55,.3); filter:blur(58px); }
-.stack__back,.stack__mid{ position:absolute; inset:0; border-radius:22px;
-                          border:1px solid var(--hair); }
-.stack__back{ transform:translateZ(-70px) scale(1.07);
-              background:linear-gradient(158deg,rgba(13,27,61,.7),rgba(5,15,12,.9)); }
-.stack__mid { transform:translateZ(-36px) scale(1.035);
-              background:linear-gradient(158deg,rgba(26,64,56,.75),rgba(11,31,26,.9)); }
-.stack__face{ position:absolute; inset:0; border-radius:22px; overflow:hidden;
-              transform:translateZ(30px); border:1px solid var(--gold);
-              box-shadow:0 40px 70px -22px rgba(0,0,0,.95); }
-.stack__face img{ position:relative; z-index:1; width:100%; height:100%;
-                  object-fit:contain; object-position:center; }
-.stack__tag{ position:absolute; left:14px; bottom:-16px; transform:translateZ(56px);
-             padding:9px 16px; border-radius:10px;
-             background:var(--gold-metal); color:var(--metal-ink);
-             font-size:.56rem; font-weight:700; letter-spacing:.2em;
-             box-shadow:0 4px 0 var(--metal-rim), 0 14px 24px -8px rgba(0,0,0,.8); }
+   Each plane keeps its own layout transform and takes the pointer as two
+   custom properties, so the script never has to know how a plane is
+   centred - it writes --px and --py and the plane composes them. A plane
+   left alone reads 0 and sits exactly where the CSS put it.
+   -------------------------------------------------------------------------- */
+.hero__stage{ position:absolute; inset:0; z-index:1; pointer-events:none;
+              transform:translate3d(0,var(--sy,0px),0); }
 
-.cue{ position:absolute; left:50%; bottom:26px; transform:translateX(-50%); z-index:4;
-      display:flex; flex-direction:column; align-items:center; gap:9px;
+.hero__giant{ position:absolute; left:50%; top:38%; z-index:1; margin:0;
+  transform:translate3d(calc(-50% + var(--px,0px)), calc(-50% + var(--py,0px)), 0);
+  font-family:var(--fd); font-weight:800; line-height:.8;
+  font-size:clamp(2.4rem,12.6vw,11.4rem); letter-spacing:-.03em; white-space:nowrap;
+  /* stone rather than paint: a fine noise laid over the fall of light, both
+     clipped to the letterforms so the name reads as a surface, not a fill */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"),
+    linear-gradient(168deg, rgba(245,241,232,.34) 0%, rgba(245,241,232,.15) 46%,
+                            rgba(201,164,92,.20) 78%, rgba(245,241,232,.09) 100%);
+  background-blend-mode:overlay;
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent; -webkit-text-fill-color:transparent;
+  user-select:none; }
+
+.hero__cut{ position:absolute; left:50%; bottom:0; z-index:2; margin:0;
+  width:clamp(300px,42vw,560px); height:min(84vh,900px);
+  transform:translate3d(calc(-50% + var(--px,0px)), var(--py,0px), 0) scale(var(--pz,1));
+  transition:scale .6s var(--e); }
+.hero__cut img{ width:100%; height:100%; object-fit:cover; object-position:50% 10%;
+  /* The photograph carries its own sky, so its edges are dissolved rather
+     than painted over: the mask makes them transparent and the hero's own
+     gradient shows through. A flat scrim cannot do this - the ground under
+     it is a gradient, so any solid colour reads back as a rectangle. One
+     ellipse, generous enough to keep the whole figure and tight enough to
+     lose the corners. */
+  -webkit-mask-image:radial-gradient(54% 64% at 50% 42%,
+       #000 34%, rgba(0,0,0,.72) 62%, rgba(0,0,0,.18) 84%, transparent 100%);
+          mask-image:radial-gradient(54% 64% at 50% 42%,
+       #000 34%, rgba(0,0,0,.72) 62%, rgba(0,0,0,.18) 84%, transparent 100%);
+  filter:brightness(.72) contrast(1.22) saturate(.88); }
+
+.hero__script{ position:absolute; z-index:3; margin:0;
+  left:50%; top:54%;
+  transform:translate3d(calc(11vw + var(--px,0px)), var(--py,0px), 0) rotate(-6deg);
+  font-family:'Dancing Script', 'Segoe Script', cursive; font-weight:700; font-style:normal;
+  font-size:clamp(2rem,6.4vw,5.4rem); line-height:1;
+  color:var(--gold); text-shadow:0 8px 30px rgba(0,0,0,.7);
+  user-select:none; }
+
+/* --- the reading column, which sits over every plane --- */
+.hero__in{ position:relative; z-index:4; width:100%;
+           display:flex; align-items:flex-end; justify-content:space-between;
+           gap:28px; flex-wrap:wrap; }
+.hero__lead{ max-width:min(44ch,100%); }
+.hero__kicker{ margin:14px 0 0; font-size:.66rem; font-weight:700; letter-spacing:.32em;
+               text-transform:uppercase; color:var(--ink); }
+.hero__lede{ margin:16px 0 0; font-size:clamp(.92rem,1.5vw,1.06rem); line-height:1.75;
+             color:var(--soft); }
+.hero__rule{ display:block; width:64px; height:3px; margin-top:24px; border-radius:2px;
+             background:var(--gold); }
+.hero__cta{ display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+
+/* the pointer hint, which says what the stage does before it is touched */
+.hero__hint{ display:flex; align-items:center; gap:12px; margin:0;
+             font-size:.72rem; font-weight:600; color:var(--ink); }
+.hero__hint b{ display:block; font-size:.66rem; font-weight:400; color:var(--mute); }
+.hero__hint-a{ display:flex; align-items:center; gap:3px; flex:none; color:var(--gold); }
+.hero__hint-a i{ width:15px; height:7px; border-top:1.4px solid currentColor; position:relative; }
+.hero__hint-a i::before{ content:''; position:absolute; width:6px; height:6px;
+                         border-top:1.4px solid currentColor; border-left:1.4px solid currentColor;
+                         top:-3.4px; }
+.hero__hint-a i:first-child::before{ left:-1px; transform:rotate(-45deg); }
+.hero__hint-a i:last-child::before { right:-1px; transform:rotate(135deg); }
+@media (pointer:coarse){ .hero__hint{ display:none; } }
+
+.cue{ position:absolute; left:50%; bottom:26px; transform:translateX(-50%); z-index:6;
+      display:flex; flex-direction:column; align-items:center; gap:10px;
       font-size:.54rem; font-weight:600; letter-spacing:.26em; color:var(--mute); }
 .cue span{ width:1px; height:44px; background:var(--hairw); position:relative; overflow:hidden; }
 .cue span::after{ content:''; position:absolute; inset:0; background:var(--gold);
                   animation:cue 2s var(--e) infinite; }
 @keyframes cue{ from{ transform:translateY(-100%); } to{ transform:translateY(100%); } }
+
+/* --- narrower screens: the name steps back, the column takes the room --- */
+@media (max-width:900px){
+  .hero__giant{ top:38%; font-size:clamp(3rem,21vw,9rem); }
+  .hero__cut{ width:min(74vw,420px); height:min(64vh,620px); opacity:.85; }
+  .hero__script{ top:48%; }
+  .hero__in{ align-items:flex-start; }
+  .hero__lead{ max-width:none; }
+}
+@media (max-width:640px){
+  /* On a phone the stage becomes a backdrop: the figure holds the upper
+     half at low strength and the reading column takes the lower half
+     outright, so nothing is set over a face. */
+  .hero{ align-items:flex-end; padding-bottom:92px; }
+  .hero__giant{ top:26%; font-size:clamp(2.2rem,16.5vw,5rem); }
+  .hero__cut{ width:min(96vw,460px); height:56vh; bottom:auto; top:4vh;
+              opacity:.5; }
+  .hero__cut img{ object-position:50% 6%; }
+  .hero__script{ top:34%;
+    transform:translate3d(calc(-4vw + var(--px,0px)), var(--py,0px), 0) rotate(-6deg); }
+  .hero__lead{ position:relative; }
+  .hero__lede br{ display:none; }
+  .hero__lede{ font-size:.94rem; line-height:1.7; }
+  .hero__kicker{ font-size:.58rem; letter-spacing:.24em; }
+}
 
 /* ==========================================================================
    06. COVERFLOW — the 25 frames rotating through 3D space
@@ -1260,8 +1331,7 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
           opacity:0; transition:opacity .4s var(--e); }
   .scrim.open{ opacity:1; }
 
-  .hero__in{ grid-template-columns:1fr; }
-  .hero__art{ max-width:400px; margin-inline:auto; }
+  .hero__in{ flex-direction:column; align-items:flex-start; }
   .duo,.duo--rev{ grid-template-columns:1fr; }
   .duo--rev > .cards{ order:2; }
   .cue{ display:none; }
@@ -1277,7 +1347,7 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
   body{ font-size:15px; }
   .sec{ padding:64px 0; }
   .sec[data-code]::after,.hero[data-code]::after{ font-size:.5rem; letter-spacing:.22em; }
-  .hero{ min-height:auto; padding:calc(var(--hh) + 38px) 0 64px; }
+  .hero{ padding:calc(var(--hh) + 38px) 0 78px; }
   .hero__cta .btn{ flex:1 1 100%; }
   .h3d{ text-shadow:1px 1px 0 #b4952f,2px 2px 0 #96802a,3px 3px 0 #786520,
                     4px 4px 10px rgba(0,0,0,.6); }
@@ -1322,7 +1392,7 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
 @media print{
   .intro,.hdr,.aura,.grain,.prog,.totop,.cue,.lb,.vm,.fil,.form,.pbtn,.mc__p,.mc__f,
   .cf__bar,.cf__track,.snd,.brg,.ctas,.orb,.player__glow,.card3d__glow,
-  .bill__glow,.stack__glow{ display:none !important; }
+  .bill__glow{ display:none !important; }
 
   html,body{ background:#fff !important; color:#111 !important; font-size:10.5pt; }
   body{ overflow:visible !important; }
@@ -1341,7 +1411,12 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
   .slab,.pc,.mc,.gi,.bill,.card3d,.wbox,.chip3d,.cred__art,.cred__body,.player__in{
     background:#fff !important; border-color:#c9c9c9 !important;
     box-shadow:none !important; color:#111 !important; }
-  .h3d,.ttl,.bill__t,.cred__t,.hero__name{ color:#111 !important; text-shadow:none !important; }
+  .h3d,.ttl,.bill__t,.cred__t{ color:#111 !important; text-shadow:none !important; }
+  .hero__giant{ position:static; transform:none !important; font-size:2.4rem !important;
+    background:none !important; -webkit-text-fill-color:#111 !important;
+    color:#111 !important; white-space:normal; }
+  .hero__stage{ position:static; }
+  .hero__cut,.hero__script,.hero__hint,.orb{ display:none !important; }
   .eyebrow,.eyebrow i,.cf__cat,.slab__no,.mc__n,.card3d__r,.gnote b{ color:#8a6c2f !important; background:none !important; }
   .lede,.kv dd{ color:#333 !important; } .kv dt{ color:#777 !important; }
   .gi img,.pc img,.player__in img{ filter:none !important; }
@@ -1788,7 +1863,9 @@ html[data-theme="dark"] .sec--navy  { background:linear-gradient(168deg,#0A0A0B 
 html[data-theme="dark"] .sec--red   { background:linear-gradient(168deg,#0A0A0B 0%,#1A1010 50%,#0A0A0B 100%); }
 html[data-theme="dark"] .foot       { background:linear-gradient(180deg,#0A0A0B,#060607); }
 html[data-theme="dark"] .intro      { background:radial-gradient(ellipse at 50% 40%,#1C1C1E,#0A0A0B 70%); }
-html[data-theme="dark"] .hero       { background:radial-gradient(ellipse at 22% 34%,#212123 0%,#151517 46%,#0A0A0B 100%); }
+html[data-theme="dark"] .hero       { background:
+    radial-gradient(ellipse 60% 54% at 50% 42%, rgba(201,164,92,.11), transparent 72%),
+    radial-gradient(ellipse at 22% 34%,#212123 0%,#151517 46%,#0A0A0B 100%); }
 
 /* The casting band is the one section written as light-on-dark rather
    than the reverse, and it keeps that inversion: pale paper set into the
@@ -1988,7 +2065,9 @@ html[data-theme="light"] .sec--deep  { background:linear-gradient(180deg,#F8F5EF
 html[data-theme="light"] .sec--red   { background:linear-gradient(168deg,#F0E5D5 0%,#F0E5D5 50%,#F0E5D5 100%); }
 html[data-theme="light"] .sec--forest{ background:linear-gradient(168deg,#F8F5EF 0%,#EEE8DC 50%,#F8F5EF 100%); }
 html[data-theme="light"] .sec--navy  { background:linear-gradient(168deg,#EEE8DC 0%,#E6DFD1 52%,#EEE8DC 100%); }
-html[data-theme="light"] .hero { background:radial-gradient(ellipse at 22% 34%,#F8F5EF 0%,#F8F5EF 46%,#EEE8DC 100%); }
+html[data-theme="light"] .hero { background:
+    radial-gradient(ellipse 60% 54% at 50% 42%, rgba(167,123,50,.10), transparent 72%),
+    radial-gradient(ellipse at 22% 34%,#F8F5EF 0%,#F8F5EF 46%,#EEE8DC 100%); }
 html[data-theme="light"] .intro{ background:radial-gradient(ellipse at 50% 40%,#F8F5EF,#EEE8DC 70%); }
 html[data-theme="light"] .foot { background:linear-gradient(180deg,#EEE8DC,#D8D0C2); }
 html[data-theme="light"] .hdr.stuck{ background:rgba(248,245,239,.92);

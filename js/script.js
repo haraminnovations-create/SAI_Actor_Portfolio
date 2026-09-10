@@ -1152,17 +1152,72 @@
   }
 
   /* ======================================================================
-     10c. HERO PARALLAX — the portrait drifts slower than the page
+     10c. HERO STAGE — the planes answer the pointer at different rates
+
+     Each plane declares how far it travels as data-depth. The script only
+     ever writes --px and --py on it; the plane's own rule decides how to
+     compose them with whatever transform already centres it, so nothing
+     here has to know that the name is centred on both axes and the
+     portrait only on one.
+
+     The whole stage also drifts on scroll, which every visitor gets. The
+     pointer depth is desktop-only and off under reduced motion, since it
+     is the kind of movement that setting is asking us not to make.
      ====================================================================== */
-  function initParallax() {
-    const art = $('.hero__art');
-    if (!art || NO3D) return;
+  function initHeroStage() {
+    const stage = $('#heroStage');
+    const hero  = $('.hero');
+    if (!stage || !hero) return;
+
     const onScroll = raf(() => {
       const y = scrollY;
-      if (y > innerHeight * 1.2) return;
-      art.style.transform = 'translate3d(0,' + (-y * 0.08).toFixed(1) + 'px,0)';
+      if (y > innerHeight * 1.3) return;
+      stage.style.setProperty('--sy', (y * 0.11).toFixed(1) + 'px');
     });
     addEventListener('scroll', onScroll, { passive: true });
+
+    if (NO3D) return;
+
+    const cut = $('.hero__cut', stage);
+    const planes = $$('[data-depth]', stage)
+      .map((el) => ({ el, d: parseFloat(el.dataset.depth) || 0 }));
+
+    /* tx,ty is where the pointer is, -1 to 1 from the middle of the hero;
+       cx,cy is where the planes have got to. They chase, they do not jump. */
+    let tx = 0, ty = 0, cx = 0, cy = 0, running = false;
+
+    hero.addEventListener('pointermove', (e) => {
+      if (e.pointerType === 'touch') return;
+      const r = hero.getBoundingClientRect();
+      tx = clamp(((e.clientX - r.left) / r.width  - 0.5) * 2, -1, 1);
+      ty = clamp(((e.clientY - r.top)  / r.height - 0.5) * 2, -1, 1);
+      if (cut) cut.style.setProperty('--pz', '1.035');
+      start();
+    }, { passive: true });
+
+    hero.addEventListener('pointerleave', () => {
+      tx = 0; ty = 0;
+      if (cut) cut.style.setProperty('--pz', '1');
+      start();
+    });
+
+    function start() { if (!running) { running = true; requestAnimationFrame(loop); } }
+
+    function loop() {
+      cx += (tx - cx) * 0.075;
+      cy += (ty - cy) * 0.075;
+      for (const { el, d } of planes) {
+        el.style.setProperty('--px', (cx * 34 * d).toFixed(2) + 'px');
+        el.style.setProperty('--py', (cy * 20 * d).toFixed(2) + 'px');
+      }
+      /* stop the loop once it has arrived, rather than burning a frame a
+         tick forever on a page nobody is pointing at */
+      if (Math.abs(tx - cx) > 0.0015 || Math.abs(ty - cy) > 0.0015) {
+        requestAnimationFrame(loop);
+      } else {
+        running = false;
+      }
+    }
   }
 
   /* ======================================================================
@@ -1449,7 +1504,7 @@
     initVideo();
     initAura();
     initMagnetic();
-    initParallax();
+    initHeroStage();
     initVcard();
     initForm();
     initPdf();

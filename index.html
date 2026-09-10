@@ -15,7 +15,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@200;300;400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -185,43 +185,41 @@
   <span class="orb orb--a" aria-hidden="true"></span>
   <span class="orb orb--b" aria-hidden="true"></span>
 
-  <div class="wrap hero__in scene">
-    <div class="hero__txt">
-      <p class="eyebrow rv"><i></i>HYDERABAD,MANIKONDA, INDIA — AVAILABLE FOR CASTING</p>
-      <h1 class="hero__name h3d rv" data-d="1">YORVIK</h1>
-      <p class="hero__sur rv" data-d="2">SHARJITH SHAANK</p>
-      <p class="hero__role rv" data-d="2">ACTOR &nbsp;·&nbsp; DANCER &nbsp;·&nbsp; CHOREOGRAPHER &nbsp;·&nbsp; SIGNING </p>
-      <p class="hero__tag rv" data-d="3">ACTING &nbsp;·&nbsp; MOVEMENT &nbsp;·&nbsp; STORYTELLING &nbsp;·&nbsp; BACKGROUND SINGER</p>
+  <!-- EDIT: three planes, back to front — the name lies furthest back, the
+       portrait stands in front of it, the signature sits closest. The
+       pointer shifts each by a different amount, and that difference is
+       the whole of the depth. data-depth is the multiplier: negative
+       drifts against the pointer, larger moves further. Swap the portrait
+       by changing the one src; a background-removed PNG drops straight in
+       and needs no other change. -->
+  <div class="hero__stage" id="heroStage">
+    <h1 class="hero__giant" data-depth="-.55"><span>YORVIK</span></h1>
+    <figure class="hero__cut" data-depth="1">
+      <img width="1024" height="1536" src="images/veera1.jpeg"
+           alt="Yorvik Sharjith Shaank" fetchpriority="high">
+    </figure>
+    <p class="hero__script" data-depth="1.5">Sharjith</p>
+  </div>
 
+  <div class="wrap hero__in">
+    <div class="hero__lead">
+      <p class="eyebrow rv"><i></i>HYDERABAD,MANIKONDA, INDIA — AVAILABLE FOR CASTING</p>
+      <p class="hero__kicker rv" data-d="1">ACTOR &nbsp;/&nbsp; DANCER &nbsp;/&nbsp; CHOREOGRAPHER</p>
+      <p class="hero__lede rv" data-d="2">Bringing emotions to life through stories,<br>performance and passion.</p>
+      <span class="hero__rule rv" data-d="3" aria-hidden="true"></span>
       <div class="hero__cta rv" data-d="4">
         <a href="#reel" class="btn btn--gold" data-mag data-sfx="enter"><svg class="ico"><use href="#i-play"/></svg> WATCH SHOWREEL</a>
         <a href="#casting" class="btn btn--navy" data-mag data-sfx="tap">CASTING PROFILE</a>
       </div>
-
-      <ul class="facts rv" data-d="5">
-        <li class="chip3d"><b>22</b><span>Age</span></li>
-        <li class="chip3d"><b>5'8"</b><span>Height</span></li>
-        <li class="chip3d"><b>70<i>kg</i></b><span>Weight</span></li>
-        <li class="chip3d"><b>3</b><span>Languages</span></li>
-        <li class="chip3d"><b>9<i>yr</i></b><span>Dance</span></li>
-      </ul>
     </div>
 
-    <!-- 3D stacked portrait: planes at different depths -->
-    <div class="hero__art rv" data-d="3">
-      <div class="stack tilt" data-tilt="9">
-        <span class="stack__glow" aria-hidden="true"></span>
-        <span class="stack__back" aria-hidden="true"></span>
-        <span class="stack__mid" aria-hidden="true"></span>
-        <figure class="stack__face">
-          <img width="1186" height="1612" src="images/p02.jpg" alt="Yorvik Sharjith Shaank">
-        </figure>
-        <span class="stack__tag">ACTOR</span>
-      </div>
-    </div>
+    <p class="hero__hint rv" data-d="5" aria-hidden="true">
+      <span class="hero__hint-a"><i></i><i></i></span>
+      Move your mouse<b>to see the image come to life</b>
+    </p>
   </div>
 
-  <a href="#reel" class="cue" aria-label="Scroll"><span></span>SCROLL</a>
+  <a href="#casting" class="cue" aria-label="Scroll down">SCROLL DOWN<span></span></a>
 </section>
 
 <!-- ================= 15 · CASTING PROFILE — 3D flip cards ================= -->
