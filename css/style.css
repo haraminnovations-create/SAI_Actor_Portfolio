@@ -468,31 +468,28 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
   font-size:clamp(2.4rem,12.6vw,11.4rem); letter-spacing:-.03em; white-space:nowrap;
   /* stone rather than paint: a fine noise laid over the fall of light, both
      clipped to the letterforms so the name reads as a surface, not a fill */
+  --g1:rgba(245,241,232,.46); --g2:rgba(245,241,232,.26);
+  --g3:rgba(201,164,92,.34);   --g4:rgba(245,241,232,.17);
   background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"),
-    linear-gradient(168deg, rgba(245,241,232,.34) 0%, rgba(245,241,232,.15) 46%,
-                            rgba(201,164,92,.20) 78%, rgba(245,241,232,.09) 100%);
+    linear-gradient(168deg, var(--g1) 0%, var(--g2) 46%, var(--g3) 78%, var(--g4) 100%);
   background-blend-mode:overlay;
   -webkit-background-clip:text; background-clip:text;
   color:transparent; -webkit-text-fill-color:transparent;
   user-select:none; }
 
 .hero__cut{ position:absolute; left:50%; bottom:0; z-index:2; margin:0;
-  width:clamp(300px,42vw,560px); height:min(84vh,900px);
+  /* short enough that his head clears the header, tall enough that he
+     still owns the middle of the page */
+  width:clamp(300px,42vw,560px); height:min(74vh,820px);
   transform:translate3d(calc(-50% + var(--px,0px)), var(--py,0px), 0) scale(var(--pz,1));
   transition:scale .6s var(--e); }
-.hero__cut img{ width:100%; height:100%; object-fit:cover; object-position:50% 10%;
-  /* The photograph carries its own sky, so its edges are dissolved rather
-     than painted over: the mask makes them transparent and the hero's own
-     gradient shows through. A flat scrim cannot do this - the ground under
-     it is a gradient, so any solid colour reads back as a rectangle. One
-     ellipse, generous enough to keep the whole figure and tight enough to
-     lose the corners. */
-  -webkit-mask-image:radial-gradient(54% 64% at 50% 42%,
-       #000 34%, rgba(0,0,0,.72) 62%, rgba(0,0,0,.18) 84%, transparent 100%);
-          mask-image:radial-gradient(54% 64% at 50% 42%,
-       #000 34%, rgba(0,0,0,.72) 62%, rgba(0,0,0,.18) 84%, transparent 100%);
-  filter:brightness(.72) contrast(1.22) saturate(.88); }
+/* The picture is a cut-out with a real alpha channel, so there is no sky to
+   hide and nothing to mask: the figure stands on the page and the name
+   shows through every gap in him, which is the whole point of the layout.
+   The shadow is cast off his own outline, not off a box. */
+.hero__cut img{ width:100%; height:100%; object-fit:contain; object-position:50% 100%;
+  filter:drop-shadow(0 26px 42px rgba(0,0,0,.5)); }
 
 .hero__script{ position:absolute; z-index:3; margin:0;
   left:50%; top:54%;
@@ -530,7 +527,10 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
 
 .cue{ position:absolute; left:50%; bottom:26px; transform:translateX(-50%); z-index:6;
       display:flex; flex-direction:column; align-items:center; gap:10px;
-      font-size:.54rem; font-weight:600; letter-spacing:.26em; color:var(--mute); }
+      font-size:.54rem; font-weight:600; letter-spacing:.26em; color:var(--mute);
+      /* the figure now stands where this sits, so it is haloed in whatever
+         the ground happens to be and stays legible over him in either theme */
+      text-shadow:0 1px 9px var(--black), 0 0 3px var(--black); }
 .cue span{ width:1px; height:44px; background:var(--hairw); position:relative; overflow:hidden; }
 .cue span::after{ content:''; position:absolute; inset:0; background:var(--gold);
                   animation:cue 2s var(--e) infinite; }
@@ -550,9 +550,11 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
      outright, so nothing is set over a face. */
   .hero{ align-items:flex-end; padding-bottom:92px; }
   .hero__giant{ top:26%; font-size:clamp(2.2rem,16.5vw,5rem); }
-  .hero__cut{ width:min(96vw,460px); height:56vh; bottom:auto; top:4vh;
+  .hero__cut{ width:min(96vw,460px); height:58vh; bottom:auto; top:5vh;
               opacity:.5; }
-  .hero__cut img{ object-position:50% 6%; }
+  .hero__cut img{ object-position:50% 0;
+    -webkit-mask-image:linear-gradient(180deg,#000 62%,transparent 97%);
+            mask-image:linear-gradient(180deg,#000 62%,transparent 97%); }
   .hero__script{ top:34%;
     transform:translate3d(calc(-4vw + var(--px,0px)), var(--py,0px), 0) rotate(-6deg); }
   .hero__lead{ position:relative; }
@@ -1863,6 +1865,11 @@ html[data-theme="dark"] .sec--navy  { background:linear-gradient(168deg,#0A0A0B 
 html[data-theme="dark"] .sec--red   { background:linear-gradient(168deg,#0A0A0B 0%,#1A1010 50%,#0A0A0B 100%); }
 html[data-theme="dark"] .foot       { background:linear-gradient(180deg,#0A0A0B,#060607); }
 html[data-theme="dark"] .intro      { background:radial-gradient(ellipse at 50% 40%,#1C1C1E,#0A0A0B 70%); }
+/* the name is a surface, and a surface needs light: these are the four
+   stops it is lit by, restated per theme so it reads on either ground */
+html[data-theme="dark"] .hero__giant{
+  --g1:rgba(245,241,232,.50); --g2:rgba(245,241,232,.28);
+  --g3:rgba(201,164,92,.40);  --g4:rgba(245,241,232,.18); }
 html[data-theme="dark"] .hero       { background:
     radial-gradient(ellipse 60% 54% at 50% 42%, rgba(201,164,92,.11), transparent 72%),
     radial-gradient(ellipse at 22% 34%,#212123 0%,#151517 46%,#0A0A0B 100%); }
@@ -2065,6 +2072,10 @@ html[data-theme="light"] .sec--deep  { background:linear-gradient(180deg,#F8F5EF
 html[data-theme="light"] .sec--red   { background:linear-gradient(168deg,#F0E5D5 0%,#F0E5D5 50%,#F0E5D5 100%); }
 html[data-theme="light"] .sec--forest{ background:linear-gradient(168deg,#F8F5EF 0%,#EEE8DC 50%,#F8F5EF 100%); }
 html[data-theme="light"] .sec--navy  { background:linear-gradient(168deg,#EEE8DC 0%,#E6DFD1 52%,#EEE8DC 100%); }
+html[data-theme="light"] .hero__giant{
+  --g1:rgba(23,23,25,.34);   --g2:rgba(23,23,25,.20);
+  --g3:rgba(167,123,50,.40); --g4:rgba(23,23,25,.15);
+  background-blend-mode:soft-light; }
 html[data-theme="light"] .hero { background:
     radial-gradient(ellipse 60% 54% at 50% 42%, rgba(167,123,50,.10), transparent 72%),
     radial-gradient(ellipse at 22% 34%,#F8F5EF 0%,#F8F5EF 46%,#EEE8DC 100%); }

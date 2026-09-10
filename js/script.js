@@ -865,6 +865,11 @@
       const skip = (im) =>
         !im.getAttribute('src') ||
         im.closest('#lb') || im.closest('#gg') || im.closest('.cf__stage') ||
+        /* the hero portrait is scenery: its stage takes no pointer at all,
+           so making it zoomable only bought a focusable button that opens
+           nothing, a zoom badge over the artwork, and a position:relative
+           that knocked the figure off the bottom of the stage */
+        im.closest('.hero__stage') ||
         im.closest('[data-video]') || im.closest('[data-href]') ||
         im.closest('a') || im.closest('nav') || im.closest('header.nav');
 
