@@ -23,6 +23,9 @@
      follows - which is how the light theme came to be full of gold
      glows long after its accent had stopped being gold. */
   --accent-rgb: 212,175,55;
+  /* the divider star, whose fill is sealed inside a data URI - so the
+     url() itself is the token and a theme restates the whole of it */
+  --star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.6 6.8L21.5 11l-6.9 2.2L12 20l-2.6-6.8L2.5 11l6.9-2.2z' fill='%23d4af37'/%3E%3C/svg%3E");
   --green:  #0b1f1a;   /* BLACK GREEN — bg  */
   --navy:   #0d1b3d;   /* SECONDARY accent  */
   --white:  #ffffff;   /* neutral / light   */
@@ -176,8 +179,7 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
 .sec::before{
   content:''; position:absolute; top:0; left:0; right:0; height:14px; z-index:4;
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.6 6.8L21.5 11l-6.9 2.2L12 20l-2.6-6.8L2.5 11l6.9-2.2z' fill='%23d4af37'/%3E%3C/svg%3E")
-      center / 12px 12px no-repeat,
+    var(--star) center / 12px 12px no-repeat,
     linear-gradient(90deg,transparent 0%,var(--hair) 18%,var(--hair) 47%,
       transparent 47.5%,transparent 52.5%,var(--hair) 53%,var(--hair) 82%,transparent 100%)
       center / 100% 1px no-repeat;
@@ -1792,371 +1794,376 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
 
 
 /* ======================================================================
-   DARK THEME - 01 · MIDNIGHT BLUE + SILVER
+   DARK THEME - 01 · AURORA CINEMA
    Modern · cinematic · young · stylish
 
-   Midnight navy is the ground the site opens on. The base sheet below
-   still holds the forest-green palette, and the toggle reaches for that
-   instead. Both are dark grounds, so nothing here has to invert the
-   design - only the palette differs, and every literal the base names
-   outright is restated once, further down.
+   This palette does not name one accent, it names four - purple, blue,
+   cyan, pink - which is what an aurora is. They are not interchangeable
+   here, because the accent has to carry the page's small uppercase type,
+   and on this ground only two of the four can:
 
-   The accent stops being a metal. Where champagne warmed the page, an
-   electric blue cools it and a lighter blue is held back for the hover,
-   so the page still has somewhere to go.
+     purple  3.44:1     blue  3.79:1     cyan  8.07:1     pink  5.56:1
 
-     Midnight Navy  #07111F   the ground
-     Deep Blue      #0D1B2A   cards and surfaces
-     Silver White   #E8EDF2   primary type
-     Cool Gray      #8D99A6   secondary type
-     Electric Blue  #3B82F6   the accent
-     Light Blue     #60A5FA   the accent on hover
-     Border         #1E3350   drawn from the two blues
+   So cyan takes the accent and carries every label, eyebrow and rule;
+   pink takes the highlight the CTA needs; and purple and blue, which
+   cannot be read small on black, are spent where nothing has to be read
+   at all - the sweep across the buttons and the extruded headings, where
+   the aurora actually shows.
 
-   The palette names no highlight, so the CTA keeps an oxblood - cooled
-   to sit under blue rather than under champagne.
+     Background   #080B18   the ground
+     Surface      #11162A   cards and surfaces
+     Text         #F8FAFC   primary type
+     Slate        #94A3B8   secondary type, which the palette leaves open
+     Cyan         #06B6D4   the accent
+     Purple       #7C3AED   the sweep, with blue
+     Blue         #2563EB   the sweep, with purple
+     Pink         #EC4899   the highlight
    ====================================================================== */
 html[data-theme="dark"]{
-  --accent-rgb: 59,130,246;
-  --silver: #8D99A6;          /* Cool Gray */
-  --gold:   #3B82F6;          /* Electric Blue, in the role the metal held */
-  --green:  #07111F;          /* Midnight Navy, in the role the forest held */
-  --navy:   #0D1B2A;          /* Deep Blue */
-  --white:  #E8EDF2;          /* Silver White */
-  /* the palette names no highlight, so the CTA keeps an oxblood, cooled
-     to sit under blue */
-  --red:    #B23A45;
+  --accent-rgb: 6,182,212;
+  --star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.6 6.8L21.5 11l-6.9 2.2L12 20l-2.6-6.8L2.5 11l6.9-2.2z' fill='%2306B6D4'/%3E%3C/svg%3E");
+  --silver: #94A3B8;          /* Slate — the palette leaves this open */
+  --gold:   #06B6D4;          /* Cyan — the only accent that reads small here */
+  --green:  #080B18;          /* Background, in the role the forest held */
+  --navy:   #11162A;          /* Surface */
+  --white:  #F8FAFC;          /* Text */
+  --red:    #EC4899;          /* Pink — the highlight */
 
-  --black:   #07111F;
-  --card:    #0D1B2A;
-  --card-hi: #16293F;
-  --sunk:    #091524;
+  --black:   #080B18;
+  --card:    #11162A;
+  --card-hi: #1A2140;
+  --sunk:    #0B1126;
 
-  --gold-lt: #60A5FA;         /* Light Blue — the hover accent */
-  --gold-dk: #1D4FD8;
-  --gold-metal: linear-gradient(158deg,#9DC5FC 0%,#3B82F6 46%,#1E5FCC 100%);
-  --metal-ink: #03101F;
-  --metal-rim: #17439B;
+  --gold-lt: #22D3EE;         /* cyan lifted, for the hover */
+  --gold-dk: #0E7490;
+  --gold-metal: linear-gradient(158deg,#7C3AED 0%,#2563EB 46%,#06B6D4 100%);
+  --metal-ink: #050914;
+  --metal-rim: #1E3A8A;
 
-  --ink:  #E8EDF2;
-  --soft: rgba(232,237,242,.74);
-  --mute: #8D99A6;
-  --hair: rgba(59,130,246,.34);   /* the accent drawn as a line */
-  --hairw:#1E3350;                /* Border, drawn from the two blues */
+  --ink:  #F8FAFC;
+  --soft: rgba(248,250,252,.74);
+  --mute: #94A3B8;
+  --hair: rgba(6,182,212,.34);   /* the accent drawn as a line */
+  --hairw:#232B47;                /* Border, drawn from the two blues */
 }
 
 /* ---- the grounds ----------------------------------------------------
    The base paints each band with a literal, so each one is restated here
-   in midnight navy and deep blue. Each band keeps its own tint, but they
-   are all struck off the same ground, which is what keeps the electric
-   blue reading as light rather than as paint. */
-html[data-theme="dark"] body        { background:#07111F; }
-html[data-theme="dark"] .sec--deep  { background:linear-gradient(180deg,#0D1B2A 0%,#07111F 100%); }
-html[data-theme="dark"] .sec--green { background:linear-gradient(180deg,#06101C,#07111F); }
-html[data-theme="dark"] .sec--forest{ background:linear-gradient(168deg,#07111F 0%,#0D1B2A 50%,#07111F 100%); }
-html[data-theme="dark"] .sec--navy  { background:linear-gradient(168deg,#07111F 0%,#102033 52%,#07111F 100%); }
-html[data-theme="dark"] .sec--red   { background:linear-gradient(168deg,#07111F 0%,#1B0F15 50%,#07111F 100%); }
-html[data-theme="dark"] .foot       { background:linear-gradient(180deg,#07111F,#030914); }
-html[data-theme="dark"] .intro      { background:radial-gradient(ellipse at 50% 40%,#12243A,#07111F 70%); }
+   on the aurora ground. Each band keeps its own tint, but they are all
+   struck off the same near-black, which is what lets four hues sit on one
+   page without any of them turning to paint. */
+html[data-theme="dark"] body        { background:#080B18; }
+html[data-theme="dark"] .sec--deep  { background:linear-gradient(180deg,#11162A 0%,#080B18 100%); }
+html[data-theme="dark"] .sec--green { background:linear-gradient(180deg,#070C1C,#080B18); }
+html[data-theme="dark"] .sec--forest{ background:linear-gradient(168deg,#080B18 0%,#11162A 50%,#080B18 100%); }
+html[data-theme="dark"] .sec--navy  { background:linear-gradient(168deg,#080B18 0%,#161C38 52%,#080B18 100%); }
+html[data-theme="dark"] .sec--red   { background:linear-gradient(168deg,#080B18 0%,#1D0F22 50%,#080B18 100%); }
+html[data-theme="dark"] .foot       { background:linear-gradient(180deg,#080B18,#030610); }
+html[data-theme="dark"] .intro      { background:radial-gradient(ellipse at 50% 40%,#19203E,#080B18 70%); }
 /* the name is a surface, and a surface needs light: these are the four
    stops it is lit by, restated per theme so it reads on either ground */
 html[data-theme="dark"] .hero__giant{
-  --g1:rgba(232,237,242,.50); --g2:rgba(232,237,242,.28);
-  --g3:rgba(59,130,246,.40);  --g4:rgba(232,237,242,.18); }
+  --g1:rgba(248,250,252,.50); --g2:rgba(248,250,252,.28);
+  --g3:rgba(6,182,212,.40);  --g4:rgba(248,250,252,.18); }
 html[data-theme="dark"] .hero       { background:
-    radial-gradient(ellipse 60% 54% at 50% 42%, rgba(59,130,246,.11), transparent 72%),
-    radial-gradient(ellipse at 22% 34%,#16293F 0%,#0D1B2A 46%,#07111F 100%); }
+    radial-gradient(ellipse 60% 54% at 50% 42%, rgba(6,182,212,.11), transparent 72%),
+    radial-gradient(ellipse at 22% 34%,#1A2140 0%,#11162A 46%,#080B18 100%); }
 
 /* The casting band is the one section written as light-on-dark rather
    than the reverse, and it keeps that inversion: pale paper set into the
-   midnight, which is where the electric blue earns its keep. Its lede was
-   hard-coded to a forest ink. */
-html[data-theme="dark"] .sec--white .lede{ color:rgba(7,17,31,.72); }
+   night, which is where the cyan earns its keep. Its lede was hard-coded
+   to a forest ink. */
+html[data-theme="dark"] .sec--white .lede{ color:rgba(8,11,24,.72); }
 
 /* ---- surfaces the base paints with a literal ---- */
-html[data-theme="dark"] .wbox{ background:#0D1B2A; color:#E8EDF2; border-color:rgba(232,237,242,.14); }
-html[data-theme="dark"] .bill{ background:linear-gradient(158deg,#26121C,#150A10);
-                                border-color:rgba(178,58,69,.7); }
-html[data-theme="dark"] .cred__body{ background:linear-gradient(158deg,#132741,#091524);
-                                      border-color:rgba(232,237,242,.14); }
-html[data-theme="dark"] .card3d__cube{ background:linear-gradient(158deg,#1D3552,#0A1727); }
+html[data-theme="dark"] .wbox{ background:#11162A; color:#F8FAFC; border-color:rgba(248,250,252,.14); }
+html[data-theme="dark"] .bill{ background:linear-gradient(158deg,#2A1030,#160B1C);
+                                border-color:rgba(236,72,153,.7); }
+html[data-theme="dark"] .cred__body{ background:linear-gradient(158deg,#1B2344,#0B1126);
+                                      border-color:rgba(248,250,252,.14); }
+html[data-theme="dark"] .card3d__cube{ background:linear-gradient(158deg,#242C52,#0C1329); }
 
 /* ---- the plates my own components sit on ---- */
-html[data-theme="dark"] .gi__e{ background:rgba(7,17,31,.78); border-color:rgba(59,130,246,.42);
-                                 color:#3B82F6; box-shadow:0 2px 10px -4px rgba(0,0,0,.9); }
-html[data-theme="dark"] .zi{ background:linear-gradient(#3B82F6,#3B82F6) center/11px 1.6px no-repeat,
-                                          linear-gradient(#3B82F6,#3B82F6) center/1.6px 11px no-repeat,
-                                          rgba(7,17,31,.78);
-                              border-color:rgba(59,130,246,.5); box-shadow:none; }
+html[data-theme="dark"] .gi__e{ background:rgba(8,11,24,.78); border-color:rgba(6,182,212,.42);
+                                 color:#06B6D4; box-shadow:0 2px 10px -4px rgba(0,0,0,.9); }
+html[data-theme="dark"] .zi{ background:linear-gradient(#06B6D4,#06B6D4) center/11px 1.6px no-repeat,
+                                          linear-gradient(#06B6D4,#06B6D4) center/1.6px 11px no-repeat,
+                                          rgba(8,11,24,.78);
+                              border-color:rgba(6,182,212,.5); box-shadow:none; }
 html[data-theme="dark"] .rpc > .zi{ background-size:8px 1.4px, 1.4px 8px, auto; }
-html[data-theme="dark"] .fb i{ background:rgba(59,130,246,.16); color:#3B82F6; }
-html[data-theme="dark"] .fb.on i{ background:rgba(7,17,31,.3); color:#E8EDF2; }
-html[data-theme="dark"] .pl__art{ border-color:rgba(59,130,246,.34);
-                                   box-shadow:0 4px 0 #01050B, 0 34px 60px -20px rgba(0,0,0,.95); }
+html[data-theme="dark"] .fb i{ background:rgba(6,182,212,.16); color:#06B6D4; }
+html[data-theme="dark"] .fb.on i{ background:rgba(8,11,24,.3); color:#F8FAFC; }
+html[data-theme="dark"] .pl__art{ border-color:rgba(6,182,212,.34);
+                                   box-shadow:0 4px 0 #01030A, 0 34px 60px -20px rgba(0,0,0,.95); }
 
 /* ---- Every rule in the base sheet that names a colour outright - the
-        forest greens, the navies, the crimson and the gold - restated in
-        midnight navy, deep blue, oxblood and electric blue. Generated from
-        the sheet itself, so each literal is accounted for, not guessed at.
+        forest greens, the navies, the crimson and the gold - restated on
+        the aurora: night, surface, pink and cyan. Generated from the sheet
+        itself, so each literal is accounted for, not guessed at.
         Rules given a ground above keep it: only their depth is restated. ---- */
 html[data-theme="dark"] .raise{ box-shadow:
     0 1px 0 rgba(255,255,255,.09) inset,
     0 -1px 0 rgba(0,0,0,.5) inset,
-    0 2px 0 #01050B,
-    0 4px 0 #040C18,
-    0 8px 0 #020710,
+    0 2px 0 #01030A,
+    0 4px 0 #050815,
+    0 8px 0 #02040D,
     0 26px 40px -14px rgba(0,0,0,.85); }
 html[data-theme="dark"] .h3d{ text-shadow:
-     1px 1px 0 #2F6FD6,  2px 2px 0 #2A63C0,  3px 3px 0 #2557AA,
-     4px 4px 0 #204B94,  5px 5px 0 #1B3F7E,  6px 6px 0 #163368,
-     7px 7px 0 #112752,  8px 8px 14px rgba(0,0,0,.6),
-     0 0 42px rgba(59,130,246,.22); }
+     1px 1px 0 #7C3AED,  2px 2px 0 #5B3BD9,  3px 3px 0 #3F4BE0,
+     4px 4px 0 #2563EB,  5px 5px 0 #1D6FC4,  6px 6px 0 #1191AE,
+     7px 7px 0 #0E7490,  8px 8px 14px rgba(0,0,0,.6),
+     0 0 42px rgba(6,182,212,.22); }
 html[data-theme="dark"] .h3d--dark{ text-shadow:
-     1px 1px 0 #60A5FA,  2px 2px 0 #3B82F6,  3px 3px 0 #2F6FD6,
-     4px 4px 0 #2A63C0,  5px 5px 0 #2557AA,  6px 6px 10px rgba(7,17,31,.3); }
-html[data-theme="dark"] .sec--white .lede{ color:rgba(7,17,31,.7); }
-html[data-theme="dark"] .btn--gold{ box-shadow:0 3px 0 #17439B, 0 12px 24px -8px rgba(59,130,246,.4); }
-html[data-theme="dark"] .btn--gold:hover{ box-shadow:0 6px 0 #17439B, 0 20px 32px -10px rgba(59,130,246,.5); }
-html[data-theme="dark"] .btn--navy{ background:linear-gradient(158deg,#132741,var(--navy)); border-color:#1D3552; box-shadow:0 3px 0 #01050B, 0 12px 24px -8px rgba(7,17,31,.9); }
-html[data-theme="dark"] .btn--navy:hover{ box-shadow:0 6px 0 #01050B, 0 20px 32px -10px rgba(29,53,82,.5); }
-html[data-theme="dark"] .btn--red{ box-shadow:0 3px 0 #7A2530, 0 12px 24px -8px rgba(178,58,69,.6); }
-html[data-theme="dark"] .btn--red:hover{ box-shadow:0 6px 0 #7A2530, 0 20px 32px -10px rgba(178,58,69,.7); }
-html[data-theme="dark"] .btn--dark{ box-shadow:0 3px 0 rgba(7,17,31,.5), 0 12px 24px -8px rgba(7,17,31,.6); }
-html[data-theme="dark"] .chip3d{ box-shadow:0 1px 0 rgba(255,255,255,.08) inset, 0 3px 0 #01050B, 0 10px 18px -8px rgba(0,0,0,.8); }
-html[data-theme="dark"] .chip3d:hover{ box-shadow:0 1px 0 rgba(255,255,255,.12) inset, 0 7px 0 #01050B, 0 20px 28px -10px rgba(0,0,0,.85); }
-html[data-theme="dark"] .chip3d--red{ background:linear-gradient(158deg,#26121C,#150A10); border-color:rgba(178,58,69,.6); }
-html[data-theme="dark"] .chip3d--green{ background:linear-gradient(158deg,#1D3552,#0A1727); border-color:rgba(59,130,246,.7); }
-html[data-theme="dark"] .chip3d--navy{ background:linear-gradient(158deg,#132741,#091524); border-color:rgba(29,53,82,.7); }
-html[data-theme="dark"] .chip3d--dark{ background:linear-gradient(158deg,#142944,var(--green)); border-color:rgba(7,17,31,.4); box-shadow:0 3px 0 rgba(7,17,31,.35), 0 10px 18px -8px rgba(7,17,31,.4); }
-html[data-theme="dark"] .rnd{ box-shadow:0 3px 0 #01050B, 0 10px 18px -8px rgba(0,0,0,.8); }
-html[data-theme="dark"] .cube__f{ background:linear-gradient(158deg,rgba(22,41,63,.9),rgba(7,17,31,.92)); box-shadow:0 0 34px rgba(59,130,246,.15) inset; }
-html[data-theme="dark"] .cube__f--tp{ background:linear-gradient(158deg,#1D3552,#0A1727); }
-html[data-theme="dark"] .cube__f--bt{ background:linear-gradient(158deg,#081422,#07111F); }
-html[data-theme="dark"] .prog{ box-shadow:0 0 12px rgba(59,130,246,.7); }
-html[data-theme="dark"] .hdr.stuck{ background:rgba(7,17,31,.88); }
-html[data-theme="dark"] .logo__cube{ box-shadow:0 3px 0 #01050B, 0 8px 16px -6px rgba(0,0,0,.8); }
-html[data-theme="dark"] .orb--a{ background:rgba(59,130,246,.13); }
-html[data-theme="dark"] .orb--b{ background:rgba(7,17,31,.55); }
-html[data-theme="dark"] .stack__glow{ background:rgba(59,130,246,.3); }
-html[data-theme="dark"] .stack__back{ background:linear-gradient(158deg,rgba(7,17,31,.7),rgba(7,17,31,.9)); }
-html[data-theme="dark"] .stack__mid{ background:linear-gradient(158deg,rgba(22,41,63,.75),rgba(7,17,31,.9)); }
-html[data-theme="dark"] .cf__i::after{ background:linear-gradient(180deg,transparent 40%,rgba(7,17,31,.7)); }
-html[data-theme="dark"] .cf__i.mid{ box-shadow:0 40px 70px -20px rgba(0,0,0,.95), 0 0 60px rgba(59,130,246,.25); }
-html[data-theme="dark"] .cf__floor{ background:radial-gradient(ellipse,rgba(59,130,246,.15),transparent 70%); }
-html[data-theme="dark"] .slab{ box-shadow:0 1px 0 rgba(255,255,255,.09) inset, 0 3px 0 #01050B,
-             0 6px 0 #030914, 0 28px 44px -16px rgba(0,0,0,.9); }
-html[data-theme="dark"] .kv--dark > div{ border-bottom-color:rgba(7,17,31,.12); }
-html[data-theme="dark"] .kv--dark dt{ color:rgba(7,17,31,.5); }
-html[data-theme="dark"] .pc{ box-shadow:0 3px 0 #01050B, 0 22px 34px -14px rgba(0,0,0,.9); }
-html[data-theme="dark"] .pc figcaption{ background:linear-gradient(transparent,rgba(7,17,31,.94)); }
-html[data-theme="dark"] .pc::before{ border:1px solid rgba(59,130,246,.14); }
-html[data-theme="dark"] .pc:hover::before{ border-color:rgba(59,130,246,.42); }
-html[data-theme="dark"] .pc:hover figcaption i{ text-shadow:0 0 14px rgba(59,130,246,.65); }
-html[data-theme="dark"] .rcard{ box-shadow:0 1px 0 rgba(255,255,255,.09) inset, 0 3px 0 #01050B,
-                   0 6px 0 #030914, 0 22px 34px -16px rgba(0,0,0,.9); }
-html[data-theme="dark"] .rpc{ box-shadow:0 2px 0 #01050B, 0 10px 16px -10px rgba(0,0,0,.85); }
-html[data-theme="dark"] .rpc:focus-visible{ border-color:rgba(59,130,246,.55); box-shadow:0 3px 0 #01050B, 0 40px 66px -16px rgba(0,0,0,.96),
-             0 0 0 1px rgba(59,130,246,.22); }
-html[data-theme="dark"] .rpc figcaption{ background:linear-gradient(transparent,rgba(7,17,31,.55) 38%,rgba(7,17,31,.96)); }
-html[data-theme="dark"] .player__glow{ background:rgba(59,130,246,.22); }
-html[data-theme="dark"] .player__in{ box-shadow:0 3px 0 #01050B, 0 8px 0 #020710, 0 40px 60px -20px rgba(0,0,0,.95); }
-html[data-theme="dark"] .pbtn span{ border:1px solid rgba(59,130,246,.55); }
-html[data-theme="dark"] .player__bar{ background:linear-gradient(transparent,rgba(7,17,31,.92)); }
-html[data-theme="dark"] .bill{ border:1px solid rgba(178,58,69,.6); box-shadow:0 4px 0 #040C18, 0 10px 0 #030914, 0 44px 70px -22px rgba(0,0,0,.95); }
-html[data-theme="dark"] .bill__glow{ background:rgba(178,58,69,.4); }
-html[data-theme="dark"] .bill__g{ border-block:1px solid rgba(59,130,246,.28); }
-html[data-theme="dark"] .cred__art{ box-shadow:0 4px 0 #01050B, 0 34px 56px -20px rgba(0,0,0,.95); }
-html[data-theme="dark"] .cred__body{ box-shadow:0 3px 0 #01050B, 0 6px 0 #01050B, 0 30px 48px -18px rgba(0,0,0,.9); }
-html[data-theme="dark"] .mc{ box-shadow:0 3px 0 #01050B, 0 22px 36px -14px rgba(0,0,0,.9); }
-html[data-theme="dark"] .mc__f{ background:rgba(7,17,31,.6); }
-html[data-theme="dark"] .gi{ box-shadow:0 3px 0 #01050B, 0 20px 34px -14px rgba(0,0,0,.9); }
-html[data-theme="dark"] .gi:hover{ box-shadow:0 3px 0 #01050B, 0 26px 44px -14px rgba(0,0,0,.95),
-                      0 0 0 1px rgba(59,130,246,.3) inset; }
-html[data-theme="dark"] .gi::before{ background:linear-gradient(transparent 45%,rgba(7,17,31,.85)); }
+     1px 1px 0 #22D3EE,  2px 2px 0 #06B6D4,  3px 3px 0 #7C3AED,
+     4px 4px 0 #5B3BD9,  5px 5px 0 #3F4BE0,  6px 6px 10px rgba(8,11,24,.3); }
+html[data-theme="dark"] .sec--white .lede{ color:rgba(8,11,24,.7); }
+html[data-theme="dark"] .btn--gold{ box-shadow:0 3px 0 #1E3A8A, 0 12px 24px -8px rgba(6,182,212,.4); }
+html[data-theme="dark"] .btn--gold:hover{ box-shadow:0 6px 0 #1E3A8A, 0 20px 32px -10px rgba(6,182,212,.5); }
+html[data-theme="dark"] .btn--navy{ background:linear-gradient(158deg,#1B2344,var(--navy)); border-color:#242C52; box-shadow:0 3px 0 #01030A, 0 12px 24px -8px rgba(8,11,24,.9); }
+html[data-theme="dark"] .btn--navy:hover{ box-shadow:0 6px 0 #01030A, 0 20px 32px -10px rgba(36,44,82,.5); }
+html[data-theme="dark"] .btn--red{ box-shadow:0 3px 0 #9D174D, 0 12px 24px -8px rgba(236,72,153,.6); }
+html[data-theme="dark"] .btn--red:hover{ box-shadow:0 6px 0 #9D174D, 0 20px 32px -10px rgba(236,72,153,.7); }
+html[data-theme="dark"] .btn--dark{ box-shadow:0 3px 0 rgba(8,11,24,.5), 0 12px 24px -8px rgba(8,11,24,.6); }
+html[data-theme="dark"] .chip3d{ box-shadow:0 1px 0 rgba(255,255,255,.08) inset, 0 3px 0 #01030A, 0 10px 18px -8px rgba(0,0,0,.8); }
+html[data-theme="dark"] .chip3d:hover{ box-shadow:0 1px 0 rgba(255,255,255,.12) inset, 0 7px 0 #01030A, 0 20px 28px -10px rgba(0,0,0,.85); }
+html[data-theme="dark"] .chip3d--red{ background:linear-gradient(158deg,#2A1030,#160B1C); border-color:rgba(236,72,153,.6); }
+html[data-theme="dark"] .chip3d--green{ background:linear-gradient(158deg,#242C52,#0C1329); border-color:rgba(6,182,212,.7); }
+html[data-theme="dark"] .chip3d--navy{ background:linear-gradient(158deg,#1B2344,#0B1126); border-color:rgba(36,44,82,.7); }
+html[data-theme="dark"] .chip3d--dark{ background:linear-gradient(158deg,#1D2547,var(--green)); border-color:rgba(8,11,24,.4); box-shadow:0 3px 0 rgba(8,11,24,.35), 0 10px 18px -8px rgba(8,11,24,.4); }
+html[data-theme="dark"] .rnd{ box-shadow:0 3px 0 #01030A, 0 10px 18px -8px rgba(0,0,0,.8); }
+html[data-theme="dark"] .cube__f{ background:linear-gradient(158deg,rgba(26,33,64,.9),rgba(8,11,24,.92)); box-shadow:0 0 34px rgba(6,182,212,.15) inset; }
+html[data-theme="dark"] .cube__f--tp{ background:linear-gradient(158deg,#242C52,#0C1329); }
+html[data-theme="dark"] .cube__f--bt{ background:linear-gradient(158deg,#0A1024,#080B18); }
+html[data-theme="dark"] .prog{ box-shadow:0 0 12px rgba(6,182,212,.7); }
+html[data-theme="dark"] .hdr.stuck{ background:rgba(8,11,24,.88); }
+html[data-theme="dark"] .logo__cube{ box-shadow:0 3px 0 #01030A, 0 8px 16px -6px rgba(0,0,0,.8); }
+html[data-theme="dark"] .orb--a{ background:rgba(6,182,212,.13); }
+html[data-theme="dark"] .orb--b{ background:rgba(8,11,24,.55); }
+html[data-theme="dark"] .stack__glow{ background:rgba(6,182,212,.3); }
+html[data-theme="dark"] .stack__back{ background:linear-gradient(158deg,rgba(8,11,24,.7),rgba(8,11,24,.9)); }
+html[data-theme="dark"] .stack__mid{ background:linear-gradient(158deg,rgba(26,33,64,.75),rgba(8,11,24,.9)); }
+html[data-theme="dark"] .cf__i::after{ background:linear-gradient(180deg,transparent 40%,rgba(8,11,24,.7)); }
+html[data-theme="dark"] .cf__i.mid{ box-shadow:0 40px 70px -20px rgba(0,0,0,.95), 0 0 60px rgba(6,182,212,.25); }
+html[data-theme="dark"] .cf__floor{ background:radial-gradient(ellipse,rgba(6,182,212,.15),transparent 70%); }
+html[data-theme="dark"] .slab{ box-shadow:0 1px 0 rgba(255,255,255,.09) inset, 0 3px 0 #01030A,
+             0 6px 0 #030610, 0 28px 44px -16px rgba(0,0,0,.9); }
+html[data-theme="dark"] .kv--dark > div{ border-bottom-color:rgba(8,11,24,.12); }
+html[data-theme="dark"] .kv--dark dt{ color:rgba(8,11,24,.5); }
+html[data-theme="dark"] .pc{ box-shadow:0 3px 0 #01030A, 0 22px 34px -14px rgba(0,0,0,.9); }
+html[data-theme="dark"] .pc figcaption{ background:linear-gradient(transparent,rgba(8,11,24,.94)); }
+html[data-theme="dark"] .pc::before{ border:1px solid rgba(6,182,212,.14); }
+html[data-theme="dark"] .pc:hover::before{ border-color:rgba(6,182,212,.42); }
+html[data-theme="dark"] .pc:hover figcaption i{ text-shadow:0 0 14px rgba(6,182,212,.65); }
+html[data-theme="dark"] .rcard{ box-shadow:0 1px 0 rgba(255,255,255,.09) inset, 0 3px 0 #01030A,
+                   0 6px 0 #030610, 0 22px 34px -16px rgba(0,0,0,.9); }
+html[data-theme="dark"] .rpc{ box-shadow:0 2px 0 #01030A, 0 10px 16px -10px rgba(0,0,0,.85); }
+html[data-theme="dark"] .rpc:focus-visible{ border-color:rgba(6,182,212,.55); box-shadow:0 3px 0 #01030A, 0 40px 66px -16px rgba(0,0,0,.96),
+             0 0 0 1px rgba(6,182,212,.22); }
+html[data-theme="dark"] .rpc figcaption{ background:linear-gradient(transparent,rgba(8,11,24,.55) 38%,rgba(8,11,24,.96)); }
+html[data-theme="dark"] .player__glow{ background:rgba(6,182,212,.22); }
+html[data-theme="dark"] .player__in{ box-shadow:0 3px 0 #01030A, 0 8px 0 #02040D, 0 40px 60px -20px rgba(0,0,0,.95); }
+html[data-theme="dark"] .pbtn span{ border:1px solid rgba(6,182,212,.55); }
+html[data-theme="dark"] .player__bar{ background:linear-gradient(transparent,rgba(8,11,24,.92)); }
+html[data-theme="dark"] .bill{ border:1px solid rgba(236,72,153,.6); box-shadow:0 4px 0 #050815, 0 10px 0 #030610, 0 44px 70px -22px rgba(0,0,0,.95); }
+html[data-theme="dark"] .bill__glow{ background:rgba(236,72,153,.4); }
+html[data-theme="dark"] .bill__g{ border-block:1px solid rgba(6,182,212,.28); }
+html[data-theme="dark"] .cred__art{ box-shadow:0 4px 0 #01030A, 0 34px 56px -20px rgba(0,0,0,.95); }
+html[data-theme="dark"] .cred__body{ box-shadow:0 3px 0 #01030A, 0 6px 0 #01030A, 0 30px 48px -18px rgba(0,0,0,.9); }
+html[data-theme="dark"] .mc{ box-shadow:0 3px 0 #01030A, 0 22px 36px -14px rgba(0,0,0,.9); }
+html[data-theme="dark"] .mc__f{ background:rgba(8,11,24,.6); }
+html[data-theme="dark"] .gi{ box-shadow:0 3px 0 #01030A, 0 20px 34px -14px rgba(0,0,0,.9); }
+html[data-theme="dark"] .gi:hover{ box-shadow:0 3px 0 #01030A, 0 26px 44px -14px rgba(0,0,0,.95),
+                      0 0 0 1px rgba(6,182,212,.3) inset; }
+html[data-theme="dark"] .gi::before{ background:linear-gradient(transparent 45%,rgba(8,11,24,.85)); }
 html[data-theme="dark"] .gnote::before{ background:radial-gradient(58% 56% at 50% 42%,
-                           rgba(59,130,246,.20), rgba(59,130,246,.07) 55%, transparent 74%); }
-html[data-theme="dark"] .flip__f{ border:1px solid rgba(7,17,31,.14); box-shadow:0 3px 0 #C6D0DC, 0 14px 26px -12px rgba(7,17,31,.35); }
-html[data-theme="dark"] .flip__f span{ color:rgba(7,17,31,.62); }
-html[data-theme="dark"] .flip__b{ box-shadow:0 3px 0 #01050B, 0 16px 28px -12px rgba(0,0,0,.7); }
-html[data-theme="dark"] .wbox{ border:1px solid rgba(7,17,31,.12); box-shadow:0 3px 0 #DDE4EC, 0 20px 34px -16px rgba(7,17,31,.3); }
-html[data-theme="dark"] .wbox h3{ border-bottom:1px solid rgba(7,17,31,.12); }
-html[data-theme="dark"] .card3d{ box-shadow:0 4px 0 #01050B, 0 10px 0 #020710, 0 44px 66px -22px rgba(0,0,0,.95); }
-html[data-theme="dark"] .card3d__glow{ background:rgba(59,130,246,.3); }
-html[data-theme="dark"] .card3d__cube{ box-shadow:0 4px 0 #040C18, 0 12px 22px -8px rgba(0,0,0,.8); }
-html[data-theme="dark"] .foot__s{ text-shadow:1px 1px 0 rgba(59,130,246,.16), 2px 2px 0 rgba(59,130,246,.11),
-                      3px 3px 0 rgba(59,130,246,.07), 4px 4px 10px rgba(0,0,0,.5); }
+                           rgba(6,182,212,.20), rgba(6,182,212,.07) 55%, transparent 74%); }
+html[data-theme="dark"] .flip__f{ border:1px solid rgba(8,11,24,.14); box-shadow:0 3px 0 #CBD5E1, 0 14px 26px -12px rgba(8,11,24,.35); }
+html[data-theme="dark"] .flip__f span{ color:rgba(8,11,24,.62); }
+html[data-theme="dark"] .flip__b{ box-shadow:0 3px 0 #01030A, 0 16px 28px -12px rgba(0,0,0,.7); }
+html[data-theme="dark"] .wbox{ border:1px solid rgba(8,11,24,.12); box-shadow:0 3px 0 #E2E8F0, 0 20px 34px -16px rgba(8,11,24,.3); }
+html[data-theme="dark"] .wbox h3{ border-bottom:1px solid rgba(8,11,24,.12); }
+html[data-theme="dark"] .card3d{ box-shadow:0 4px 0 #01030A, 0 10px 0 #02040D, 0 44px 66px -22px rgba(0,0,0,.95); }
+html[data-theme="dark"] .card3d__glow{ background:rgba(6,182,212,.3); }
+html[data-theme="dark"] .card3d__cube{ box-shadow:0 4px 0 #050815, 0 12px 22px -8px rgba(0,0,0,.8); }
+html[data-theme="dark"] .foot__s{ text-shadow:1px 1px 0 rgba(6,182,212,.16), 2px 2px 0 rgba(6,182,212,.11),
+                      3px 3px 0 rgba(6,182,212,.07), 4px 4px 10px rgba(0,0,0,.5); }
 html[data-theme="dark"] .aura__bloom{ background:radial-gradient(circle closest-side,
-                rgba(59,130,246,.19), rgba(59,130,246,.09) 38%,
-                rgba(7,17,31,.05) 62%, transparent 76%); }
-html[data-theme="dark"] .lb,.vm{ background:rgba(2,7,16,.97); }
-html[data-theme="dark"] .fitbg{ box-shadow:inset 0 0 120px 40px rgba(7,17,31,.75); }
-html[data-theme="dark"] .zoomable:focus-visible{ box-shadow:0 0 0 2px var(--gold), 0 0 0 6px rgba(59,130,246,.22); }
-html[data-theme="dark"] .zi{ border:1px solid rgba(59,130,246,.55); background:
+                rgba(6,182,212,.19), rgba(6,182,212,.09) 38%,
+                rgba(8,11,24,.05) 62%, transparent 76%); }
+html[data-theme="dark"] .lb,.vm{ background:rgba(1,3,10,.97); }
+html[data-theme="dark"] .fitbg{ box-shadow:inset 0 0 120px 40px rgba(8,11,24,.75); }
+html[data-theme="dark"] .zoomable:focus-visible{ box-shadow:0 0 0 2px var(--gold), 0 0 0 6px rgba(6,182,212,.22); }
+html[data-theme="dark"] .zi{ border:1px solid rgba(6,182,212,.55); background:
     linear-gradient(var(--gold),var(--gold)) center/11px 1.6px no-repeat,
     linear-gradient(var(--gold),var(--gold)) center/1.6px 11px no-repeat,
-    rgba(7,17,31,.74); }
-html[data-theme="dark"] .pl__art{ border:1px solid rgba(59,130,246,.34); box-shadow:0 4px 0 #040C18, 0 34px 60px -20px rgba(0,0,0,.95); }
-html[data-theme="dark"] .fb i{ background:rgba(59,130,246,.15); }
-html[data-theme="dark"] .fb:hover i{ background:rgba(59,130,246,.24); }
-html[data-theme="dark"] .gi__e{ background:rgba(7,17,31,.74); border:1px solid rgba(59,130,246,.42); }
+    rgba(8,11,24,.74); }
+html[data-theme="dark"] .pl__art{ border:1px solid rgba(6,182,212,.34); box-shadow:0 4px 0 #050815, 0 34px 60px -20px rgba(0,0,0,.95); }
+html[data-theme="dark"] .fb i{ background:rgba(6,182,212,.15); }
+html[data-theme="dark"] .fb:hover i{ background:rgba(6,182,212,.24); }
+html[data-theme="dark"] .gi__e{ background:rgba(8,11,24,.74); border:1px solid rgba(6,182,212,.42); }
 
 
 /* ==========================================================================
-   LIGHT THEME - MIDNIGHT BLUE + SILVER, ON PAPER
+   LIGHT THEME - AURORA CINEMA, ON PAPER
    Modern · cinematic · young · stylish
 
-   Where the dark theme is electric blue struck on midnight navy, this one
-   is the same blue laid on paper: a cool near-white ground, a soft blue
-   for the bands that sit back, near-black for the type, and a deeper blue
-   for everything the dark side gives to electric.
+   The same four hues, and the reading of them inverts. On the night
+   ground cyan was the only one that could be read small and purple was
+   the worst of them; on paper it is the other way round:
 
-   The hue slots the base sheet still names - navy, purple, orange - hold
-   the nearest cool neutral, so nothing on the page reverts to the five-hue
-   sheet this replaced. Only the error red and the one warm accent stay
-   coloured, because both of them are signals rather than decoration.
+     purple  5.46:1     blue  4.95:1     cyan  3.53:1     pink  4.40:1
 
-     Background     #F4F7FA   the ground
-     Soft Blue      #E8EEF5   the bands that sit back
-     Text           #101828   primary type
-     Gray           #667085   secondary type
-     Blue Accent    #2563EB   the accent, dark enough for small type
-     Light Accent   #60A5FA   the accent on hover, and fills
-     Border         #D0DAE6   the ledge every card stands on
+   So blue takes the accent here, purple takes the hover and the fills,
+   and cyan drops back to the glow it can still do at any contrast. The
+   palette names a Surface as well as a Background, so the bands that used
+   to sit back now come forward in white and the ground goes a shade
+   cooler behind them.
 
-   The midnight theme above is untouched.
+     Background   #F8FAFF   the ground
+     Surface      #FFFFFF   cards, and the bands that come forward
+     Text         #111827   primary type
+     Slate        #64748B   secondary type, which the palette leaves open
+     Blue         #2563EB   the accent
+     Purple       #7C3AED   the hover, and the sweep
+     Cyan         #0891B2   the glow
+     Pink         #DB2777   the highlight
+
+   The night theme above is untouched.
    ========================================================================== */
 html[data-theme="light"]{
   --accent-rgb: 37,99,235;
-  --silver: #667085;      /* Gray, for type and icons */
-  /* the hue slots the base sheet still names, each holding the nearest
-     cool neutral so nothing on the page reverts to the old five-hue sheet */
-  --navy:   #667085;
-  --purple: #98A2B3;
-  --orange: #F79009;
-  --red:    #B42318;      /* for errors and the one red band */
-  --white:  #F4F7FA;      /* Background — the ground */
-  --green:  #101828;      /* the role the forest held: ink on the pale band */
+  --star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.6 6.8L21.5 11l-6.9 2.2L12 20l-2.6-6.8L2.5 11l6.9-2.2z' fill='%232563EB'/%3E%3C/svg%3E");
+  --silver: #64748B;      /* Slate — the palette leaves this open */
+  /* the hue slots the base sheet still names */
+  --navy:   #64748B;
+  --purple: #94A3B8;
+  --orange: #0891B2;      /* Cyan — the glow on the billboard */
+  --red:    #DB2777;      /* Pink — the highlight, and the one red band */
+  /* Pink is 4.40:1 on the background, which is right for a fill and short
+     for the error text the form sets in it. Five percent darker on the
+     same hue clears 4.5:1 on all three grounds; only the errors take it. */
+  --red-ink: #D22371;
+  --white:  #F8FAFF;      /* Background — the ground */
+  --green:  #111827;      /* the role the forest held: ink on the pale band */
 
-  --gold:    #2563EB;   /* Blue Accent — 4.81:1 on the ground, so it can
-                           carry the small type the page sets it in */
-  --gold-lt: #60A5FA;   /* Light Accent — the hover accent, and fills */
-  /* The accent clears AA on the background but lands at 4.43:1 on the
-     soft-blue band, which some of that small type sits on. One percent
-     darker on the same hue clears 4.5:1 on both, so those few labels take
-     this and everything else keeps the palette colour exactly as given. */
-  --gold-ink: #2361EB;
-  --gold-dk: #1A44BE;
-  --gold-metal: linear-gradient(158deg,#9DC5FC 0%,#60A5FA 46%,#2563EB 100%);
-  /* this theme never restated these, so every button and badge was
-     standing on the base sheet's warm gold ledge - which matched a gold
-     accent and does not match a blue one */
-  --metal-ink: #0B1836;
-  --metal-rim: #1A44BE;
+  --gold:    #2563EB;   /* Blue — 4.95:1 on the background, 5.17:1 on the
+                           surface, 4.73:1 on the recessed band, so it can
+                           carry the small type the page sets it in and
+                           needs no stepped-down twin the way gold did */
+  --gold-lt: #7C3AED;   /* Purple — the hover accent, and fills */
+  --gold-ink: #2563EB;
+  --gold-dk: #1E3A8A;
+  /* the aurora itself: purple through blue, on the buttons and the badges */
+  --gold-metal: linear-gradient(158deg,#A78BFA 0%,#7C3AED 46%,#2563EB 100%);
+  /* that face is saturated all the way across, so what is written on it
+     is white rather than the near-black a pale metal wanted */
+  --metal-ink: #FFFFFF;
+  --metal-rim: #1E3A8A;
 
-  --black:   #F4F7FA;   /* Background — the page ground */
-  --card:    #F4F7FA;
-  --card-hi: #F4F7FA;
-  --sunk:    #E8EEF5;   /* Soft Blue */
+  --black:   #F8FAFF;   /* Background — the page ground */
+  --card:    #FFFFFF;   /* Surface — every card stands on white */
+  --card-hi: #FFFFFF;
+  --sunk:    #F1F5FD;   /* the one step back from the background */
 
-  --ink:  #101828;      /* Text */
-  --soft: rgba(16,24,40,.76);
-  --mute: #667085;      /* Gray */
+  --ink:  #111827;      /* Text */
+  --soft: rgba(17,24,39,.76);
+  --mute: #64748B;      /* Gray */
   --hair: rgba(37,99,235,.45);   /* the accent drawn as a line */
-  --hairw:#D0DAE6;                /* Border, as the palette names it */
+  --hairw:#DCE3F0;                /* Border, as the palette names it */
 }
-html[data-theme="light"] .sec--green { background:#E8EEF5; }
-html[data-theme="light"] .sec--deep  { background:linear-gradient(180deg,#F4F7FA 0%,#E8EEF5 100%); }
-html[data-theme="light"] .sec--red   { background:linear-gradient(168deg,#E4EDF7 0%,#E4EDF7 50%,#E4EDF7 100%); }
-html[data-theme="light"] .sec--forest{ background:linear-gradient(168deg,#F4F7FA 0%,#E8EEF5 50%,#F4F7FA 100%); }
-html[data-theme="light"] .sec--navy  { background:linear-gradient(168deg,#E8EEF5 0%,#E1E9F2 52%,#E8EEF5 100%); }
+html[data-theme="light"] .sec--green { background:#FFFFFF; }
+html[data-theme="light"] .sec--deep  { background:linear-gradient(180deg,#F8FAFF 0%,#FFFFFF 100%); }
+html[data-theme="light"] .sec--red   { background:linear-gradient(168deg,#F4F7FF 0%,#F4F7FF 50%,#F4F7FF 100%); }
+html[data-theme="light"] .sec--forest{ background:linear-gradient(168deg,#F8FAFF 0%,#FFFFFF 50%,#F8FAFF 100%); }
+html[data-theme="light"] .sec--navy  { background:linear-gradient(168deg,#FFFFFF 0%,#F1F5FD 52%,#FFFFFF 100%); }
 html[data-theme="light"] .hero__giant{
-  --g1:rgba(16,24,40,.34);   --g2:rgba(16,24,40,.20);
-  --g3:rgba(37,99,235,.40); --g4:rgba(16,24,40,.15);
+  --g1:rgba(17,24,39,.34);   --g2:rgba(17,24,39,.20);
+  --g3:rgba(37,99,235,.40); --g4:rgba(17,24,39,.15);
   background-blend-mode:soft-light; }
 html[data-theme="light"] .hero { background:
     radial-gradient(ellipse 60% 54% at 50% 42%, rgba(37,99,235,.10), transparent 72%),
-    radial-gradient(ellipse at 22% 34%,#F4F7FA 0%,#F4F7FA 46%,#E8EEF5 100%); }
-html[data-theme="light"] .intro{ background:radial-gradient(ellipse at 50% 40%,#F4F7FA,#E8EEF5 70%); }
-html[data-theme="light"] .foot { background:linear-gradient(180deg,#E8EEF5,#D0DAE6); }
-html[data-theme="light"] .hdr.stuck{ background:rgba(244,247,250,.92);
-  box-shadow:0 10px 30px -14px rgba(16,24,40,.22); }
+    radial-gradient(ellipse at 22% 34%,#F8FAFF 0%,#F8FAFF 46%,#FFFFFF 100%); }
+html[data-theme="light"] .intro{ background:radial-gradient(ellipse at 50% 40%,#F8FAFF,#FFFFFF 70%); }
+html[data-theme="light"] .foot { background:linear-gradient(180deg,#FFFFFF,#DCE3F0); }
+html[data-theme="light"] .hdr.stuck{ background:rgba(248,250,255,.92);
+  box-shadow:0 10px 30px -14px rgba(17,24,39,.22); }
 html[data-theme="light"] .h3d{
   color:var(--ink);
   text-shadow:
-     1px 1px 0 #60A5FA, 2px 2px 0 #3B82F6, 3px 3px 0 #2563EB,
-     4px 4px 0 #2563EB, 5px 5px 0 #1A44BE, 6px 6px 12px rgba(16,24,40,.28),
-     0 0 30px rgba(96,165,250,.28); }
+     1px 1px 0 #7C3AED, 2px 2px 0 #4F46E5, 3px 3px 0 #2563EB,
+     4px 4px 0 #2563EB, 5px 5px 0 #1E3A8A, 6px 6px 12px rgba(17,24,39,.28),
+     0 0 30px rgba(124,58,237,.28); }
 html[data-theme="light"] .btn--gold:hover{
-  box-shadow:0 6px 0 #2563EB, 0 20px 32px -10px rgba(96,165,250,.55); }
-html[data-theme="light"] .btn--navy{ background:linear-gradient(158deg,#60A5FA,#2563EB);
+  box-shadow:0 6px 0 #2563EB, 0 20px 32px -10px rgba(124,58,237,.55); }
+html[data-theme="light"] .btn--navy{ background:linear-gradient(158deg,#7C3AED,#2563EB);
   border-color:#2563EB; }
 html[data-theme="light"] .btn--navy:hover{
-  box-shadow:0 6px 0 #1D2939, 0 20px 32px -10px rgba(37,99,235,.45); }
-html[data-theme="light"] .btn--red{ background:linear-gradient(158deg,#F79009,#B42318);
-  border-color:#B42318; }
+  box-shadow:0 6px 0 #1F2937, 0 20px 32px -10px rgba(37,99,235,.45); }
+html[data-theme="light"] .btn--red{ background:linear-gradient(158deg,#0891B2,#DB2777);
+  border-color:#DB2777; }
 html[data-theme="light"] .btn--red:hover{
-  box-shadow:0 6px 0 #912018, 0 20px 32px -10px rgba(180,35,24,.5); }
-html[data-theme="light"] .btn--dark{ background:linear-gradient(158deg,#60A5FA,#2563EB);
-  border-color:#2563EB; color:#F4F7FA; }
+  box-shadow:0 6px 0 #9D174D, 0 20px 32px -10px rgba(219,39,119,.5); }
+html[data-theme="light"] .btn--dark{ background:linear-gradient(158deg,#7C3AED,#2563EB);
+  border-color:#2563EB; color:#F8FAFF; }
 html[data-theme="light"] .btn--ghost{ background:rgba(37,99,235,.05); }
 html[data-theme="light"] .chip3d{
-  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 3px 0 #D0DAE6,
-             0 10px 18px -8px rgba(16,24,40,.22); }
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 3px 0 #DCE3F0,
+             0 10px 18px -8px rgba(17,24,39,.22); }
 html[data-theme="light"] .chip3d:hover{
-  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 7px 0 #D0DAE6,
-             0 20px 28px -10px rgba(16,24,40,.28); }
-html[data-theme="light"] .chip3d--red  { background:linear-gradient(158deg,#E4EDF7,#E4EDF7);
-  border-color:rgba(180,35,24,.42);
-  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 3px 0 #E4EDF7,
-             0 10px 18px -8px rgba(16,24,40,.2); }
-html[data-theme="light"] .chip3d--red:hover{ background:linear-gradient(158deg,#DFE9F4,#E4EDF7); }
-html[data-theme="light"] .chip3d--green{ background:linear-gradient(158deg,#F4F7FA,#E8EEF5);
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 7px 0 #DCE3F0,
+             0 20px 28px -10px rgba(17,24,39,.28); }
+html[data-theme="light"] .chip3d--red  { background:linear-gradient(158deg,#F4F7FF,#F4F7FF);
+  border-color:rgba(219,39,119,.42);
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 3px 0 #F4F7FF,
+             0 10px 18px -8px rgba(17,24,39,.2); }
+html[data-theme="light"] .chip3d--red:hover{ background:linear-gradient(158deg,#EEF2FC,#F4F7FF); }
+html[data-theme="light"] .chip3d--green{ background:linear-gradient(158deg,#F8FAFF,#FFFFFF);
   border-color:rgba(37,99,235,.2); }
-html[data-theme="light"] .chip3d--navy { background:linear-gradient(158deg,#E8EEF5,#E8EEF5);
+html[data-theme="light"] .chip3d--navy { background:linear-gradient(158deg,#FFFFFF,#FFFFFF);
   border-color:rgba(37,99,235,.38); }
-html[data-theme="light"] .chip3d--dark { background:linear-gradient(158deg,#60A5FA,#2563EB);
-  border-color:#2563EB; color:#F4F7FA;
-  box-shadow:0 3px 0 rgba(16,24,40,.35), 0 10px 18px -8px rgba(16,24,40,.35); }
+html[data-theme="light"] .chip3d--dark { background:linear-gradient(158deg,#7C3AED,#2563EB);
+  border-color:#2563EB; color:#F8FAFF;
+  box-shadow:0 3px 0 rgba(17,24,39,.35), 0 10px 18px -8px rgba(17,24,39,.35); }
 html[data-theme="light"] .chip3d--dark i{ color:var(--gold-lt); }
 html[data-theme="light"] .chip3d--dark span,
-html[data-theme="light"] .chip3d--dark b i{ color:rgba(244,247,250,.72); }
+html[data-theme="light"] .chip3d--dark b i{ color:rgba(248,250,255,.72); }
 html[data-theme="light"] .fb,
 html[data-theme="light"] .snd,
 html[data-theme="light"] .thm{ background:rgba(37,99,235,.04);
-  box-shadow:0 2px 0 rgba(16,24,40,.12); }
-html[data-theme="light"] .stack__glow{ background:rgba(96,165,250,.4); }
+  box-shadow:0 2px 0 rgba(17,24,39,.12); }
+html[data-theme="light"] .stack__glow{ background:rgba(124,58,237,.4); }
 html[data-theme="light"] .stack__back{
-  background:linear-gradient(158deg,rgba(152,162,179,.16),rgba(37,99,235,.16)); }
+  background:linear-gradient(158deg,rgba(148,163,184,.16),rgba(37,99,235,.16)); }
 html[data-theme="light"] .stack__mid{
-  background:linear-gradient(158deg,rgba(37,99,235,.14),rgba(96,165,250,.18)); }
-html[data-theme="light"] .stack__face{ box-shadow:0 40px 70px -24px rgba(16,24,40,.4); }
+  background:linear-gradient(158deg,rgba(37,99,235,.14),rgba(124,58,237,.18)); }
+html[data-theme="light"] .stack__face{ box-shadow:0 40px 70px -24px rgba(17,24,39,.4); }
 html[data-theme="light"] .cf__i.mid{
-  box-shadow:0 40px 70px -22px rgba(16,24,40,.35), 0 0 60px rgba(96,165,250,.35); }
+  box-shadow:0 40px 70px -22px rgba(17,24,39,.35), 0 0 60px rgba(124,58,237,.35); }
 html[data-theme="light"] .gnote p{ color:var(--ink); }
 html[data-theme="light"] .gnote::before{
   background:radial-gradient(58% 56% at 50% 42%,
-             rgba(96,165,250,.34), rgba(152,162,179,.10) 55%, transparent 74%); }
-html[data-theme="light"] .flip__f{ background:linear-gradient(158deg,#F4F7FA,#E8EEF5);
+             rgba(124,58,237,.34), rgba(148,163,184,.10) 55%, transparent 74%); }
+html[data-theme="light"] .flip__f{ background:linear-gradient(158deg,#F8FAFF,#FFFFFF);
   border-color:rgba(37,99,235,.14);
-  box-shadow:0 3px 0 #D0DAE6, 0 14px 26px -12px rgba(16,24,40,.3); }
-html[data-theme="light"] .flip__b{ background:linear-gradient(158deg,#F4F7FA,#E8EEF5);
+  box-shadow:0 3px 0 #DCE3F0, 0 14px 26px -12px rgba(17,24,39,.3); }
+html[data-theme="light"] .flip__b{ background:linear-gradient(158deg,#F8FAFF,#FFFFFF);
   border-color:var(--gold); }
 html[data-theme="light"] .flip__b b{ color:var(--ink); }
 html[data-theme="light"] .f input,
 html[data-theme="light"] .f select,
-html[data-theme="light"] .f textarea{ box-shadow:0 2px 5px rgba(16,24,40,.07) inset; }
+html[data-theme="light"] .f textarea{ box-shadow:0 2px 5px rgba(17,24,39,.07) inset; }
 html[data-theme="light"] .f label i,
 html[data-theme="light"] .f .e,
-html[data-theme="light"] .fnote.no{ color:var(--red); }
+html[data-theme="light"] .fnote.no{ color:var(--red-ink); }
 html[data-theme="light"] .f.bad input,
 html[data-theme="light"] .f.bad select,
 html[data-theme="light"] .f.bad textarea{ border-color:var(--red); }
 html[data-theme="light"] .f input[type="date"]::-webkit-calendar-picker-indicator{ filter:none; }
 html[data-theme="light"] .lb,
-html[data-theme="light"] .vm{ background:rgba(244,247,250,.97); }
-html[data-theme="light"] .lb__s img{ box-shadow:0 40px 80px -24px rgba(16,24,40,.45); }
+html[data-theme="light"] .vm{ background:rgba(248,250,255,.97); }
+html[data-theme="light"] .lb__s img{ box-shadow:0 40px 80px -24px rgba(17,24,39,.45); }
 html[data-theme="light"] .fitbg{ filter:blur(26px) saturate(1.15) brightness(1.02);
-  box-shadow:inset 0 0 120px 40px rgba(244,247,250,.72); }
+  box-shadow:inset 0 0 120px 40px rgba(248,250,255,.72); }
 html[data-theme="light"] .slab,
 html[data-theme="light"] .pc,
 html[data-theme="light"] .rcard,
@@ -2171,59 +2178,59 @@ html[data-theme="light"] .cred__body,
 html[data-theme="light"] .player__in,
 html[data-theme="light"] .logo__cube,
 html[data-theme="light"] .cf__i{
-  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 3px 0 #D0DAE6,
-             0 22px 34px -18px rgba(16,24,40,.28); }
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 3px 0 #DCE3F0,
+             0 22px 34px -18px rgba(17,24,39,.28); }
 html[data-theme="light"] .rpc:hover,
 html[data-theme="light"] .rpc:focus-visible{
-  box-shadow:0 3px 0 #D0DAE6, 0 40px 66px -18px rgba(16,24,40,.42),
-             0 0 0 1px rgba(96,165,250,.55); }
+  box-shadow:0 3px 0 #DCE3F0, 0 40px 66px -18px rgba(17,24,39,.42),
+             0 0 0 1px rgba(124,58,237,.55); }
 html[data-theme="light"] .gi:hover{
-  box-shadow:0 3px 0 #D0DAE6, 0 26px 44px -16px rgba(16,24,40,.34),
-             0 0 0 1px rgba(96,165,250,.5) inset; }
-html[data-theme="light"] .card3d{ background:linear-gradient(158deg,#F4F7FA,#E8EEF5);
+  box-shadow:0 3px 0 #DCE3F0, 0 26px 44px -16px rgba(17,24,39,.34),
+             0 0 0 1px rgba(124,58,237,.5) inset; }
+html[data-theme="light"] .card3d{ background:linear-gradient(158deg,#F8FAFF,#FFFFFF);
   border-color:var(--gold);
-  box-shadow:0 4px 0 #D0DAE6, 0 10px 0 #D0DAE6, 0 44px 66px -24px rgba(16,24,40,.32); }
-html[data-theme="light"] .card3d__glow{ background:rgba(96,165,250,.34); }
-html[data-theme="light"] .card3d__cube{ background:linear-gradient(158deg,#60A5FA,#2563EB);
-  border-color:#2563EB; box-shadow:0 4px 0 #1D2939, 0 12px 22px -8px rgba(16,24,40,.35); }
-html[data-theme="light"] .bill{ background:linear-gradient(158deg,#E4EDF7,#E4EDF7);
-  border-color:rgba(180,35,24,.42);
-  box-shadow:0 4px 0 #E4EDF7, 0 10px 0 #DFE9F4, 0 44px 70px -24px rgba(16,24,40,.3); }
-html[data-theme="light"] .bill__glow{ background:rgba(247,144,9,.34); }
+  box-shadow:0 4px 0 #DCE3F0, 0 10px 0 #DCE3F0, 0 44px 66px -24px rgba(17,24,39,.32); }
+html[data-theme="light"] .card3d__glow{ background:rgba(124,58,237,.34); }
+html[data-theme="light"] .card3d__cube{ background:linear-gradient(158deg,#7C3AED,#2563EB);
+  border-color:#2563EB; box-shadow:0 4px 0 #1F2937, 0 12px 22px -8px rgba(17,24,39,.35); }
+html[data-theme="light"] .bill{ background:linear-gradient(158deg,#F4F7FF,#F4F7FF);
+  border-color:rgba(219,39,119,.42);
+  box-shadow:0 4px 0 #F4F7FF, 0 10px 0 #EEF2FC, 0 44px 70px -24px rgba(17,24,39,.3); }
+html[data-theme="light"] .bill__glow{ background:rgba(8,145,178,.34); }
 html[data-theme="light"] .socs a{ background:rgba(37,99,235,.05);
-  box-shadow:0 2px 0 rgba(16,24,40,.12); }
-html[data-theme="light"] .cred__body{ background:linear-gradient(158deg,#F4F7FA,#E8EEF5);
+  box-shadow:0 2px 0 rgba(17,24,39,.12); }
+html[data-theme="light"] .cred__body{ background:linear-gradient(158deg,#F8FAFF,#FFFFFF);
   border-color:rgba(37,99,235,.24);
-  box-shadow:0 3px 0 #D0DAE6, 0 6px 0 #E8EEF5, 0 30px 48px -20px rgba(16,24,40,.3); }
+  box-shadow:0 3px 0 #DCE3F0, 0 6px 0 #FFFFFF, 0 30px 48px -20px rgba(17,24,39,.3); }
 html[data-theme="light"] .cred__art{
-  box-shadow:0 4px 0 #D0DAE6, 0 34px 56px -22px rgba(16,24,40,.34); }
+  box-shadow:0 4px 0 #DCE3F0, 0 34px 56px -22px rgba(17,24,39,.34); }
 html[data-theme="light"] .aura__bloom{ display:none; }
 html[data-theme="light"] .aura{ transition:none; }
 html[data-theme="light"] .aura__t{ background:var(--navy); }
 html[data-theme="light"] body{ font-weight:400; }
-html[data-theme="light"] .lede{ color:#344054; }
+html[data-theme="light"] .lede{ color:#374151; }
 html[data-theme="light"] .kv dd,
 html[data-theme="light"] .card3d__l li,
 html[data-theme="light"] .bill__g b,
-html[data-theme="light"] .mc__b h3{ color:#1D2939; }
+html[data-theme="light"] .mc__b h3{ color:#1F2937; }
 html[data-theme="light"] .kv dt,
 html[data-theme="light"] .mini,
 html[data-theme="light"] .note,
 html[data-theme="light"] .none,
 html[data-theme="light"] .chip3d span,
 html[data-theme="light"] .card3d__c,
-html[data-theme="light"] .bill__g span{ color:#667085; }
+html[data-theme="light"] .bill__g span{ color:#64748B; }
 html[data-theme="light"] .eyebrow{ color:var(--gold-ink); }
 html[data-theme="light"] .eyebrow i{ background:var(--gold-lt); }
 html[data-theme="light"] .sec[data-code]::after{ color:var(--gold-ink); opacity:.8; }
-html[data-theme="light"] .chip3d b{ color:#101828; }
+html[data-theme="light"] .chip3d b{ color:#111827; }
 html[data-theme="light"] .chip3d i{ color:var(--gold-ink); }
-html[data-theme="light"] .chip3d--dark b{ color:#F4F7FA; }
+html[data-theme="light"] .chip3d--dark b{ color:#F8FAFF; }
 html[data-theme="light"] .h3d{
-  color:#101828;
+  color:#111827;
   text-shadow:
-     1px 1px 0 #60A5FA, 2px 2px 0 #3B82F6, 3px 3px 0 #2563EB,
-     4px 4px 10px rgba(16,24,40,.16); }
+     1px 1px 0 #7C3AED, 2px 2px 0 #4F46E5, 3px 3px 0 #2563EB,
+     4px 4px 10px rgba(17,24,39,.16); }
 html[data-theme="light"] .pc img,
 html[data-theme="light"] .rpc img,
 html[data-theme="light"] .gi img,
@@ -2236,7 +2243,7 @@ html[data-theme="light"] .mc:hover .mc__img img{ filter:saturate(1.05) brightnes
 html[data-theme="light"] .player__in img{ filter:brightness(.96) saturate(1.02); }
 html[data-theme="light"] .player:hover .player__in img{ filter:brightness(1.02); }
 html[data-theme="light"] .fitbg{ filter:blur(30px) saturate(1.1) brightness(1.14);
-  box-shadow:inset 0 0 120px 44px rgba(244,247,250,.6); }
+  box-shadow:inset 0 0 120px 44px rgba(248,250,255,.6); }
 html[data-theme="light"] .pc:hover .fitbg,
 html[data-theme="light"] .gi:hover .fitbg,
 html[data-theme="light"] .mc:hover .fitbg,
@@ -2244,32 +2251,32 @@ html[data-theme="light"] .cf__i.mid .fitbg,
 html[data-theme="light"] .player:hover .fitbg{
   filter:blur(34px) saturate(1.25) brightness(1.08); }
 html[data-theme="light"] .gi::before{
-  background:linear-gradient(transparent 58%,rgba(16,24,40,.78)); opacity:.3; }
-html[data-theme="light"] .gi::after{ color:#60A5FA; text-shadow:0 1px 3px rgba(16,24,40,.9); }
+  background:linear-gradient(transparent 58%,rgba(17,24,39,.78)); opacity:.3; }
+html[data-theme="light"] .gi::after{ color:#7C3AED; text-shadow:0 1px 3px rgba(17,24,39,.9); }
 html[data-theme="light"] .cf__i::after{
-  background:linear-gradient(180deg,transparent 45%,rgba(16,24,40,.55)); }
-html[data-theme="light"] .sec--deep  { background:#F4F7FA; }
-html[data-theme="light"] .sec--green { background:linear-gradient(180deg,#F4F7FA,#E8EEF5); }
-html[data-theme="light"] .sec--forest{ background:linear-gradient(168deg,#E8EEF5 0%,#E8EEF5 50%,#E8EEF5 100%); }
-html[data-theme="light"] .foot{ background:linear-gradient(180deg,#E8EEF5,#D0DAE6); }
+  background:linear-gradient(180deg,transparent 45%,rgba(17,24,39,.55)); }
+html[data-theme="light"] .sec--deep  { background:#F8FAFF; }
+html[data-theme="light"] .sec--green { background:linear-gradient(180deg,#F8FAFF,#FFFFFF); }
+html[data-theme="light"] .sec--forest{ background:linear-gradient(168deg,#FFFFFF 0%,#FFFFFF 50%,#FFFFFF 100%); }
+html[data-theme="light"] .foot{ background:linear-gradient(180deg,#FFFFFF,#DCE3F0); }
 html[data-theme="light"] .zi{
   border-color:rgba(37,99,235,.5);
   background:
     linear-gradient(var(--gold),var(--gold)) center/11px 1.6px no-repeat,
     linear-gradient(var(--gold),var(--gold)) center/1.6px 11px no-repeat,
-    rgba(244,247,250,.9);
-  box-shadow:0 2px 8px -2px rgba(16,24,40,.3);
+    rgba(248,250,255,.9);
+  box-shadow:0 2px 8px -2px rgba(17,24,39,.3);
 }
 html[data-theme="light"] .rpc > .zi{ background-size:8px 1.4px, 1.4px 8px, auto; }
 html[data-theme="light"] .pl__art{
   border-color:rgba(37,99,235,.4);
-  box-shadow:0 4px 0 #D0DAE6, 0 34px 56px -22px rgba(16,24,40,.34); }
+  box-shadow:0 4px 0 #DCE3F0, 0 34px 56px -22px rgba(17,24,39,.34); }
 html[data-theme="light"] .fb i{ background:rgba(37,99,235,.16); color:var(--gold-ink); }
-html[data-theme="light"] .fb.on i{ background:rgba(16,24,40,.2); color:#101828; }
+html[data-theme="light"] .fb.on i{ background:rgba(17,24,39,.2); color:#111827; }
 html[data-theme="light"] .gi__e{
-  color:var(--gold-ink); background:rgba(244,247,250,.9);
+  color:var(--gold-ink); background:rgba(248,250,255,.9);
   border-color:rgba(37,99,235,.45);
-  box-shadow:0 2px 10px -4px rgba(16,24,40,.34); }
+  box-shadow:0 2px 10px -4px rgba(17,24,39,.34); }
 /* ---- the primary button, as the palette sheet draws it -------------
    The reference shows one button, a royal-blue-to-purple sweep. The
    gold-metal gradient stays golden yellow, since that is a primary
@@ -2277,74 +2284,74 @@ html[data-theme="light"] .gi__e{
    as well as the buttons; the sweep goes to the secondary button, which
    is the one that sits beside it in the hero. */
 html[data-theme="light"] .btn--navy{
-  background:linear-gradient(103deg,#1D2939 0%,#101828 100%);
-  border-color:rgba(16,24,40,.5); color:#F4F7FA;
-  box-shadow:0 3px 0 #101828, 0 14px 26px -12px rgba(16,24,40,.4); }
+  background:linear-gradient(103deg,#1F2937 0%,#111827 100%);
+  border-color:rgba(17,24,39,.5); color:#F8FAFF;
+  box-shadow:0 3px 0 #111827, 0 14px 26px -12px rgba(17,24,39,.4); }
 html[data-theme="light"] .btn--navy:hover{
-  background:linear-gradient(103deg,#101828 0%,#1D2939 100%);
-  box-shadow:0 4px 0 #101828, 0 18px 30px -12px rgba(16,24,40,.45); }
+  background:linear-gradient(103deg,#111827 0%,#1F2937 100%);
+  box-shadow:0 4px 0 #111827, 0 18px 30px -12px rgba(17,24,39,.45); }
 
 /* ---- the pieces added since the cream sheet was written ---- */
 html[data-theme="light"] .gi__e{
-  background:rgba(244,247,250,.92); border-color:rgba(37,99,235,.42); color:var(--gold-ink);
-  box-shadow:0 2px 10px -3px rgba(16,24,40,.28); }
+  background:rgba(248,250,255,.92); border-color:rgba(37,99,235,.42); color:var(--gold-ink);
+  box-shadow:0 2px 10px -3px rgba(17,24,39,.28); }
 html[data-theme="light"] .zi{
   background:linear-gradient(#2563EB,#2563EB) center/11px 1.6px no-repeat,
              linear-gradient(#2563EB,#2563EB) center/1.6px 11px no-repeat,
-             rgba(244,247,250,.94);
-  border-color:rgba(37,99,235,.45); box-shadow:0 2px 8px -2px rgba(16,24,40,.3); }
+             rgba(248,250,255,.94);
+  border-color:rgba(37,99,235,.45); box-shadow:0 2px 8px -2px rgba(17,24,39,.3); }
 html[data-theme="light"] .rpc > .zi{ background-size:8px 1.4px, 1.4px 8px, auto; }
-html[data-theme="light"] .fb i{ background:rgba(96,165,250,.22); color:var(--gold-ink); }
-html[data-theme="light"] .fb.on i{ background:rgba(16,24,40,.16); color:#101828; }
+html[data-theme="light"] .fb i{ background:rgba(124,58,237,.22); color:var(--gold-ink); }
+html[data-theme="light"] .fb.on i{ background:rgba(17,24,39,.16); color:#111827; }
 html[data-theme="light"] .pl__art{
   border-color:rgba(37,99,235,.32);
-  box-shadow:0 4px 0 #D0DAE6, 0 34px 56px -22px rgba(16,24,40,.34); }
+  box-shadow:0 4px 0 #DCE3F0, 0 34px 56px -22px rgba(17,24,39,.34); }
 
 /* ---- what the sheet still paints dark on a white ground. The scrims are
         deliberately left out: a gradient that sits ON a photograph so the
         caption over it can be read stays dark in either theme. ---- */
 html[data-theme="light"] .raise{ box-shadow:
-    0 1px 0 rgba(244,247,250,.09) inset,
+    0 1px 0 rgba(248,250,255,.09) inset,
     0 -1px 0 rgba(0,0,0,.5) inset,
-    0 2px 0 #D0DAE6,
-    0 4px 0 #D0DAE6,
-    0 8px 0 #D0DAE6,
+    0 2px 0 #DCE3F0,
+    0 4px 0 #DCE3F0,
+    0 8px 0 #DCE3F0,
     0 26px 40px -14px rgba(0,0,0,.85); }
 html[data-theme="light"] .h3d--dark{ text-shadow:
-     1px 1px 0 #60A5FA,  2px 2px 0 #3B82F6,  3px 3px 0 #2563EB,
-     4px 4px 0 #1D4FD8,  5px 5px 0 #1A44BE,  6px 6px 10px rgba(16,24,40,.3); }
-html[data-theme="light"] .sec--white .lede{ color:rgba(16,24,40,.7); }
-html[data-theme="light"] .rnd{ box-shadow:0 3px 0 #D0DAE6, 0 10px 18px -8px rgba(0,0,0,.8); }
-html[data-theme="light"] .cube__f{ background:linear-gradient(158deg,rgba(152,162,179,.9),rgba(16,24,40,.92)); }
-html[data-theme="light"] .cube__f--bt{ background:linear-gradient(158deg,#E8EEF5,#F4F7FA); }
-html[data-theme="light"] .logo__cube{ box-shadow:0 3px 0 #D0DAE6, 0 8px 16px -6px rgba(0,0,0,.8); }
+     1px 1px 0 #7C3AED,  2px 2px 0 #4F46E5,  3px 3px 0 #2563EB,
+     4px 4px 0 #1E40AF,  5px 5px 0 #1E3A8A,  6px 6px 10px rgba(17,24,39,.3); }
+html[data-theme="light"] .sec--white .lede{ color:rgba(17,24,39,.7); }
+html[data-theme="light"] .rnd{ box-shadow:0 3px 0 #DCE3F0, 0 10px 18px -8px rgba(0,0,0,.8); }
+html[data-theme="light"] .cube__f{ background:linear-gradient(158deg,rgba(148,163,184,.9),rgba(17,24,39,.92)); }
+html[data-theme="light"] .cube__f--bt{ background:linear-gradient(158deg,#FFFFFF,#F8FAFF); }
+html[data-theme="light"] .logo__cube{ box-shadow:0 3px 0 #DCE3F0, 0 8px 16px -6px rgba(0,0,0,.8); }
 html[data-theme="light"] .orb--b{ background:rgba(37,99,235,.55); }
-html[data-theme="light"] .slab{ box-shadow:0 1px 0 rgba(244,247,250,.09) inset, 0 3px 0 #D0DAE6,
-             0 6px 0 #D0DAE6, 0 28px 44px -16px rgba(0,0,0,.9); }
-html[data-theme="light"] .kv--dark > div{ border-bottom-color:rgba(16,24,40,.12); }
-html[data-theme="light"] .kv--dark dt{ color:rgba(16,24,40,.5); }
-html[data-theme="light"] .pc{ box-shadow:0 3px 0 #D0DAE6, 0 22px 34px -14px rgba(0,0,0,.9); }
-html[data-theme="light"] .rcard{ box-shadow:0 1px 0 rgba(244,247,250,.09) inset, 0 3px 0 #D0DAE6,
-                   0 6px 0 #D0DAE6, 0 22px 34px -16px rgba(0,0,0,.9); }
-html[data-theme="light"] .rpc{ box-shadow:0 2px 0 #D0DAE6, 0 10px 16px -10px rgba(0,0,0,.85); }
-html[data-theme="light"] .rpc:focus-visible{ box-shadow:0 3px 0 #D0DAE6, 0 40px 66px -16px rgba(0,0,0,.96),
+html[data-theme="light"] .slab{ box-shadow:0 1px 0 rgba(248,250,255,.09) inset, 0 3px 0 #DCE3F0,
+             0 6px 0 #DCE3F0, 0 28px 44px -16px rgba(0,0,0,.9); }
+html[data-theme="light"] .kv--dark > div{ border-bottom-color:rgba(17,24,39,.12); }
+html[data-theme="light"] .kv--dark dt{ color:rgba(17,24,39,.5); }
+html[data-theme="light"] .pc{ box-shadow:0 3px 0 #DCE3F0, 0 22px 34px -14px rgba(0,0,0,.9); }
+html[data-theme="light"] .rcard{ box-shadow:0 1px 0 rgba(248,250,255,.09) inset, 0 3px 0 #DCE3F0,
+                   0 6px 0 #DCE3F0, 0 22px 34px -16px rgba(0,0,0,.9); }
+html[data-theme="light"] .rpc{ box-shadow:0 2px 0 #DCE3F0, 0 10px 16px -10px rgba(0,0,0,.85); }
+html[data-theme="light"] .rpc:focus-visible{ box-shadow:0 3px 0 #DCE3F0, 0 40px 66px -16px rgba(0,0,0,.96),
              0 0 0 1px rgba(37,99,235,.22); }
 /* the caption still lies on a dark scrim over the photograph, so it keeps
    light ink in this theme rather than taking the page's dark body colour */
-html[data-theme="light"] .rpc figcaption b{ color:#E8EDF2; }
-html[data-theme="light"] .rpc figcaption i{ color:#9DC5FC; }
+html[data-theme="light"] .rpc figcaption b{ color:#F8FAFC; }
+html[data-theme="light"] .rpc figcaption i{ color:#A78BFA; }
 /* a white edge disappears on a pale chip, so the flag is outlined in ink here */
-html[data-theme="light"] .rem{ border-color:rgba(16,24,40,.3); }
-html[data-theme="light"] .player__in{ box-shadow:0 3px 0 #D0DAE6, 0 8px 0 #D0DAE6, 0 40px 60px -20px rgba(0,0,0,.95); }
-html[data-theme="light"] .mc{ box-shadow:0 3px 0 #D0DAE6, 0 22px 36px -14px rgba(0,0,0,.9); }
-html[data-theme="light"] .gi{ box-shadow:0 3px 0 #D0DAE6, 0 20px 34px -14px rgba(0,0,0,.9); }
-html[data-theme="light"] .flip__f span{ color:rgba(16,24,40,.62); }
-html[data-theme="light"] .wbox{ border:1px solid rgba(16,24,40,.12); box-shadow:0 3px 0 #D0DAE6, 0 20px 34px -16px rgba(16,24,40,.3); }
-html[data-theme="light"] .wbox h3{ border-bottom:1px solid rgba(16,24,40,.12); }
+html[data-theme="light"] .rem{ border-color:rgba(17,24,39,.3); }
+html[data-theme="light"] .player__in{ box-shadow:0 3px 0 #DCE3F0, 0 8px 0 #DCE3F0, 0 40px 60px -20px rgba(0,0,0,.95); }
+html[data-theme="light"] .mc{ box-shadow:0 3px 0 #DCE3F0, 0 22px 36px -14px rgba(0,0,0,.9); }
+html[data-theme="light"] .gi{ box-shadow:0 3px 0 #DCE3F0, 0 20px 34px -14px rgba(0,0,0,.9); }
+html[data-theme="light"] .flip__f span{ color:rgba(17,24,39,.62); }
+html[data-theme="light"] .wbox{ border:1px solid rgba(17,24,39,.12); box-shadow:0 3px 0 #DCE3F0, 0 20px 34px -16px rgba(17,24,39,.3); }
+html[data-theme="light"] .wbox h3{ border-bottom:1px solid rgba(17,24,39,.12); }
 
 /* The two surfaces the recovered sheet repainted but left standing on a
    dark drop shadow: on white the shadow has to lift rather than sink. */
 html[data-theme="light"] .btn--dark{
-  box-shadow:0 3px 0 #D0DAE6, 0 12px 24px -8px rgba(16,24,40,.28); }
+  box-shadow:0 3px 0 #DCE3F0, 0 12px 24px -8px rgba(17,24,39,.28); }
 html[data-theme="light"] .flip__b{
-  box-shadow:0 3px 0 #D0DAE6, 0 16px 28px -12px rgba(16,24,40,.26); }
+  box-shadow:0 3px 0 #DCE3F0, 0 16px 28px -12px rgba(17,24,39,.26); }
