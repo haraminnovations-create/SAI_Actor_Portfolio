@@ -1082,12 +1082,12 @@
 
     /* the tail's glow is the one part of the pointer that cannot live in the
        stylesheet — each bead's shadow is written here, per bead — so it is
-       repainted when the theme changes: champagne over deep black,
-       antique gold over the ivory ground */
+       repainted when the theme changes: electric blue over midnight,
+       a deeper blue over the paper ground */
     function paintTail() {
       const forest = document.documentElement.getAttribute('data-theme') === 'light';
-      // antique gold over the ivory ground, champagne over the black one
-      const tint = forest ? '167,123,50' : '201,164,92';
+      // the paper ground takes the deeper blue, the midnight one electric
+      const tint = forest ? '37,99,235' : '59,130,246';
       beads.forEach(({ el, i }) => {
         el.style.boxShadow = '0 0 ' + (18 - i) + 'px rgba(' + tint + ',.85)';
       });
@@ -1456,7 +1456,7 @@
   }
 
   /* ======================================================================
-     11b. THEME — deep black by default, ivory on request
+     11b. THEME — midnight navy by default, paper on request
      The inline script in <head> has already written data-theme on <html>
      before the first paint, so the page never flashes the wrong ground.
      This wires the header button to it, keeps the icon and the labels
@@ -1479,7 +1479,7 @@
         btn.title = light ? 'Dark theme' : 'Light theme';
       }
       if (icon) icon.setAttribute('href', light ? '#i-moon' : '#i-sun');
-      if (meta) meta.setAttribute('content', light ? '#F8F5EF' : '#0A0A0B');
+      if (meta) meta.setAttribute('content', light ? '#F4F7FA' : '#07111F');
       if (window.__ysAuraPaint) window.__ysAuraPaint();   // the pointer's tail changes tint with the ground
       if (remember) { try { localStorage.setItem('ys-theme', light ? 'light' : 'dark'); } catch (e) {} }
     }
