@@ -1077,12 +1077,12 @@
 
     /* the tail's glow is the one part of the pointer that cannot live in the
        stylesheet — each bead's shadow is written here, per bead — so it is
-       repainted when the theme changes: ice blue over midnight,
-       gold over the forest ground */
+       repainted when the theme changes: champagne over deep black,
+       antique gold over the ivory ground */
     function paintTail() {
       const forest = document.documentElement.getAttribute('data-theme') === 'light';
-      // gold over the forest ground, ice blue over the midnight one
-      const tint = forest ? '212,175,55' : '143,184,232';
+      // antique gold over the ivory ground, champagne over the black one
+      const tint = forest ? '167,123,50' : '201,164,92';
       beads.forEach(({ el, i }) => {
         el.style.boxShadow = '0 0 ' + (18 - i) + 'px rgba(' + tint + ',.85)';
       });
@@ -1118,7 +1118,7 @@
 
       /* On the light ground there is no bloom — the trail IS the pointer — so
          both grounds are dark, so the bloom is steady in either. */
-      /* Both grounds are dark now - midnight and forest - so the bloom
+      /* The dark ground carries the bloom; the ivory one does not, so
          keeps its steady glow in either. The stylesheet is handed the
          opacity back in case a previous session left it driven. */
       if (driven) { box.style.opacity = ''; driven = false; }
@@ -1396,7 +1396,7 @@
   }
 
   /* ======================================================================
-     11b. THEME — midnight by default, forest on request
+     11b. THEME — deep black by default, ivory on request
      The inline script in <head> has already written data-theme on <html>
      before the first paint, so the page never flashes the wrong ground.
      This wires the header button to it, keeps the icon and the labels
@@ -1419,7 +1419,7 @@
         btn.title = light ? 'Dark theme' : 'Light theme';
       }
       if (icon) icon.setAttribute('href', light ? '#i-moon' : '#i-sun');
-      if (meta) meta.setAttribute('content', light ? '#FFFFFF' : '#080B14');
+      if (meta) meta.setAttribute('content', light ? '#F8F5EF' : '#0A0A0B');
       if (window.__ysAuraPaint) window.__ysAuraPaint();   // the pointer's tail changes tint with the ground
       if (remember) { try { localStorage.setItem('ys-theme', light ? 'light' : 'dark'); } catch (e) {} }
     }
