@@ -1387,59 +1387,103 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
   .orb{ animation:none; }
 }
 
-/* --- A4 PDF: the "Download" button calls window.print() --- */
-@page{ size:A4; margin:14mm 12mm; }
+/* ==========================================================================
+   PRINT — the portfolio as a PDF, in the colours it is actually seen in
+
+   This used to strip the page to black on white, which is what you want
+   from a printer and not at all what you want from a portfolio. It now
+   prints what is on the screen: the theme that is switched on, the
+   photographs, the grounds, the metal on the buttons.
+
+   Two things make that work. print-color-adjust:exact, which is what tells
+   a browser to lay down a background it would otherwise drop to save ink.
+   And landscape, because the layout is built for a screen - A4 portrait is
+   794px of measure, which trips the phone breakpoint and prints the mobile
+   site instead of this one.
+
+   What still goes: anything position:fixed, which repeats on every sheet;
+   anything that needs a pointer; and the 3D carousel, which is a stack of
+   rotated planes and flattens to a contact sheet instead.
+   ========================================================================== */
+@page{ size:A4 landscape; margin:0; }
 
 @media print{
-  .intro,.hdr,.aura,.grain,.prog,.totop,.cue,.lb,.vm,.fil,.form,.pbtn,.mc__p,.mc__f,
-  .cf__bar,.cf__track,.snd,.brg,.ctas,.orb,.player__glow,.card3d__glow,
-  .bill__glow{ display:none !important; }
+  /* lay down every ground, gradient and photograph as drawn */
+  *,*::before,*::after{
+    -webkit-print-color-adjust:exact !important;
+            print-color-adjust:exact !important;
+  }
 
-  html,body{ background:#fff !important; color:#111 !important; font-size:10.5pt; }
-  body{ overflow:visible !important; }
+  .intro,.hdr,.aura,.grain,.prog,.totop,.cue,.lb,.vm,.brg,.scrim,.snd,.thm,
+  .pbtn,.mc__p,.mc__f,.zi,.cf__bar,.cf__hint,.fil,.form,.ctas,.hero__hint,
+  /* and any line that asks the reader to hover, drag or tap something */
+  .onscreen
+  { display:none !important; }
 
-  .sec,.sec--green,.sec--deep,.sec--red,.sec--forest,.sec--navy,.sec--white,.hero,.foot{
-    background:#fff !important; color:#111 !important;
-    padding:0 !important; page-break-inside:avoid; break-inside:avoid; box-shadow:none !important; }
-  .sec{ page-break-before:always; break-before:page; padding-top:4mm !important; }
-  .hero{ page-break-before:auto; min-height:auto; }
+  html,body{ overflow:visible !important; height:auto !important; }
+  body{ font-size:10pt; }
 
+  /* one band to a sheet, and the sheet keeps the band's own ground */
+  .sec,.hero,.foot{ padding:11mm 9mm !important; min-height:auto !important;
+                    break-after:page; page-break-after:always; }
+  .foot{ break-after:auto; page-break-after:auto; }
   .wrap{ max-width:none; padding:0; }
+
+  /* everything arrives already revealed and already flat */
   .rv{ opacity:1 !important; transform:none !important; }
   .tilt{ transform:none !important; }
+  .scene,.rquad,.mgrid,.gg,.cards{ perspective:none !important; }
 
-  /* flatten every 3D surface for paper */
-  .slab,.pc,.mc,.gi,.bill,.card3d,.wbox,.chip3d,.cred__art,.cred__body,.player__in{
-    background:#fff !important; border-color:#c9c9c9 !important;
-    box-shadow:none !important; color:#111 !important; }
-  .h3d,.ttl,.bill__t,.cred__t{ color:#111 !important; text-shadow:none !important; }
-  .hero__giant{ position:static; transform:none !important; font-size:2.4rem !important;
-    background:none !important; -webkit-text-fill-color:#111 !important;
-    color:#111 !important; white-space:normal; }
-  .hero__stage{ position:static; }
-  .hero__cut,.hero__script,.orb{ display:none !important; }
-  .eyebrow,.eyebrow i,.cf__cat,.slab__no,.mc__n,.card3d__r,.gnote b{ color:#8a6c2f !important; background:none !important; }
-  .lede,.kv dd{ color:#333 !important; } .kv dt{ color:#777 !important; }
-  .gi img,.pc img,.player__in img{ filter:none !important; }
-  .fitbg{ display:none !important; }
-  /* tile heights are measured for the screen; print keeps the paper grid */
-  .gi{ grid-row:span 2 !important; }
-  .gnote,.gnote--tall{ grid-row:span 1 !important; }
-  .gi--t,.gi--w,.gi--xl{ grid-row:span 3 !important; }
-  .gg{ grid-auto-rows:34mm; gap:3mm; }
+  /* THE HERO — the stage prints whole, held to one sheet */
+  .hero{ height:192mm !important; display:block !important; position:relative; }
+  .hero__stage{ position:absolute !important; inset:0 !important; transform:none !important; }
+  .hero__giant{ top:30% !important; font-size:88pt !important; }
+  .hero__cut{ height:150mm !important; }
+  .hero__in{ position:absolute !important; left:9mm; bottom:11mm; width:52%; z-index:4; }
 
-  /* flip cards print showing the VALUE, not the label */
+  /* THE CAROUSEL — a stack of rotated planes on screen, a contact sheet here */
+  .cf{ perspective:none !important; }
+  .cf__stage{ height:auto !important; display:flex !important; flex-wrap:wrap;
+              gap:4mm; justify-content:center; transform-style:flat !important; }
+  .cf__i{ position:static !important; transform:none !important; opacity:1 !important;
+          height:46mm !important; width:auto !important; margin:0 !important; }
+  .cf__i::after,.cf__floor{ display:none !important; }
+
+  /* the flip cards print the value rather than the label they hide it behind */
   .flip{ height:auto; perspective:none; }
   .flip__in{ transform:none !important; }
   .flip__f{ display:none; }
-  .flip__b{ position:static; transform:none; background:#fff !important;
-            border:1px solid #c9c9c9 !important; padding:6mm 4mm; }
-  .flip__b b{ color:#111 !important; } .flip__b b i{ color:#8a6c2f !important; }
+  .flip__b{ position:static; transform:none; padding:5mm 4mm; }
 
-  .sec[data-code]::after{ position:static; display:block; margin-bottom:4mm;
-                          color:#8a6c2f !important; opacity:1; font-size:7pt; }
-  a{ color:#111 !important; }
-  a[href^="http"]::after{ content:' (' attr(href) ')'; font-size:7pt; color:#777; }
+  /* the rasa quads and the gallery keep their shapes, on a paper grid */
+  .rpc figcaption{ opacity:1 !important; }
+  .gg{ grid-auto-rows:26mm; gap:3mm; }
+  .gi{ grid-row:span 2 !important; }
+  .gnote,.gnote--tall{ grid-row:span 1 !important; }
+  .gi--t,.gi--w,.gi--xl{ grid-row:span 3 !important; }
+  .gi::after{ display:none !important; }
+
+  /* .fitbg is a blurred second copy of every photograph, sat behind it to
+     fill the frame. On screen that is one extra paint; in a PDF it is a
+     second full-resolution embed of all hundred-odd of them, which is most
+     of the file. The frames letterbox on their own ground instead. */
+  .fitbg{ display:none !important; }
+
+  /* a CSS filter on an <img> forces the browser to rasterise that image
+     rather than hand the PDF the file it already has, which is how a 14MB
+     folder of photographs became a 118MB document. The grade is worth a
+     few percent of saturation on screen and nothing at all on paper. */
+  .gi img,.pc img,.rpc img,.mc__img img,.cf__i img,
+  .player__in img,.cred__art img,.stack__face img{ filter:none !important; }
+
+  /* the section code stops being a floated tab and becomes a line of type */
+  .sec[data-code]::after,.hero[data-code]::after{
+    position:static !important; display:block; margin-bottom:5mm;
+    opacity:1; font-size:7pt; }
+
+  /* a link on paper has to say where it goes */
+  a[href^="http"]::after{ content:' (' attr(href) ')'; font-size:6.5pt; opacity:.7; }
+  a[href^="#"]::after,a[href^="mailto"]::after,a[href^="tel"]::after{ content:none; }
 }
 
 

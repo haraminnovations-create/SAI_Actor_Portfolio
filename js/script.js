@@ -1408,12 +1408,46 @@
     }
   }
 
+  /* The PDF is the page itself, printed - the stylesheet's @media print
+     keeps the theme, the grounds and the photographs rather than stripping
+     to black on white. Two things have to happen before the dialog opens.
+
+     Everything that reveals on scroll has to be revealed, or the parts the
+     reader never scrolled past print blank. And every lazy image has to be
+     fetched and finished, for the same reason: loading="lazy" means most of
+     a hundred-odd photographs have never been asked for, and print() does
+     not wait for them. */
   function initPdf() {
     const btn = $('#printPdf');
     if (!btn) return;
-    btn.addEventListener('click', () => {
+    let busy = false;
+
+    btn.addEventListener('click', async () => {
+      if (busy) return;
+      busy = true;
+      const label = btn.innerHTML;
+      btn.innerHTML = 'PREPARING…';
+      btn.disabled = true;
+
       $$('.rv').forEach((el) => el.classList.add('on'));
-      setTimeout(() => print(), 260);
+      $$('img[loading="lazy"]').forEach((im) => { im.loading = 'eager'; });
+
+      const pending = $$('img').filter((im) => !im.complete || !im.naturalWidth);
+      await Promise.all(pending.map((im) => new Promise((done) => {
+        const go = () => { clearTimeout(t); done(); };
+        im.addEventListener('load', go, { once: true });
+        im.addEventListener('error', go, { once: true });   // a broken one still ends the wait
+        /* and one that simply never answers must not hold the button
+           hostage - better a PDF missing a frame than a dead page */
+        const t = setTimeout(done, 20000);
+      })));
+      /* one frame for the layout to settle once they are all in */
+      await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+
+      btn.innerHTML = label;
+      btn.disabled = false;
+      busy = false;
+      print();
     });
   }
 
