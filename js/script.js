@@ -1086,8 +1086,8 @@
        blue over the paper one */
     function paintTail() {
       const forest = document.documentElement.getAttribute('data-theme') === 'light';
-      // the paper ground takes the blue, the night one takes the cyan
-      const tint = forest ? '37,99,235' : '6,182,212';
+      // the paper ground takes the indigo, the night one takes the cyan
+      const tint = forest ? '99,102,241' : '6,182,212';
       beads.forEach(({ el, i }) => {
         el.style.boxShadow = '0 0 ' + (18 - i) + 'px rgba(' + tint + ',.85)';
       });
@@ -1456,7 +1456,7 @@
   }
 
   /* ======================================================================
-     11b. THEME — the aurora night by default, paper on request
+     11b. THEME — the cosmic night by default, paper on request
      The inline script in <head> has already written data-theme on <html>
      before the first paint, so the page never flashes the wrong ground.
      This wires the header button to it, keeps the icon and the labels
@@ -1479,7 +1479,7 @@
         btn.title = light ? 'Dark theme' : 'Light theme';
       }
       if (icon) icon.setAttribute('href', light ? '#i-moon' : '#i-sun');
-      if (meta) meta.setAttribute('content', light ? '#F8FAFF' : '#080B18');
+      if (meta) meta.setAttribute('content', light ? '#F5F9FF' : '#050816');
       if (window.__ysAuraPaint) window.__ysAuraPaint();   // the pointer's tail changes tint with the ground
       if (remember) { try { localStorage.setItem('ys-theme', light ? 'light' : 'dark'); } catch (e) {} }
     }
