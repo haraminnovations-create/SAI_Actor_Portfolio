@@ -1,0 +1,14 @@
+# Editor and tool snapshots. Every one of these was a copy of a file that
+# git already has every version of, so they were 2.9MB of duplicate history
+# sitting next to the real thing.
+*.bak
+*.bak[0-9]*
+
+# Chrome writes a profile directory here when something drives the browser
+# and is handed no user-data-dir, which is where "undefined/" came from.
+undefined/
+
+# local only
+node_modules/
+.DS_Store
+Thumbs.db
