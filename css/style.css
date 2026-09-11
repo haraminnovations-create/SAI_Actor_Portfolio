@@ -1423,16 +1423,33 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
   html,body{ overflow:visible !important; height:auto !important; }
   body{ font-size:10pt; }
 
-  /* one band to a sheet, and the sheet keeps the band's own ground */
-  .sec,.hero,.foot{ padding:11mm 9mm !important; min-height:auto !important;
-                    break-after:page; page-break-after:always; }
-  .foot{ break-after:auto; page-break-after:auto; }
+  /* The bands run on rather than each claiming a sheet of its own. Forcing
+     a break after every one of seventeen sections left half of them mostly
+     empty - a page of three cards and then two thirds of nothing. The
+     content flows instead, and the guards below are what keep anything
+     from being cut by a page edge. Only the hero takes a sheet to itself,
+     because it is the cover. */
+  .sec,.foot{ padding:9mm !important; min-height:auto !important; }
+  .hero{ break-after:page; page-break-after:always; }
   .wrap{ max-width:none; padding:0; }
 
   /* everything arrives already revealed and already flat */
   .rv{ opacity:1 !important; transform:none !important; }
   .tilt{ transform:none !important; }
   .scene,.rquad,.mgrid,.gg,.cards{ perspective:none !important; }
+
+  /* Nothing with a border round it may be cut by a page edge. Left alone a
+     card simply runs off the bottom of one sheet and resumes on the next,
+     which is how the three casting cards ended up sawn in half and their
+     last centimetre stranded alone on the page after. A card that will not
+     fit moves whole instead. */
+  .wbox,.slab,.pc,.gi,.gnote,.mc,.rcard,.chip3d,.flip,.cf__i,
+  .card3d,.bill,.cred__art,.cred__body,.player__in,.player,.wboxes,.range,
+  .kv > div,.rquad,.role,.pl__art
+  { break-inside:avoid; page-break-inside:avoid; }
+
+  /* and a heading never sits alone at the foot of a sheet */
+  h1,h2,h3,.ttl,.eyebrow{ break-after:avoid; page-break-after:avoid; }
 
   /* THE HERO — the stage prints whole, held to one sheet */
   .hero{ height:192mm !important; display:block !important; position:relative; }
@@ -1455,13 +1472,26 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
   .flip__f{ display:none; }
   .flip__b{ position:static; transform:none; padding:5mm 4mm; }
 
-  /* the rasa quads and the gallery keep their shapes, on a paper grid */
   .rpc figcaption{ opacity:1 !important; }
-  .gg{ grid-auto-rows:26mm; gap:3mm; }
-  .gi{ grid-row:span 2 !important; }
-  .gnote,.gnote--tall{ grid-row:span 1 !important; }
-  .gi--t,.gi--w,.gi--xl{ grid-row:span 3 !important; }
+
+  /* THE GALLERY — a spanning grid on screen, a contact sheet here.
+     CSS grid does not reflow across a page boundary: a masonry wall whose
+     tiles each refuse to be cut simply jumps them to the next sheet and
+     leaves the holes behind, which is how eighty-seven photographs came to
+     need twenty pages with half of each one empty. Held to a common height
+     and allowed to wrap, they fill the sheet instead. */
+  .gg{ display:flex !important; flex-wrap:wrap; gap:3.5mm;
+       align-content:flex-start; grid-template-columns:none !important;
+       grid-auto-rows:auto !important; }
+  .gi,.gnote{ grid-row:auto !important; grid-column:auto !important;
+              height:44mm !important; width:auto !important; margin:0 !important; }
+  .gi img{ height:100% !important; width:auto !important; object-fit:cover; }
+  .gnote{ width:58mm; display:grid; place-content:center; }
   .gi::after{ display:none !important; }
+
+  /* the theatre stack the same way, rather than one plate to a sheet */
+  .pl__art{ height:96mm !important; width:auto !important; }
+  .pl__art img{ height:100% !important; width:auto !important; object-fit:cover; }
 
   /* .fitbg is a blurred second copy of every photograph, sat behind it to
      fill the frame. On screen that is one extra paint; in a PDF it is a
@@ -1483,7 +1513,10 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
 
   /* a link on paper has to say where it goes */
   a[href^="http"]::after{ content:' (' attr(href) ')'; font-size:6.5pt; opacity:.7; }
-  a[href^="#"]::after,a[href^="mailto"]::after,a[href^="tel"]::after{ content:none; }
+  /* but not inside a button, where the label is the point and a forty
+     character URL set after it is just noise */
+  a[href^="#"]::after,a[href^="mailto"]::after,a[href^="tel"]::after,
+  .btn::after,.soci__a::after,.socs a::after{ content:none !important; }
 }
 
 
