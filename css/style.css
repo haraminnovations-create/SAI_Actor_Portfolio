@@ -1794,370 +1794,376 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
 
 
 /* ======================================================================
-   DARK THEME - 01 · COSMIC BLUE
-   Cinematic
+   DARK THEME - 01 · BURGUNDY + CREAM
+   Dramatic · romantic · film-star · artistic
 
-   The palette runs from a near-black through indigo and blue into cyan.
-   Only the far end of it can be read at the size this page sets its
-   labels, eyebrows and rules:
+   After four palettes that named three or four accents and made me choose
+   between them, this one names exactly one, and it reads:
 
-     indigo  1.75:1     blue  3.17:1     cyan  8.22:1     glow  11.04:1
+     rose gold  6.81:1     cream  16.73:1     muted cream  9.18:1
 
-   So cyan takes the accent and carries all of that; glow takes the hover.
-   Indigo and blue are never asked to be type - they are the sweep across
-   the buttons and the extruded headings, and the surfaces underneath,
-   which is the only place a 1.75:1 colour belongs.
+   So there is nothing to work around. Rose gold takes the accent and
+   carries every label, eyebrow and rule; cream is the type; muted cream
+   the second voice. The burgundy and the wine are never asked to be type
+   at all - at 1.18:1 and 1.74:1 they are grounds, which is exactly what
+   the palette calls them.
 
-     Background   #050816   the ground
-     Surface      #0B1430   cards and surfaces
-     Indigo       #312E81   the far end of the sweep
-     Blue         #4F46E5   the middle of the sweep
-     Cyan         #06B6D4   the accent
-     Glow         #22D3EE   the accent on hover
-     Text         #F8FAFC   primary type
-     Slate        #94A3B8   secondary type, which the palette leaves open
+     Black         #100C0D   the ground
+     Burgundy      #3B1018   cards and surfaces
+     Wine Red      #6D1F2B   the highlight
+     Cream         #F4EDE4   primary type
+     Muted Cream   #BDB0A5   secondary type
+     Rose Gold     #C58B7C   the accent
    ====================================================================== */
 html[data-theme="dark"]{
-  --accent-rgb: 6,182,212;
-  --star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.6 6.8L21.5 11l-6.9 2.2L12 20l-2.6-6.8L2.5 11l6.9-2.2z' fill='%2306B6D4'/%3E%3C/svg%3E");
-  --silver: #94A3B8;          /* Slate — the palette leaves this open */
-  --gold:   #06B6D4;          /* Cyan — the only accent that reads small here */
-  --green:  #050816;          /* Background, in the role the forest held */
-  --navy:   #0B1430;          /* Surface */
-  --white:  #F8FAFC;          /* Text */
-  --purple: #312E81;          /* Indigo — 1.75:1 here, so it never carries type */
-  /* the palette names no signal colour, and the form still has to say when
-     a field is wrong, so a rose stands in - 5.43:1 on this ground */
-  --red:    #F43F5E;
+  --accent-rgb: 197,139,124;
+  --star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.6 6.8L21.5 11l-6.9 2.2L12 20l-2.6-6.8L2.5 11l6.9-2.2z' fill='%23C58B7C'/%3E%3C/svg%3E");
+  --silver: #BDB0A5;          /* Muted Cream */
+  --gold:   #C58B7C;          /* Rose Gold — 6.81:1, so it carries the type */
+  --green:  #100C0D;          /* Black, in the role the forest held */
+  --navy:   #3B1018;          /* Burgundy — the surface */
+  --white:  #F4EDE4;          /* Cream */
+  --purple: #3B1018;          /* Burgundy — 1.18:1, a ground and nothing else */
+  --red:    #6D1F2B;          /* Wine Red — the highlight the palette names */
 
-  --black:   #050816;
-  --card:    #0B1430;
-  --card-hi: #15204A;
-  --sunk:    #080F26;
+  --black:   #100C0D;
+  --card:    #3B1018;
+  --card-hi: #4E1721;
+  --sunk:    #1A0E12;
 
-  --gold-lt: #22D3EE;         /* Glow — the hover */
-  --gold-dk: #0E7490;
-  /* the sweep runs the whole palette: cyan at the corner, blue through the
-     middle where the type sits, indigo at the far end */
-  --gold-metal: linear-gradient(158deg,#06B6D4 0%,#4F46E5 46%,#312E81 100%);
-  --metal-ink: #F8FAFC;
-  --metal-rim: #241C6B;
+  --gold-lt: #DCA898;         /* rose gold lifted, for the hover */
+  --gold-dk: #8E5C4F;
+  /* the metal is the accent itself, lit and shaded rather than a sweep
+     across hues - this palette has one accent, not four */
+  --gold-metal: linear-gradient(158deg,#DCA898 0%,#C58B7C 46%,#8E5C4F 100%);
+  /* that face is pale, so what is written on it is the black ground:
+     6.81:1 on the middle stop, where the type actually sits */
+  --metal-ink: #100C0D;
+  --metal-rim: #6D4034;
 
-  --ink:  #F8FAFC;
-  --soft: rgba(248,250,252,.74);
-  --mute: #94A3B8;
-  --hair: rgba(6,182,212,.34);   /* the accent drawn as a line */
-  --hairw:#1B2550;                /* Border, drawn from the two blues */
+  --ink:  #F4EDE4;
+  --soft: rgba(244,237,228,.74);
+  --mute: #BDB0A5;
+  --hair: rgba(197,139,124,.34);   /* the accent drawn as a line */
+  --hairw:#33232A;                /* Border, drawn off the burgundy */
 }
 
 /* ---- the grounds ----------------------------------------------------
    The base paints each band with a literal, so each one is restated here
-   on the cosmic ground. Each band keeps its own tint, but they are all
-   struck off the same near-black, which is what lets indigo sit next to
-   cyan without either of them turning to paint. */
-html[data-theme="dark"] body        { background:#050816; }
-html[data-theme="dark"] .sec--deep  { background:linear-gradient(180deg,#0B1430 0%,#050816 100%); }
-html[data-theme="dark"] .sec--green { background:linear-gradient(180deg,#060B22,#050816); }
-html[data-theme="dark"] .sec--forest{ background:linear-gradient(168deg,#050816 0%,#0B1430 50%,#050816 100%); }
-html[data-theme="dark"] .sec--navy  { background:linear-gradient(168deg,#050816 0%,#101A42 52%,#050816 100%); }
-html[data-theme="dark"] .sec--red   { background:linear-gradient(168deg,#050816 0%,#1D0F1C 50%,#050816 100%); }
-html[data-theme="dark"] .foot       { background:linear-gradient(180deg,#050816,#020412); }
-html[data-theme="dark"] .intro      { background:radial-gradient(ellipse at 50% 40%,#131E48,#050816 70%); }
+   on black and burgundy. Each band keeps its own tint, but they are all
+   struck off the same near-black, which is what lets the rose gold read
+   as metal rather than as pink. */
+html[data-theme="dark"] body        { background:#100C0D; }
+html[data-theme="dark"] .sec--deep  { background:linear-gradient(180deg,#3B1018 0%,#100C0D 100%); }
+html[data-theme="dark"] .sec--green { background:linear-gradient(180deg,#120C0F,#100C0D); }
+html[data-theme="dark"] .sec--forest{ background:linear-gradient(168deg,#100C0D 0%,#3B1018 50%,#100C0D 100%); }
+html[data-theme="dark"] .sec--navy  { background:linear-gradient(168deg,#100C0D 0%,#2B1218 52%,#100C0D 100%); }
+html[data-theme="dark"] .sec--red   { background:linear-gradient(168deg,#100C0D 0%,#241317 50%,#100C0D 100%); }
+html[data-theme="dark"] .foot       { background:linear-gradient(180deg,#100C0D,#090607); }
+html[data-theme="dark"] .intro      { background:radial-gradient(ellipse at 50% 40%,#33141B,#100C0D 70%); }
 /* the name is a surface, and a surface needs light: these are the four
    stops it is lit by, restated per theme so it reads on either ground */
 html[data-theme="dark"] .hero__giant{
-  --g1:rgba(248,250,252,.50); --g2:rgba(248,250,252,.28);
-  --g3:rgba(6,182,212,.40);  --g4:rgba(248,250,252,.18); }
+  --g1:rgba(244,237,228,.50); --g2:rgba(244,237,228,.28);
+  --g3:rgba(197,139,124,.40);  --g4:rgba(244,237,228,.18); }
+/* the palette calls black the ground and burgundy a surface, so the hero
+   takes a burgundy bloom off the black rather than a wash of it */
 html[data-theme="dark"] .hero       { background:
-    radial-gradient(ellipse 60% 54% at 50% 42%, rgba(6,182,212,.11), transparent 72%),
-    radial-gradient(ellipse at 22% 34%,#15204A 0%,#0B1430 46%,#050816 100%); }
+    radial-gradient(ellipse 60% 54% at 50% 42%, rgba(197,139,124,.09), transparent 72%),
+    radial-gradient(ellipse at 22% 34%,#2E1219 0%,#1A0E12 46%,#100C0D 100%); }
 
 /* The casting band is the one section written as light-on-dark rather
    than the reverse, and it keeps that inversion: pale paper set into the
-   night, which is where the cyan earns its keep. Its lede was hard-coded
-   to a forest ink. */
-html[data-theme="dark"] .sec--white .lede{ color:rgba(5,8,22,.72); }
+   night, which is where the rose gold earns its keep. Its lede was
+   hard-coded to a forest ink. */
+html[data-theme="dark"] .sec--white .lede{ color:rgba(16,12,13,.72); }
 
 /* ---- surfaces the base paints with a literal ---- */
-html[data-theme="dark"] .wbox{ background:#0B1430; color:#F8FAFC; border-color:rgba(248,250,252,.14); }
-html[data-theme="dark"] .bill{ background:linear-gradient(158deg,#2A1024,#160B18);
-                                border-color:rgba(244,63,94,.7); }
-html[data-theme="dark"] .cred__body{ background:linear-gradient(158deg,#17234E,#080F26);
-                                      border-color:rgba(248,250,252,.14); }
-html[data-theme="dark"] .card3d__cube{ background:linear-gradient(158deg,#232C63,#0A1230); }
+html[data-theme="dark"] .wbox{ background:#3B1018; color:#F4EDE4; border-color:rgba(244,237,228,.14); }
+html[data-theme="dark"] .bill{ background:linear-gradient(158deg,#2E1218,#1C0E12);
+                                border-color:rgba(109,31,43,.7); }
+html[data-theme="dark"] .cred__body{ background:linear-gradient(158deg,#3F151D,#1A0E12);
+                                      border-color:rgba(244,237,228,.14); }
+html[data-theme="dark"] .card3d__cube{ background:linear-gradient(158deg,#5A1B26,#1E1014); }
 
 /* ---- the plates my own components sit on ---- */
-html[data-theme="dark"] .gi__e{ background:rgba(5,8,22,.78); border-color:rgba(6,182,212,.42);
-                                 color:#06B6D4; box-shadow:0 2px 10px -4px rgba(0,0,0,.9); }
-html[data-theme="dark"] .zi{ background:linear-gradient(#06B6D4,#06B6D4) center/11px 1.6px no-repeat,
-                                          linear-gradient(#06B6D4,#06B6D4) center/1.6px 11px no-repeat,
-                                          rgba(5,8,22,.78);
-                              border-color:rgba(6,182,212,.5); box-shadow:none; }
+html[data-theme="dark"] .gi__e{ background:rgba(16,12,13,.78); border-color:rgba(197,139,124,.42);
+                                 color:#C58B7C; box-shadow:0 2px 10px -4px rgba(0,0,0,.9); }
+html[data-theme="dark"] .zi{ background:linear-gradient(#C58B7C,#C58B7C) center/11px 1.6px no-repeat,
+                                          linear-gradient(#C58B7C,#C58B7C) center/1.6px 11px no-repeat,
+                                          rgba(16,12,13,.78);
+                              border-color:rgba(197,139,124,.5); box-shadow:none; }
 html[data-theme="dark"] .rpc > .zi{ background-size:8px 1.4px, 1.4px 8px, auto; }
-html[data-theme="dark"] .fb i{ background:rgba(6,182,212,.16); color:#06B6D4; }
-html[data-theme="dark"] .fb.on i{ background:rgba(5,8,22,.3); color:#F8FAFC; }
-html[data-theme="dark"] .pl__art{ border-color:rgba(6,182,212,.34);
-                                   box-shadow:0 4px 0 #000209, 0 34px 60px -20px rgba(0,0,0,.95); }
+html[data-theme="dark"] .fb i{ background:rgba(197,139,124,.16); color:#C58B7C; }
+html[data-theme="dark"] .fb.on i{ background:rgba(16,12,13,.3); color:#F4EDE4; }
+html[data-theme="dark"] .pl__art{ border-color:rgba(197,139,124,.34);
+                                   box-shadow:0 4px 0 #060405, 0 34px 60px -20px rgba(0,0,0,.95); }
 
 /* ---- Every rule in the base sheet that names a colour outright - the
         forest greens, the navies, the crimson and the gold - restated on
-        the cosmos: night, surface, rose and cyan. Generated from the sheet
+        black, burgundy, wine and rose gold. Generated from the sheet
         itself, so each literal is accounted for, not guessed at.
         Rules given a ground above keep it: only their depth is restated. ---- */
 html[data-theme="dark"] .raise{ box-shadow:
     0 1px 0 rgba(255,255,255,.09) inset,
     0 -1px 0 rgba(0,0,0,.5) inset,
-    0 2px 0 #000209,
-    0 4px 0 #04081C,
-    0 8px 0 #01030E,
+    0 2px 0 #060405,
+    0 4px 0 #0D090A,
+    0 8px 0 #070506,
     0 26px 40px -14px rgba(0,0,0,.85); }
 html[data-theme="dark"] .h3d{ text-shadow:
-     1px 1px 0 #06B6D4,  2px 2px 0 #2AA3D6,  3px 3px 0 #4F46E5,
-     4px 4px 0 #4A41DE,  5px 5px 0 #3E36C4,  6px 6px 0 #312E81,
-     7px 7px 0 #0E7490,  8px 8px 14px rgba(0,0,0,.6),
-     0 0 42px rgba(6,182,212,.22); }
+     1px 1px 0 #C58B7C,  2px 2px 0 #B87A6B,  3px 3px 0 #A86C5C,
+     4px 4px 0 #9A6152,  5px 5px 0 #8C5749,  6px 6px 0 #6D4034,
+     7px 7px 0 #8E5C4F,  8px 8px 14px rgba(0,0,0,.6),
+     0 0 42px rgba(197,139,124,.22); }
 html[data-theme="dark"] .h3d--dark{ text-shadow:
-     1px 1px 0 #22D3EE,  2px 2px 0 #06B6D4,  3px 3px 0 #06B6D4,
-     4px 4px 0 #2AA3D6,  5px 5px 0 #4F46E5,  6px 6px 10px rgba(5,8,22,.3); }
-html[data-theme="dark"] .sec--white .lede{ color:rgba(5,8,22,.7); }
-html[data-theme="dark"] .btn--gold{ box-shadow:0 3px 0 #241C6B, 0 12px 24px -8px rgba(6,182,212,.4); }
-html[data-theme="dark"] .btn--gold:hover{ box-shadow:0 6px 0 #241C6B, 0 20px 32px -10px rgba(6,182,212,.5); }
-html[data-theme="dark"] .btn--navy{ background:linear-gradient(158deg,#17234E,var(--navy)); border-color:#232C63; box-shadow:0 3px 0 #000209, 0 12px 24px -8px rgba(5,8,22,.9); }
-html[data-theme="dark"] .btn--navy:hover{ box-shadow:0 6px 0 #000209, 0 20px 32px -10px rgba(35,44,99,.5); }
-html[data-theme="dark"] .btn--red{ box-shadow:0 3px 0 #9F1239, 0 12px 24px -8px rgba(244,63,94,.6); }
-html[data-theme="dark"] .btn--red:hover{ box-shadow:0 6px 0 #9F1239, 0 20px 32px -10px rgba(244,63,94,.7); }
-html[data-theme="dark"] .btn--dark{ box-shadow:0 3px 0 rgba(5,8,22,.5), 0 12px 24px -8px rgba(5,8,22,.6); }
-html[data-theme="dark"] .chip3d{ box-shadow:0 1px 0 rgba(255,255,255,.08) inset, 0 3px 0 #000209, 0 10px 18px -8px rgba(0,0,0,.8); }
-html[data-theme="dark"] .chip3d:hover{ box-shadow:0 1px 0 rgba(255,255,255,.12) inset, 0 7px 0 #000209, 0 20px 28px -10px rgba(0,0,0,.85); }
-html[data-theme="dark"] .chip3d--red{ background:linear-gradient(158deg,#2A1024,#160B18); border-color:rgba(244,63,94,.6); }
-html[data-theme="dark"] .chip3d--green{ background:linear-gradient(158deg,#232C63,#0A1230); border-color:rgba(6,182,212,.7); }
-html[data-theme="dark"] .chip3d--navy{ background:linear-gradient(158deg,#17234E,#080F26); border-color:rgba(35,44,99,.7); }
-html[data-theme="dark"] .chip3d--dark{ background:linear-gradient(158deg,#192551,var(--green)); border-color:rgba(5,8,22,.4); box-shadow:0 3px 0 rgba(5,8,22,.35), 0 10px 18px -8px rgba(5,8,22,.4); }
-html[data-theme="dark"] .rnd{ box-shadow:0 3px 0 #000209, 0 10px 18px -8px rgba(0,0,0,.8); }
-html[data-theme="dark"] .cube__f{ background:linear-gradient(158deg,rgba(21,32,74,.9),rgba(5,8,22,.92)); box-shadow:0 0 34px rgba(6,182,212,.15) inset; }
-html[data-theme="dark"] .cube__f--tp{ background:linear-gradient(158deg,#232C63,#0A1230); }
-html[data-theme="dark"] .cube__f--bt{ background:linear-gradient(158deg,#080E28,#050816); }
-html[data-theme="dark"] .prog{ box-shadow:0 0 12px rgba(6,182,212,.7); }
-html[data-theme="dark"] .hdr.stuck{ background:rgba(5,8,22,.88); }
-html[data-theme="dark"] .logo__cube{ box-shadow:0 3px 0 #000209, 0 8px 16px -6px rgba(0,0,0,.8); }
-html[data-theme="dark"] .orb--a{ background:rgba(6,182,212,.13); }
-html[data-theme="dark"] .orb--b{ background:rgba(5,8,22,.55); }
-html[data-theme="dark"] .stack__glow{ background:rgba(6,182,212,.3); }
-html[data-theme="dark"] .stack__back{ background:linear-gradient(158deg,rgba(5,8,22,.7),rgba(5,8,22,.9)); }
-html[data-theme="dark"] .stack__mid{ background:linear-gradient(158deg,rgba(21,32,74,.75),rgba(5,8,22,.9)); }
-html[data-theme="dark"] .cf__i::after{ background:linear-gradient(180deg,transparent 40%,rgba(5,8,22,.7)); }
-html[data-theme="dark"] .cf__i.mid{ box-shadow:0 40px 70px -20px rgba(0,0,0,.95), 0 0 60px rgba(6,182,212,.25); }
-html[data-theme="dark"] .cf__floor{ background:radial-gradient(ellipse,rgba(6,182,212,.15),transparent 70%); }
-html[data-theme="dark"] .slab{ box-shadow:0 1px 0 rgba(255,255,255,.09) inset, 0 3px 0 #000209,
-             0 6px 0 #020412, 0 28px 44px -16px rgba(0,0,0,.9); }
-html[data-theme="dark"] .kv--dark > div{ border-bottom-color:rgba(5,8,22,.12); }
-html[data-theme="dark"] .kv--dark dt{ color:rgba(5,8,22,.5); }
-html[data-theme="dark"] .pc{ box-shadow:0 3px 0 #000209, 0 22px 34px -14px rgba(0,0,0,.9); }
-html[data-theme="dark"] .pc figcaption{ background:linear-gradient(transparent,rgba(5,8,22,.94)); }
-html[data-theme="dark"] .pc::before{ border:1px solid rgba(6,182,212,.14); }
-html[data-theme="dark"] .pc:hover::before{ border-color:rgba(6,182,212,.42); }
-html[data-theme="dark"] .pc:hover figcaption i{ text-shadow:0 0 14px rgba(6,182,212,.65); }
-html[data-theme="dark"] .rcard{ box-shadow:0 1px 0 rgba(255,255,255,.09) inset, 0 3px 0 #000209,
-                   0 6px 0 #020412, 0 22px 34px -16px rgba(0,0,0,.9); }
-html[data-theme="dark"] .rpc{ box-shadow:0 2px 0 #000209, 0 10px 16px -10px rgba(0,0,0,.85); }
-html[data-theme="dark"] .rpc:focus-visible{ border-color:rgba(6,182,212,.55); box-shadow:0 3px 0 #000209, 0 40px 66px -16px rgba(0,0,0,.96),
-             0 0 0 1px rgba(6,182,212,.22); }
-html[data-theme="dark"] .rpc figcaption{ background:linear-gradient(transparent,rgba(5,8,22,.55) 38%,rgba(5,8,22,.96)); }
-html[data-theme="dark"] .player__glow{ background:rgba(6,182,212,.22); }
-html[data-theme="dark"] .player__in{ box-shadow:0 3px 0 #000209, 0 8px 0 #01030E, 0 40px 60px -20px rgba(0,0,0,.95); }
-html[data-theme="dark"] .pbtn span{ border:1px solid rgba(6,182,212,.55); }
-html[data-theme="dark"] .player__bar{ background:linear-gradient(transparent,rgba(5,8,22,.92)); }
-html[data-theme="dark"] .bill{ border:1px solid rgba(244,63,94,.6); box-shadow:0 4px 0 #04081C, 0 10px 0 #020412, 0 44px 70px -22px rgba(0,0,0,.95); }
-html[data-theme="dark"] .bill__glow{ background:rgba(244,63,94,.4); }
-html[data-theme="dark"] .bill__g{ border-block:1px solid rgba(6,182,212,.28); }
-html[data-theme="dark"] .cred__art{ box-shadow:0 4px 0 #000209, 0 34px 56px -20px rgba(0,0,0,.95); }
-html[data-theme="dark"] .cred__body{ box-shadow:0 3px 0 #000209, 0 6px 0 #000209, 0 30px 48px -18px rgba(0,0,0,.9); }
-html[data-theme="dark"] .mc{ box-shadow:0 3px 0 #000209, 0 22px 36px -14px rgba(0,0,0,.9); }
-html[data-theme="dark"] .mc__f{ background:rgba(5,8,22,.6); }
-html[data-theme="dark"] .gi{ box-shadow:0 3px 0 #000209, 0 20px 34px -14px rgba(0,0,0,.9); }
-html[data-theme="dark"] .gi:hover{ box-shadow:0 3px 0 #000209, 0 26px 44px -14px rgba(0,0,0,.95),
-                      0 0 0 1px rgba(6,182,212,.3) inset; }
-html[data-theme="dark"] .gi::before{ background:linear-gradient(transparent 45%,rgba(5,8,22,.85)); }
+     1px 1px 0 #DCA898,  2px 2px 0 #C58B7C,  3px 3px 0 #C58B7C,
+     4px 4px 0 #B87A6B,  5px 5px 0 #A86C5C,  6px 6px 10px rgba(16,12,13,.3); }
+html[data-theme="dark"] .sec--white .lede{ color:rgba(16,12,13,.7); }
+html[data-theme="dark"] .btn--gold{ box-shadow:0 3px 0 #6D4034, 0 12px 24px -8px rgba(197,139,124,.4); }
+html[data-theme="dark"] .btn--gold:hover{ box-shadow:0 6px 0 #6D4034, 0 20px 32px -10px rgba(197,139,124,.5); }
+html[data-theme="dark"] .btn--navy{ background:linear-gradient(158deg,#3F151D,var(--navy)); border-color:#5A1B26; box-shadow:0 3px 0 #060405, 0 12px 24px -8px rgba(16,12,13,.9); }
+html[data-theme="dark"] .btn--navy:hover{ box-shadow:0 6px 0 #060405, 0 20px 32px -10px rgba(90,27,38,.5); }
+html[data-theme="dark"] .btn--red{ box-shadow:0 3px 0 #4A1620, 0 12px 24px -8px rgba(109,31,43,.6); }
+html[data-theme="dark"] .btn--red:hover{ box-shadow:0 6px 0 #4A1620, 0 20px 32px -10px rgba(109,31,43,.7); }
+html[data-theme="dark"] .btn--dark{ box-shadow:0 3px 0 rgba(16,12,13,.5), 0 12px 24px -8px rgba(16,12,13,.6); }
+html[data-theme="dark"] .chip3d{ box-shadow:0 1px 0 rgba(255,255,255,.08) inset, 0 3px 0 #060405, 0 10px 18px -8px rgba(0,0,0,.8); }
+html[data-theme="dark"] .chip3d:hover{ box-shadow:0 1px 0 rgba(255,255,255,.12) inset, 0 7px 0 #060405, 0 20px 28px -10px rgba(0,0,0,.85); }
+html[data-theme="dark"] .chip3d--red{ background:linear-gradient(158deg,#2E1218,#1C0E12); border-color:rgba(109,31,43,.6); }
+html[data-theme="dark"] .chip3d--green{ background:linear-gradient(158deg,#5A1B26,#1E1014); border-color:rgba(197,139,124,.7); }
+html[data-theme="dark"] .chip3d--navy{ background:linear-gradient(158deg,#3F151D,#1A0E12); border-color:rgba(90,27,38,.7); }
+html[data-theme="dark"] .chip3d--dark{ background:linear-gradient(158deg,#45161F,var(--green)); border-color:rgba(16,12,13,.4); box-shadow:0 3px 0 rgba(16,12,13,.35), 0 10px 18px -8px rgba(16,12,13,.4); }
+html[data-theme="dark"] .rnd{ box-shadow:0 3px 0 #060405, 0 10px 18px -8px rgba(0,0,0,.8); }
+html[data-theme="dark"] .cube__f{ background:linear-gradient(158deg,rgba(59,16,24,.9),rgba(16,12,13,.92)); box-shadow:0 0 34px rgba(197,139,124,.15) inset; }
+html[data-theme="dark"] .cube__f--tp{ background:linear-gradient(158deg,#5A1B26,#1E1014); }
+html[data-theme="dark"] .cube__f--bt{ background:linear-gradient(158deg,#150E11,#100C0D); }
+html[data-theme="dark"] .prog{ box-shadow:0 0 12px rgba(197,139,124,.7); }
+html[data-theme="dark"] .hdr.stuck{ background:rgba(16,12,13,.88); }
+html[data-theme="dark"] .logo__cube{ box-shadow:0 3px 0 #060405, 0 8px 16px -6px rgba(0,0,0,.8); }
+html[data-theme="dark"] .orb--a{ background:rgba(197,139,124,.13); }
+html[data-theme="dark"] .orb--b{ background:rgba(16,12,13,.55); }
+html[data-theme="dark"] .stack__glow{ background:rgba(197,139,124,.3); }
+html[data-theme="dark"] .stack__back{ background:linear-gradient(158deg,rgba(16,12,13,.7),rgba(16,12,13,.9)); }
+html[data-theme="dark"] .stack__mid{ background:linear-gradient(158deg,rgba(59,16,24,.75),rgba(16,12,13,.9)); }
+html[data-theme="dark"] .cf__i::after{ background:linear-gradient(180deg,transparent 40%,rgba(16,12,13,.7)); }
+html[data-theme="dark"] .cf__i.mid{ box-shadow:0 40px 70px -20px rgba(0,0,0,.95), 0 0 60px rgba(197,139,124,.25); }
+html[data-theme="dark"] .cf__floor{ background:radial-gradient(ellipse,rgba(197,139,124,.15),transparent 70%); }
+html[data-theme="dark"] .slab{ box-shadow:0 1px 0 rgba(255,255,255,.09) inset, 0 3px 0 #060405,
+             0 6px 0 #090607, 0 28px 44px -16px rgba(0,0,0,.9); }
+html[data-theme="dark"] .kv--dark > div{ border-bottom-color:rgba(16,12,13,.12); }
+html[data-theme="dark"] .kv--dark dt{ color:rgba(16,12,13,.5); }
+html[data-theme="dark"] .pc{ box-shadow:0 3px 0 #060405, 0 22px 34px -14px rgba(0,0,0,.9); }
+html[data-theme="dark"] .pc figcaption{ background:linear-gradient(transparent,rgba(16,12,13,.94)); }
+html[data-theme="dark"] .pc::before{ border:1px solid rgba(197,139,124,.14); }
+html[data-theme="dark"] .pc:hover::before{ border-color:rgba(197,139,124,.42); }
+html[data-theme="dark"] .pc:hover figcaption i{ text-shadow:0 0 14px rgba(197,139,124,.65); }
+html[data-theme="dark"] .rcard{ box-shadow:0 1px 0 rgba(255,255,255,.09) inset, 0 3px 0 #060405,
+                   0 6px 0 #090607, 0 22px 34px -16px rgba(0,0,0,.9); }
+html[data-theme="dark"] .rpc{ box-shadow:0 2px 0 #060405, 0 10px 16px -10px rgba(0,0,0,.85); }
+html[data-theme="dark"] .rpc:focus-visible{ border-color:rgba(197,139,124,.55); box-shadow:0 3px 0 #060405, 0 40px 66px -16px rgba(0,0,0,.96),
+             0 0 0 1px rgba(197,139,124,.22); }
+html[data-theme="dark"] .rpc figcaption{ background:linear-gradient(transparent,rgba(16,12,13,.55) 38%,rgba(16,12,13,.96)); }
+html[data-theme="dark"] .player__glow{ background:rgba(197,139,124,.22); }
+html[data-theme="dark"] .player__in{ box-shadow:0 3px 0 #060405, 0 8px 0 #070506, 0 40px 60px -20px rgba(0,0,0,.95); }
+html[data-theme="dark"] .pbtn span{ border:1px solid rgba(197,139,124,.55); }
+html[data-theme="dark"] .player__bar{ background:linear-gradient(transparent,rgba(16,12,13,.92)); }
+html[data-theme="dark"] .bill{ border:1px solid rgba(109,31,43,.6); box-shadow:0 4px 0 #0D090A, 0 10px 0 #090607, 0 44px 70px -22px rgba(0,0,0,.95); }
+html[data-theme="dark"] .bill__glow{ background:rgba(109,31,43,.4); }
+html[data-theme="dark"] .bill__g{ border-block:1px solid rgba(197,139,124,.28); }
+html[data-theme="dark"] .cred__art{ box-shadow:0 4px 0 #060405, 0 34px 56px -20px rgba(0,0,0,.95); }
+html[data-theme="dark"] .cred__body{ box-shadow:0 3px 0 #060405, 0 6px 0 #060405, 0 30px 48px -18px rgba(0,0,0,.9); }
+html[data-theme="dark"] .mc{ box-shadow:0 3px 0 #060405, 0 22px 36px -14px rgba(0,0,0,.9); }
+html[data-theme="dark"] .mc__f{ background:rgba(16,12,13,.6); }
+html[data-theme="dark"] .gi{ box-shadow:0 3px 0 #060405, 0 20px 34px -14px rgba(0,0,0,.9); }
+html[data-theme="dark"] .gi:hover{ box-shadow:0 3px 0 #060405, 0 26px 44px -14px rgba(0,0,0,.95),
+                      0 0 0 1px rgba(197,139,124,.3) inset; }
+html[data-theme="dark"] .gi::before{ background:linear-gradient(transparent 45%,rgba(16,12,13,.85)); }
 html[data-theme="dark"] .gnote::before{ background:radial-gradient(58% 56% at 50% 42%,
-                           rgba(6,182,212,.20), rgba(6,182,212,.07) 55%, transparent 74%); }
-html[data-theme="dark"] .flip__f{ border:1px solid rgba(5,8,22,.14); box-shadow:0 3px 0 #C7D3E8, 0 14px 26px -12px rgba(5,8,22,.35); }
-html[data-theme="dark"] .flip__f span{ color:rgba(5,8,22,.62); }
-html[data-theme="dark"] .flip__b{ box-shadow:0 3px 0 #000209, 0 16px 28px -12px rgba(0,0,0,.7); }
-html[data-theme="dark"] .wbox{ border:1px solid rgba(5,8,22,.12); box-shadow:0 3px 0 #DDE6F3, 0 20px 34px -16px rgba(5,8,22,.3); }
-html[data-theme="dark"] .wbox h3{ border-bottom:1px solid rgba(5,8,22,.12); }
-html[data-theme="dark"] .card3d{ box-shadow:0 4px 0 #000209, 0 10px 0 #01030E, 0 44px 66px -22px rgba(0,0,0,.95); }
-html[data-theme="dark"] .card3d__glow{ background:rgba(6,182,212,.3); }
-html[data-theme="dark"] .card3d__cube{ box-shadow:0 4px 0 #04081C, 0 12px 22px -8px rgba(0,0,0,.8); }
-html[data-theme="dark"] .foot__s{ text-shadow:1px 1px 0 rgba(6,182,212,.16), 2px 2px 0 rgba(6,182,212,.11),
-                      3px 3px 0 rgba(6,182,212,.07), 4px 4px 10px rgba(0,0,0,.5); }
+                           rgba(197,139,124,.20), rgba(197,139,124,.07) 55%, transparent 74%); }
+html[data-theme="dark"] .flip__f{ border:1px solid rgba(16,12,13,.14); box-shadow:0 3px 0 #D6C6BA, 0 14px 26px -12px rgba(16,12,13,.35); }
+html[data-theme="dark"] .flip__f span{ color:rgba(16,12,13,.62); }
+html[data-theme="dark"] .flip__b{ box-shadow:0 3px 0 #060405, 0 16px 28px -12px rgba(0,0,0,.7); }
+html[data-theme="dark"] .wbox{ border:1px solid rgba(16,12,13,.12); box-shadow:0 3px 0 #E6DACE, 0 20px 34px -16px rgba(16,12,13,.3); }
+html[data-theme="dark"] .wbox h3{ border-bottom:1px solid rgba(16,12,13,.12); }
+html[data-theme="dark"] .card3d{ box-shadow:0 4px 0 #060405, 0 10px 0 #070506, 0 44px 66px -22px rgba(0,0,0,.95); }
+html[data-theme="dark"] .card3d__glow{ background:rgba(197,139,124,.3); }
+html[data-theme="dark"] .card3d__cube{ box-shadow:0 4px 0 #0D090A, 0 12px 22px -8px rgba(0,0,0,.8); }
+html[data-theme="dark"] .foot__s{ text-shadow:1px 1px 0 rgba(197,139,124,.16), 2px 2px 0 rgba(197,139,124,.11),
+                      3px 3px 0 rgba(197,139,124,.07), 4px 4px 10px rgba(0,0,0,.5); }
 html[data-theme="dark"] .aura__bloom{ background:radial-gradient(circle closest-side,
-                rgba(6,182,212,.19), rgba(6,182,212,.09) 38%,
-                rgba(5,8,22,.05) 62%, transparent 76%); }
-html[data-theme="dark"] .lb,.vm{ background:rgba(0,2,9,.97); }
-html[data-theme="dark"] .fitbg{ box-shadow:inset 0 0 120px 40px rgba(5,8,22,.75); }
-html[data-theme="dark"] .zoomable:focus-visible{ box-shadow:0 0 0 2px var(--gold), 0 0 0 6px rgba(6,182,212,.22); }
-html[data-theme="dark"] .zi{ border:1px solid rgba(6,182,212,.55); background:
+                rgba(197,139,124,.19), rgba(197,139,124,.09) 38%,
+                rgba(16,12,13,.05) 62%, transparent 76%); }
+html[data-theme="dark"] .lb,.vm{ background:rgba(6,4,5,.97); }
+html[data-theme="dark"] .fitbg{ box-shadow:inset 0 0 120px 40px rgba(16,12,13,.75); }
+html[data-theme="dark"] .zoomable:focus-visible{ box-shadow:0 0 0 2px var(--gold), 0 0 0 6px rgba(197,139,124,.22); }
+html[data-theme="dark"] .zi{ border:1px solid rgba(197,139,124,.55); background:
     linear-gradient(var(--gold),var(--gold)) center/11px 1.6px no-repeat,
     linear-gradient(var(--gold),var(--gold)) center/1.6px 11px no-repeat,
-    rgba(5,8,22,.74); }
-html[data-theme="dark"] .pl__art{ border:1px solid rgba(6,182,212,.34); box-shadow:0 4px 0 #04081C, 0 34px 60px -20px rgba(0,0,0,.95); }
-html[data-theme="dark"] .fb i{ background:rgba(6,182,212,.15); }
-html[data-theme="dark"] .fb:hover i{ background:rgba(6,182,212,.24); }
-html[data-theme="dark"] .gi__e{ background:rgba(5,8,22,.74); border:1px solid rgba(6,182,212,.42); }
+    rgba(16,12,13,.74); }
+html[data-theme="dark"] .pl__art{ border:1px solid rgba(197,139,124,.34); box-shadow:0 4px 0 #0D090A, 0 34px 60px -20px rgba(0,0,0,.95); }
+html[data-theme="dark"] .fb i{ background:rgba(197,139,124,.15); }
+html[data-theme="dark"] .fb:hover i{ background:rgba(197,139,124,.24); }
+html[data-theme="dark"] .gi__e{ background:rgba(16,12,13,.74); border:1px solid rgba(197,139,124,.42); }
 
 
 /* ==========================================================================
-   LIGHT THEME - COSMIC BLUE, ON PAPER
-   Cinematic
+   LIGHT THEME - BURGUNDY + CREAM, ON PAPER
+   Dramatic · romantic · film-star · artistic
 
-   The reading inverts, as it always does. On the night ground cyan was
-   the one hue that could be read small; on paper it is the worst of the
-   three, and none of them quite clears the bar:
+   The same two colours, swapped: cream becomes the ground and the darks
+   become the ink. Rose gold darkens for paper, as it has to:
 
-     indigo  4.23:1     blue  3.48:1     cyan  2.30:1
+     rose gold  4.43:1 on the cream, 3.87:1 on the soft rose
+     burgundy   10.30:1
+     dark text  16.00:1
 
-   So indigo takes the accent - it is the closest, and it is the palette's
-   own colour - and the small uppercase alone takes it four percent darker
-   to clear 4.5:1. Blue takes the hover and the fills. Cyan drops back to
-   the glow, which needs no contrast at all.
+   So rose gold takes the accent, kept exactly as given for every rule,
+   border and fill, with the small uppercase alone nine percent darker to
+   clear 4.5:1 on both grounds.
 
-   The palette gives no Text for this theme, so the ink is the dark
-   theme's Surface: #0B1430, which is 17.18:1 here and belongs to the
-   palette rather than being invented for it.
+   Burgundy is the one thing here no palette before it managed: a signal
+   colour dark enough to be read as type outright, so the form's errors
+   need no stepped twin this time.
 
-     Background   #F5F9FF   the ground
-     Surface      #FFFFFF   cards, and the bands that come forward
-     Indigo       #6366F1   the accent
-     Blue         #3B82F6   the hover, and the sweep
-     Cyan         #06B6D4   the glow
-     Text         #0B1430   primary type, borrowed from the night Surface
-     Slate        #5B6B8C   secondary type, which the palette leaves open
+   And there is no white surface named, only a Cream and a Soft Rose. So a
+   card is the ground itself, and its border and its shadow are what lift
+   it off the page.
+
+     Cream       #FAF5F0   the ground, and the cards
+     Soft Rose   #F1E4E1   the bands that sit back
+     Dark Text   #241719   primary type
+     Burgundy    #6D1F2B   the signal, and the deep end of the metal
+     Rose Gold   #A85D58   the accent
+     Gray        #756A6A   secondary type, stepped five percent for the rose
 
    The night theme above is untouched.
    ========================================================================== */
 html[data-theme="light"]{
-  --accent-rgb: 99,102,241;
-  --star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.6 6.8L21.5 11l-6.9 2.2L12 20l-2.6-6.8L2.5 11l6.9-2.2z' fill='%236366F1'/%3E%3C/svg%3E");
-  --silver: #5B6B8C;      /* Slate — the palette leaves this open */
+  --accent-rgb: 168,93,88;
+  --star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.6 6.8L21.5 11l-6.9 2.2L12 20l-2.6-6.8L2.5 11l6.9-2.2z' fill='%23A85D58'/%3E%3C/svg%3E");
+  /* Gray, stepped five percent: the palette's own #756A6A is 4.81:1 on the
+     cream but 4.20:1 on the soft rose, and secondary type sits on both */
+  --silver: #6F6565;
   /* the hue slots the base sheet still names */
-  --navy:   #5B6B8C;
-  --purple: #93A2BE;
-  --orange: #06B6D4;      /* Cyan — the glow on the billboard */
-  /* the palette names no signal colour, and the form still has to say when
-     a field is wrong. A rose stands in - but at 3.48:1 on this ground it is
-     a fill, not type, so the errors alone take it a quarter darker. */
-  --red:     #F43F5E;
-  --red-ink: #DD0D30;
-  --white:  #F5F9FF;      /* Background — the ground */
-  --green:  #0B1430;      /* the role the forest held: ink on the pale band */
+  --navy:   #6F6565;
+  --purple: #A89A9A;
+  --orange: #C58B7C;      /* Rose Gold — the glow on the billboard */
+  /* Burgundy is 10.30:1 on the cream, so unlike every palette before it
+     this one's signal colour can be read as type with no stepped twin */
+  --red:     #6D1F2B;
+  --red-ink: #6D1F2B;
+  --white:  #FAF5F0;      /* Cream — the ground */
+  --green:  #241719;      /* the role the forest held: ink on the pale band */
 
-  --gold:    #6366F1;   /* Indigo — the accent. 4.23:1 on the background and
-                           4.47:1 on the surface: right for a rule, a border
-                           or a fill, and a whisker short for small type. */
-  --gold-lt: #3B82F6;   /* Blue — the hover, and fills */
-  /* four percent darker on the same hue clears 4.5:1 on all three grounds,
-     so the small uppercase takes this and everything else keeps the
-     palette colour exactly as given */
-  --gold-ink: #575AF0;
-  --gold-dk: #312E81;
-  /* the sweep, dark enough all the way across that white can be written
-     on it: indigo, blue, and the deep indigo the palette ends on */
-  --gold-metal: linear-gradient(158deg,#6366F1 0%,#4F46E5 46%,#4338CA 100%);
-  --metal-ink: #FFFFFF;
-  --metal-rim: #312E81;
+  --gold:    #A85D58;   /* Rose Gold — the accent. 4.43:1 on the cream and
+                           3.87:1 on the soft rose: right for a rule, a
+                           border or a fill, short for small type. */
+  --gold-lt: #C58B7C;   /* the night theme's Rose Gold, lighter here */
+  /* nine percent darker on the same hue clears 4.5:1 on both grounds, so
+     the small uppercase takes this and everything else keeps the palette
+     colour exactly as given */
+  --gold-ink: #995450;
+  --gold-dk: #6D1F2B;   /* Burgundy */
+  /* rose gold down into the burgundy, dark enough through the middle that
+     the cream can be written on it - 6.29:1 where the type sits */
+  --gold-metal: linear-gradient(158deg,#C58B7C 0%,#8A3F44 46%,#6D1F2B 100%);
+  --metal-ink: #F4EDE4;
+  --metal-rim: #4A1620;
 
-  --black:   #F5F9FF;   /* Background — the page ground */
-  --card:    #FFFFFF;   /* Surface — every card stands on white */
-  --card-hi: #FFFFFF;
-  --sunk:    #EDF3FF;   /* the one step back from the background */
+  --black:   #FAF5F0;   /* Cream — the page ground */
+  /* the palette names no white surface, so a card is the ground itself and
+     its border and shadow are what lift it off the page */
+  --card:    #FAF5F0;
+  --card-hi: #FAF5F0;
+  --sunk:    #F1E4E1;   /* Soft Rose — the one step back */
 
-  --ink:  #0B1430;      /* Text */
-  --soft: rgba(11,20,48,.76);
-  --mute: #5B6B8C;      /* Gray */
-  --hair: rgba(99,102,241,.45);   /* the accent drawn as a line */
-  --hairw:#DCE6F7;                /* Border, as the palette names it */
+  --ink:  #241719;      /* Text */
+  --soft: rgba(36,23,25,.76);
+  --mute: #6F6565;      /* Gray */
+  --hair: rgba(168,93,88,.45);   /* the accent drawn as a line */
+  --hairw:#E3D4CE;                /* Border, as the palette names it */
 }
-html[data-theme="light"] .sec--green { background:#FFFFFF; }
-html[data-theme="light"] .sec--deep  { background:linear-gradient(180deg,#F5F9FF 0%,#FFFFFF 100%); }
-html[data-theme="light"] .sec--red   { background:linear-gradient(168deg,#F7FAFF 0%,#F7FAFF 50%,#F7FAFF 100%); }
-html[data-theme="light"] .sec--forest{ background:linear-gradient(168deg,#F5F9FF 0%,#FFFFFF 50%,#F5F9FF 100%); }
-html[data-theme="light"] .sec--navy  { background:linear-gradient(168deg,#FFFFFF 0%,#EDF3FF 52%,#FFFFFF 100%); }
+html[data-theme="light"] .sec--green { background:#FAF5F0; }
+html[data-theme="light"] .sec--deep  { background:linear-gradient(180deg,#FAF5F0 0%,#FAF5F0 100%); }
+html[data-theme="light"] .sec--red   { background:linear-gradient(168deg,#FCF8F4 0%,#FCF8F4 50%,#FCF8F4 100%); }
+html[data-theme="light"] .sec--forest{ background:linear-gradient(168deg,#FAF5F0 0%,#FAF5F0 50%,#FAF5F0 100%); }
+html[data-theme="light"] .sec--navy  { background:linear-gradient(168deg,#FAF5F0 0%,#F1E4E1 52%,#FAF5F0 100%); }
 html[data-theme="light"] .hero__giant{
-  --g1:rgba(11,20,48,.34);   --g2:rgba(11,20,48,.20);
-  --g3:rgba(99,102,241,.40); --g4:rgba(11,20,48,.15);
+  --g1:rgba(36,23,25,.34);   --g2:rgba(36,23,25,.20);
+  --g3:rgba(168,93,88,.40); --g4:rgba(36,23,25,.15);
   background-blend-mode:soft-light; }
 html[data-theme="light"] .hero { background:
-    radial-gradient(ellipse 60% 54% at 50% 42%, rgba(99,102,241,.10), transparent 72%),
-    radial-gradient(ellipse at 22% 34%,#F5F9FF 0%,#F5F9FF 46%,#FFFFFF 100%); }
-html[data-theme="light"] .intro{ background:radial-gradient(ellipse at 50% 40%,#F5F9FF,#FFFFFF 70%); }
-html[data-theme="light"] .foot { background:linear-gradient(180deg,#FFFFFF,#DCE6F7); }
-html[data-theme="light"] .hdr.stuck{ background:rgba(245,249,255,.92);
-  box-shadow:0 10px 30px -14px rgba(11,20,48,.22); }
+    radial-gradient(ellipse 60% 54% at 50% 42%, rgba(168,93,88,.10), transparent 72%),
+    radial-gradient(ellipse at 22% 34%,#FAF5F0 0%,#FAF5F0 46%,#FAF5F0 100%); }
+html[data-theme="light"] .intro{ background:radial-gradient(ellipse at 50% 40%,#FAF5F0,#FAF5F0 70%); }
+html[data-theme="light"] .foot { background:linear-gradient(180deg,#FAF5F0,#E3D4CE); }
+html[data-theme="light"] .hdr.stuck{ background:rgba(250,245,240,.92);
+  box-shadow:0 10px 30px -14px rgba(36,23,25,.22); }
 html[data-theme="light"] .h3d{
   color:var(--ink);
   text-shadow:
-     1px 1px 0 #3B82F6, 2px 2px 0 #4F46E5, 3px 3px 0 #6366F1,
-     4px 4px 0 #6366F1, 5px 5px 0 #312E81, 6px 6px 12px rgba(11,20,48,.28),
-     0 0 30px rgba(59,130,246,.28); }
+     1px 1px 0 #C58B7C, 2px 2px 0 #8A3F44, 3px 3px 0 #A85D58,
+     4px 4px 0 #A85D58, 5px 5px 0 #6D1F2B, 6px 6px 12px rgba(36,23,25,.28),
+     0 0 30px rgba(197,139,124,.28); }
 html[data-theme="light"] .btn--gold:hover{
-  box-shadow:0 6px 0 #6366F1, 0 20px 32px -10px rgba(59,130,246,.55); }
-html[data-theme="light"] .btn--navy{ background:linear-gradient(158deg,#3B82F6,#6366F1);
-  border-color:#6366F1; }
+  box-shadow:0 6px 0 #A85D58, 0 20px 32px -10px rgba(197,139,124,.55); }
+html[data-theme="light"] .btn--navy{ background:linear-gradient(158deg,#C58B7C,#A85D58);
+  border-color:#A85D58; }
 html[data-theme="light"] .btn--navy:hover{
-  box-shadow:0 6px 0 #16213F, 0 20px 32px -10px rgba(99,102,241,.45); }
-html[data-theme="light"] .btn--red{ background:linear-gradient(158deg,#06B6D4,#F43F5E);
-  border-color:#F43F5E; }
+  box-shadow:0 6px 0 #33232A, 0 20px 32px -10px rgba(168,93,88,.45); }
+html[data-theme="light"] .btn--red{ background:linear-gradient(158deg,#C58B7C,#6D1F2B);
+  border-color:#6D1F2B; }
 html[data-theme="light"] .btn--red:hover{
-  box-shadow:0 6px 0 #9F1239, 0 20px 32px -10px rgba(244,63,94,.5); }
-html[data-theme="light"] .btn--dark{ background:linear-gradient(158deg,#3B82F6,#6366F1);
-  border-color:#6366F1; color:#F5F9FF; }
-html[data-theme="light"] .btn--ghost{ background:rgba(99,102,241,.05); }
+  box-shadow:0 6px 0 #4A1620, 0 20px 32px -10px rgba(109,31,43,.5); }
+html[data-theme="light"] .btn--dark{ background:linear-gradient(158deg,#C58B7C,#A85D58);
+  border-color:#A85D58; color:#FAF5F0; }
+html[data-theme="light"] .btn--ghost{ background:rgba(168,93,88,.05); }
 html[data-theme="light"] .chip3d{
-  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 3px 0 #DCE6F7,
-             0 10px 18px -8px rgba(11,20,48,.22); }
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 3px 0 #E3D4CE,
+             0 10px 18px -8px rgba(36,23,25,.22); }
 html[data-theme="light"] .chip3d:hover{
-  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 7px 0 #DCE6F7,
-             0 20px 28px -10px rgba(11,20,48,.28); }
-html[data-theme="light"] .chip3d--red  { background:linear-gradient(158deg,#F7FAFF,#F7FAFF);
-  border-color:rgba(244,63,94,.42);
-  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 3px 0 #F7FAFF,
-             0 10px 18px -8px rgba(11,20,48,.2); }
-html[data-theme="light"] .chip3d--red:hover{ background:linear-gradient(158deg,#E9F0FD,#F7FAFF); }
-html[data-theme="light"] .chip3d--green{ background:linear-gradient(158deg,#F5F9FF,#FFFFFF);
-  border-color:rgba(99,102,241,.2); }
-html[data-theme="light"] .chip3d--navy { background:linear-gradient(158deg,#FFFFFF,#FFFFFF);
-  border-color:rgba(99,102,241,.38); }
-html[data-theme="light"] .chip3d--dark { background:linear-gradient(158deg,#3B82F6,#6366F1);
-  border-color:#6366F1; color:#F5F9FF;
-  box-shadow:0 3px 0 rgba(11,20,48,.35), 0 10px 18px -8px rgba(11,20,48,.35); }
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 7px 0 #E3D4CE,
+             0 20px 28px -10px rgba(36,23,25,.28); }
+html[data-theme="light"] .chip3d--red  { background:linear-gradient(158deg,#FCF8F4,#FCF8F4);
+  border-color:rgba(109,31,43,.42);
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 3px 0 #FCF8F4,
+             0 10px 18px -8px rgba(36,23,25,.2); }
+html[data-theme="light"] .chip3d--red:hover{ background:linear-gradient(158deg,#F1E4E1,#FCF8F4); }
+html[data-theme="light"] .chip3d--green{ background:linear-gradient(158deg,#FAF5F0,#FAF5F0);
+  border-color:rgba(168,93,88,.2); }
+html[data-theme="light"] .chip3d--navy { background:linear-gradient(158deg,#FAF5F0,#FAF5F0);
+  border-color:rgba(168,93,88,.38); }
+html[data-theme="light"] .chip3d--dark { background:linear-gradient(158deg,#C58B7C,#A85D58);
+  border-color:#A85D58; color:#FAF5F0;
+  box-shadow:0 3px 0 rgba(36,23,25,.35), 0 10px 18px -8px rgba(36,23,25,.35); }
 html[data-theme="light"] .chip3d--dark i{ color:var(--gold-lt); }
 html[data-theme="light"] .chip3d--dark span,
-html[data-theme="light"] .chip3d--dark b i{ color:rgba(245,249,255,.72); }
+html[data-theme="light"] .chip3d--dark b i{ color:rgba(250,245,240,.72); }
 html[data-theme="light"] .fb,
 html[data-theme="light"] .snd,
-html[data-theme="light"] .thm{ background:rgba(99,102,241,.04);
-  box-shadow:0 2px 0 rgba(11,20,48,.12); }
-html[data-theme="light"] .stack__glow{ background:rgba(59,130,246,.4); }
+html[data-theme="light"] .thm{ background:rgba(168,93,88,.04);
+  box-shadow:0 2px 0 rgba(36,23,25,.12); }
+html[data-theme="light"] .stack__glow{ background:rgba(197,139,124,.4); }
 html[data-theme="light"] .stack__back{
-  background:linear-gradient(158deg,rgba(147,162,190,.16),rgba(99,102,241,.16)); }
+  background:linear-gradient(158deg,rgba(168,154,154,.16),rgba(168,93,88,.16)); }
 html[data-theme="light"] .stack__mid{
-  background:linear-gradient(158deg,rgba(99,102,241,.14),rgba(59,130,246,.18)); }
-html[data-theme="light"] .stack__face{ box-shadow:0 40px 70px -24px rgba(11,20,48,.4); }
+  background:linear-gradient(158deg,rgba(168,93,88,.14),rgba(197,139,124,.18)); }
+html[data-theme="light"] .stack__face{ box-shadow:0 40px 70px -24px rgba(36,23,25,.4); }
 html[data-theme="light"] .cf__i.mid{
-  box-shadow:0 40px 70px -22px rgba(11,20,48,.35), 0 0 60px rgba(59,130,246,.35); }
+  box-shadow:0 40px 70px -22px rgba(36,23,25,.35), 0 0 60px rgba(197,139,124,.35); }
 html[data-theme="light"] .gnote p{ color:var(--ink); }
 html[data-theme="light"] .gnote::before{
   background:radial-gradient(58% 56% at 50% 42%,
-             rgba(59,130,246,.34), rgba(147,162,190,.10) 55%, transparent 74%); }
-html[data-theme="light"] .flip__f{ background:linear-gradient(158deg,#F5F9FF,#FFFFFF);
-  border-color:rgba(99,102,241,.14);
-  box-shadow:0 3px 0 #DCE6F7, 0 14px 26px -12px rgba(11,20,48,.3); }
-html[data-theme="light"] .flip__b{ background:linear-gradient(158deg,#F5F9FF,#FFFFFF);
+             rgba(197,139,124,.34), rgba(168,154,154,.10) 55%, transparent 74%); }
+html[data-theme="light"] .flip__f{ background:linear-gradient(158deg,#FAF5F0,#FAF5F0);
+  border-color:rgba(168,93,88,.14);
+  box-shadow:0 3px 0 #E3D4CE, 0 14px 26px -12px rgba(36,23,25,.3); }
+html[data-theme="light"] .flip__b{ background:linear-gradient(158deg,#FAF5F0,#FAF5F0);
   border-color:var(--gold); }
 html[data-theme="light"] .flip__b b{ color:var(--ink); }
 html[data-theme="light"] .f input,
 html[data-theme="light"] .f select,
-html[data-theme="light"] .f textarea{ box-shadow:0 2px 5px rgba(11,20,48,.07) inset; }
+html[data-theme="light"] .f textarea{ box-shadow:0 2px 5px rgba(36,23,25,.07) inset; }
 html[data-theme="light"] .f label i,
 html[data-theme="light"] .f .e,
 html[data-theme="light"] .fnote.no{ color:var(--red-ink); }
@@ -2166,10 +2172,10 @@ html[data-theme="light"] .f.bad select,
 html[data-theme="light"] .f.bad textarea{ border-color:var(--red); }
 html[data-theme="light"] .f input[type="date"]::-webkit-calendar-picker-indicator{ filter:none; }
 html[data-theme="light"] .lb,
-html[data-theme="light"] .vm{ background:rgba(245,249,255,.97); }
-html[data-theme="light"] .lb__s img{ box-shadow:0 40px 80px -24px rgba(11,20,48,.45); }
+html[data-theme="light"] .vm{ background:rgba(250,245,240,.97); }
+html[data-theme="light"] .lb__s img{ box-shadow:0 40px 80px -24px rgba(36,23,25,.45); }
 html[data-theme="light"] .fitbg{ filter:blur(26px) saturate(1.15) brightness(1.02);
-  box-shadow:inset 0 0 120px 40px rgba(245,249,255,.72); }
+  box-shadow:inset 0 0 120px 40px rgba(250,245,240,.72); }
 html[data-theme="light"] .slab,
 html[data-theme="light"] .pc,
 html[data-theme="light"] .rcard,
@@ -2184,59 +2190,59 @@ html[data-theme="light"] .cred__body,
 html[data-theme="light"] .player__in,
 html[data-theme="light"] .logo__cube,
 html[data-theme="light"] .cf__i{
-  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 3px 0 #DCE6F7,
-             0 22px 34px -18px rgba(11,20,48,.28); }
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 3px 0 #E3D4CE,
+             0 22px 34px -18px rgba(36,23,25,.28); }
 html[data-theme="light"] .rpc:hover,
 html[data-theme="light"] .rpc:focus-visible{
-  box-shadow:0 3px 0 #DCE6F7, 0 40px 66px -18px rgba(11,20,48,.42),
-             0 0 0 1px rgba(59,130,246,.55); }
+  box-shadow:0 3px 0 #E3D4CE, 0 40px 66px -18px rgba(36,23,25,.42),
+             0 0 0 1px rgba(197,139,124,.55); }
 html[data-theme="light"] .gi:hover{
-  box-shadow:0 3px 0 #DCE6F7, 0 26px 44px -16px rgba(11,20,48,.34),
-             0 0 0 1px rgba(59,130,246,.5) inset; }
-html[data-theme="light"] .card3d{ background:linear-gradient(158deg,#F5F9FF,#FFFFFF);
+  box-shadow:0 3px 0 #E3D4CE, 0 26px 44px -16px rgba(36,23,25,.34),
+             0 0 0 1px rgba(197,139,124,.5) inset; }
+html[data-theme="light"] .card3d{ background:linear-gradient(158deg,#FAF5F0,#FAF5F0);
   border-color:var(--gold);
-  box-shadow:0 4px 0 #DCE6F7, 0 10px 0 #DCE6F7, 0 44px 66px -24px rgba(11,20,48,.32); }
-html[data-theme="light"] .card3d__glow{ background:rgba(59,130,246,.34); }
-html[data-theme="light"] .card3d__cube{ background:linear-gradient(158deg,#3B82F6,#6366F1);
-  border-color:#6366F1; box-shadow:0 4px 0 #16213F, 0 12px 22px -8px rgba(11,20,48,.35); }
-html[data-theme="light"] .bill{ background:linear-gradient(158deg,#F7FAFF,#F7FAFF);
-  border-color:rgba(244,63,94,.42);
-  box-shadow:0 4px 0 #F7FAFF, 0 10px 0 #E9F0FD, 0 44px 70px -24px rgba(11,20,48,.3); }
-html[data-theme="light"] .bill__glow{ background:rgba(6,182,212,.34); }
-html[data-theme="light"] .socs a{ background:rgba(99,102,241,.05);
-  box-shadow:0 2px 0 rgba(11,20,48,.12); }
-html[data-theme="light"] .cred__body{ background:linear-gradient(158deg,#F5F9FF,#FFFFFF);
-  border-color:rgba(99,102,241,.24);
-  box-shadow:0 3px 0 #DCE6F7, 0 6px 0 #FFFFFF, 0 30px 48px -20px rgba(11,20,48,.3); }
+  box-shadow:0 4px 0 #E3D4CE, 0 10px 0 #E3D4CE, 0 44px 66px -24px rgba(36,23,25,.32); }
+html[data-theme="light"] .card3d__glow{ background:rgba(197,139,124,.34); }
+html[data-theme="light"] .card3d__cube{ background:linear-gradient(158deg,#C58B7C,#A85D58);
+  border-color:#A85D58; box-shadow:0 4px 0 #33232A, 0 12px 22px -8px rgba(36,23,25,.35); }
+html[data-theme="light"] .bill{ background:linear-gradient(158deg,#FCF8F4,#FCF8F4);
+  border-color:rgba(109,31,43,.42);
+  box-shadow:0 4px 0 #FCF8F4, 0 10px 0 #F1E4E1, 0 44px 70px -24px rgba(36,23,25,.3); }
+html[data-theme="light"] .bill__glow{ background:rgba(197,139,124,.34); }
+html[data-theme="light"] .socs a{ background:rgba(168,93,88,.05);
+  box-shadow:0 2px 0 rgba(36,23,25,.12); }
+html[data-theme="light"] .cred__body{ background:linear-gradient(158deg,#FAF5F0,#FAF5F0);
+  border-color:rgba(168,93,88,.24);
+  box-shadow:0 3px 0 #E3D4CE, 0 6px 0 #FAF5F0, 0 30px 48px -20px rgba(36,23,25,.3); }
 html[data-theme="light"] .cred__art{
-  box-shadow:0 4px 0 #DCE6F7, 0 34px 56px -22px rgba(11,20,48,.34); }
+  box-shadow:0 4px 0 #E3D4CE, 0 34px 56px -22px rgba(36,23,25,.34); }
 html[data-theme="light"] .aura__bloom{ display:none; }
 html[data-theme="light"] .aura{ transition:none; }
 html[data-theme="light"] .aura__t{ background:var(--navy); }
 html[data-theme="light"] body{ font-weight:400; }
-html[data-theme="light"] .lede{ color:#2C3A5C; }
+html[data-theme="light"] .lede{ color:#4A3A3A; }
 html[data-theme="light"] .kv dd,
 html[data-theme="light"] .card3d__l li,
 html[data-theme="light"] .bill__g b,
-html[data-theme="light"] .mc__b h3{ color:#16213F; }
+html[data-theme="light"] .mc__b h3{ color:#33232A; }
 html[data-theme="light"] .kv dt,
 html[data-theme="light"] .mini,
 html[data-theme="light"] .note,
 html[data-theme="light"] .none,
 html[data-theme="light"] .chip3d span,
 html[data-theme="light"] .card3d__c,
-html[data-theme="light"] .bill__g span{ color:#5B6B8C; }
+html[data-theme="light"] .bill__g span{ color:#6F6565; }
 html[data-theme="light"] .eyebrow{ color:var(--gold-ink); }
 html[data-theme="light"] .eyebrow i{ background:var(--gold-lt); }
 html[data-theme="light"] .sec[data-code]::after{ color:var(--gold-ink); opacity:.8; }
-html[data-theme="light"] .chip3d b{ color:#0B1430; }
+html[data-theme="light"] .chip3d b{ color:#241719; }
 html[data-theme="light"] .chip3d i{ color:var(--gold-ink); }
-html[data-theme="light"] .chip3d--dark b{ color:#F5F9FF; }
+html[data-theme="light"] .chip3d--dark b{ color:#FAF5F0; }
 html[data-theme="light"] .h3d{
-  color:#0B1430;
+  color:#241719;
   text-shadow:
-     1px 1px 0 #3B82F6, 2px 2px 0 #4F46E5, 3px 3px 0 #6366F1,
-     4px 4px 10px rgba(11,20,48,.16); }
+     1px 1px 0 #C58B7C, 2px 2px 0 #8A3F44, 3px 3px 0 #A85D58,
+     4px 4px 10px rgba(36,23,25,.16); }
 html[data-theme="light"] .pc img,
 html[data-theme="light"] .rpc img,
 html[data-theme="light"] .gi img,
@@ -2249,7 +2255,7 @@ html[data-theme="light"] .mc:hover .mc__img img{ filter:saturate(1.05) brightnes
 html[data-theme="light"] .player__in img{ filter:brightness(.96) saturate(1.02); }
 html[data-theme="light"] .player:hover .player__in img{ filter:brightness(1.02); }
 html[data-theme="light"] .fitbg{ filter:blur(30px) saturate(1.1) brightness(1.14);
-  box-shadow:inset 0 0 120px 44px rgba(245,249,255,.6); }
+  box-shadow:inset 0 0 120px 44px rgba(250,245,240,.6); }
 html[data-theme="light"] .pc:hover .fitbg,
 html[data-theme="light"] .gi:hover .fitbg,
 html[data-theme="light"] .mc:hover .fitbg,
@@ -2257,32 +2263,32 @@ html[data-theme="light"] .cf__i.mid .fitbg,
 html[data-theme="light"] .player:hover .fitbg{
   filter:blur(34px) saturate(1.25) brightness(1.08); }
 html[data-theme="light"] .gi::before{
-  background:linear-gradient(transparent 58%,rgba(11,20,48,.78)); opacity:.3; }
-html[data-theme="light"] .gi::after{ color:#3B82F6; text-shadow:0 1px 3px rgba(11,20,48,.9); }
+  background:linear-gradient(transparent 58%,rgba(36,23,25,.78)); opacity:.3; }
+html[data-theme="light"] .gi::after{ color:#C58B7C; text-shadow:0 1px 3px rgba(36,23,25,.9); }
 html[data-theme="light"] .cf__i::after{
-  background:linear-gradient(180deg,transparent 45%,rgba(11,20,48,.55)); }
-html[data-theme="light"] .sec--deep  { background:#F5F9FF; }
-html[data-theme="light"] .sec--green { background:linear-gradient(180deg,#F5F9FF,#FFFFFF); }
-html[data-theme="light"] .sec--forest{ background:linear-gradient(168deg,#FFFFFF 0%,#FFFFFF 50%,#FFFFFF 100%); }
-html[data-theme="light"] .foot{ background:linear-gradient(180deg,#FFFFFF,#DCE6F7); }
+  background:linear-gradient(180deg,transparent 45%,rgba(36,23,25,.55)); }
+html[data-theme="light"] .sec--deep  { background:#FAF5F0; }
+html[data-theme="light"] .sec--green { background:linear-gradient(180deg,#FAF5F0,#FAF5F0); }
+html[data-theme="light"] .sec--forest{ background:linear-gradient(168deg,#FAF5F0 0%,#FAF5F0 50%,#FAF5F0 100%); }
+html[data-theme="light"] .foot{ background:linear-gradient(180deg,#FAF5F0,#E3D4CE); }
 html[data-theme="light"] .zi{
-  border-color:rgba(99,102,241,.5);
+  border-color:rgba(168,93,88,.5);
   background:
     linear-gradient(var(--gold),var(--gold)) center/11px 1.6px no-repeat,
     linear-gradient(var(--gold),var(--gold)) center/1.6px 11px no-repeat,
-    rgba(245,249,255,.9);
-  box-shadow:0 2px 8px -2px rgba(11,20,48,.3);
+    rgba(250,245,240,.9);
+  box-shadow:0 2px 8px -2px rgba(36,23,25,.3);
 }
 html[data-theme="light"] .rpc > .zi{ background-size:8px 1.4px, 1.4px 8px, auto; }
 html[data-theme="light"] .pl__art{
-  border-color:rgba(99,102,241,.4);
-  box-shadow:0 4px 0 #DCE6F7, 0 34px 56px -22px rgba(11,20,48,.34); }
-html[data-theme="light"] .fb i{ background:rgba(99,102,241,.16); color:var(--gold-ink); }
-html[data-theme="light"] .fb.on i{ background:rgba(11,20,48,.2); color:#0B1430; }
+  border-color:rgba(168,93,88,.4);
+  box-shadow:0 4px 0 #E3D4CE, 0 34px 56px -22px rgba(36,23,25,.34); }
+html[data-theme="light"] .fb i{ background:rgba(168,93,88,.16); color:var(--gold-ink); }
+html[data-theme="light"] .fb.on i{ background:rgba(36,23,25,.2); color:#241719; }
 html[data-theme="light"] .gi__e{
-  color:var(--gold-ink); background:rgba(245,249,255,.9);
-  border-color:rgba(99,102,241,.45);
-  box-shadow:0 2px 10px -4px rgba(11,20,48,.34); }
+  color:var(--gold-ink); background:rgba(250,245,240,.9);
+  border-color:rgba(168,93,88,.45);
+  box-shadow:0 2px 10px -4px rgba(36,23,25,.34); }
 /* ---- the primary button, as the palette sheet draws it -------------
    The reference shows one button, a royal-blue-to-purple sweep. The
    gold-metal gradient stays golden yellow, since that is a primary
@@ -2290,77 +2296,77 @@ html[data-theme="light"] .gi__e{
    as well as the buttons; the sweep goes to the secondary button, which
    is the one that sits beside it in the hero. */
 html[data-theme="light"] .btn--navy{
-  background:linear-gradient(103deg,#16213F 0%,#0B1430 100%);
-  border-color:rgba(11,20,48,.5); color:#F5F9FF;
-  box-shadow:0 3px 0 #0B1430, 0 14px 26px -12px rgba(11,20,48,.4); }
+  background:linear-gradient(103deg,#33232A 0%,#241719 100%);
+  border-color:rgba(36,23,25,.5); color:#FAF5F0;
+  box-shadow:0 3px 0 #241719, 0 14px 26px -12px rgba(36,23,25,.4); }
 html[data-theme="light"] .btn--navy:hover{
-  background:linear-gradient(103deg,#0B1430 0%,#16213F 100%);
-  box-shadow:0 4px 0 #0B1430, 0 18px 30px -12px rgba(11,20,48,.45); }
+  background:linear-gradient(103deg,#241719 0%,#33232A 100%);
+  box-shadow:0 4px 0 #241719, 0 18px 30px -12px rgba(36,23,25,.45); }
 
 /* ---- the pieces added since the cream sheet was written ---- */
 html[data-theme="light"] .gi__e{
-  background:rgba(245,249,255,.92); border-color:rgba(99,102,241,.42); color:var(--gold-ink);
-  box-shadow:0 2px 10px -3px rgba(11,20,48,.28); }
+  background:rgba(250,245,240,.92); border-color:rgba(168,93,88,.42); color:var(--gold-ink);
+  box-shadow:0 2px 10px -3px rgba(36,23,25,.28); }
 html[data-theme="light"] .zi{
-  background:linear-gradient(#6366F1,#6366F1) center/11px 1.6px no-repeat,
-             linear-gradient(#6366F1,#6366F1) center/1.6px 11px no-repeat,
-             rgba(245,249,255,.94);
-  border-color:rgba(99,102,241,.45); box-shadow:0 2px 8px -2px rgba(11,20,48,.3); }
+  background:linear-gradient(#A85D58,#A85D58) center/11px 1.6px no-repeat,
+             linear-gradient(#A85D58,#A85D58) center/1.6px 11px no-repeat,
+             rgba(250,245,240,.94);
+  border-color:rgba(168,93,88,.45); box-shadow:0 2px 8px -2px rgba(36,23,25,.3); }
 html[data-theme="light"] .rpc > .zi{ background-size:8px 1.4px, 1.4px 8px, auto; }
-html[data-theme="light"] .fb i{ background:rgba(59,130,246,.22); color:var(--gold-ink); }
-html[data-theme="light"] .fb.on i{ background:rgba(11,20,48,.16); color:#0B1430; }
+html[data-theme="light"] .fb i{ background:rgba(197,139,124,.22); color:var(--gold-ink); }
+html[data-theme="light"] .fb.on i{ background:rgba(36,23,25,.16); color:#241719; }
 html[data-theme="light"] .pl__art{
-  border-color:rgba(99,102,241,.32);
-  box-shadow:0 4px 0 #DCE6F7, 0 34px 56px -22px rgba(11,20,48,.34); }
+  border-color:rgba(168,93,88,.32);
+  box-shadow:0 4px 0 #E3D4CE, 0 34px 56px -22px rgba(36,23,25,.34); }
 
 /* ---- what the sheet still paints dark on a white ground. The scrims are
         deliberately left out: a gradient that sits ON a photograph so the
         caption over it can be read stays dark in either theme. ---- */
 html[data-theme="light"] .raise{ box-shadow:
-    0 1px 0 rgba(245,249,255,.09) inset,
+    0 1px 0 rgba(250,245,240,.09) inset,
     0 -1px 0 rgba(0,0,0,.5) inset,
-    0 2px 0 #DCE6F7,
-    0 4px 0 #DCE6F7,
-    0 8px 0 #DCE6F7,
+    0 2px 0 #E3D4CE,
+    0 4px 0 #E3D4CE,
+    0 8px 0 #E3D4CE,
     0 26px 40px -14px rgba(0,0,0,.85); }
 html[data-theme="light"] .h3d--dark{ text-shadow:
-     1px 1px 0 #3B82F6,  2px 2px 0 #4F46E5,  3px 3px 0 #6366F1,
-     4px 4px 0 #4338CA,  5px 5px 0 #312E81,  6px 6px 10px rgba(11,20,48,.3); }
-html[data-theme="light"] .sec--white .lede{ color:rgba(11,20,48,.7); }
-html[data-theme="light"] .rnd{ box-shadow:0 3px 0 #DCE6F7, 0 10px 18px -8px rgba(0,0,0,.8); }
-html[data-theme="light"] .cube__f{ background:linear-gradient(158deg,rgba(147,162,190,.9),rgba(11,20,48,.92)); }
-html[data-theme="light"] .cube__f--bt{ background:linear-gradient(158deg,#FFFFFF,#F5F9FF); }
-html[data-theme="light"] .logo__cube{ box-shadow:0 3px 0 #DCE6F7, 0 8px 16px -6px rgba(0,0,0,.8); }
-html[data-theme="light"] .orb--b{ background:rgba(99,102,241,.55); }
-html[data-theme="light"] .slab{ box-shadow:0 1px 0 rgba(245,249,255,.09) inset, 0 3px 0 #DCE6F7,
-             0 6px 0 #DCE6F7, 0 28px 44px -16px rgba(0,0,0,.9); }
-html[data-theme="light"] .kv--dark > div{ border-bottom-color:rgba(11,20,48,.12); }
-html[data-theme="light"] .kv--dark dt{ color:rgba(11,20,48,.5); }
-html[data-theme="light"] .pc{ box-shadow:0 3px 0 #DCE6F7, 0 22px 34px -14px rgba(0,0,0,.9); }
-html[data-theme="light"] .rcard{ box-shadow:0 1px 0 rgba(245,249,255,.09) inset, 0 3px 0 #DCE6F7,
-                   0 6px 0 #DCE6F7, 0 22px 34px -16px rgba(0,0,0,.9); }
-html[data-theme="light"] .rpc{ box-shadow:0 2px 0 #DCE6F7, 0 10px 16px -10px rgba(0,0,0,.85); }
-html[data-theme="light"] .rpc:focus-visible{ box-shadow:0 3px 0 #DCE6F7, 0 40px 66px -16px rgba(0,0,0,.96),
-             0 0 0 1px rgba(99,102,241,.22); }
+     1px 1px 0 #C58B7C,  2px 2px 0 #8A3F44,  3px 3px 0 #A85D58,
+     4px 4px 0 #6D1F2B,  5px 5px 0 #6D1F2B,  6px 6px 10px rgba(36,23,25,.3); }
+html[data-theme="light"] .sec--white .lede{ color:rgba(36,23,25,.7); }
+html[data-theme="light"] .rnd{ box-shadow:0 3px 0 #E3D4CE, 0 10px 18px -8px rgba(0,0,0,.8); }
+html[data-theme="light"] .cube__f{ background:linear-gradient(158deg,rgba(168,154,154,.9),rgba(36,23,25,.92)); }
+html[data-theme="light"] .cube__f--bt{ background:linear-gradient(158deg,#FAF5F0,#FAF5F0); }
+html[data-theme="light"] .logo__cube{ box-shadow:0 3px 0 #E3D4CE, 0 8px 16px -6px rgba(0,0,0,.8); }
+html[data-theme="light"] .orb--b{ background:rgba(168,93,88,.55); }
+html[data-theme="light"] .slab{ box-shadow:0 1px 0 rgba(250,245,240,.09) inset, 0 3px 0 #E3D4CE,
+             0 6px 0 #E3D4CE, 0 28px 44px -16px rgba(0,0,0,.9); }
+html[data-theme="light"] .kv--dark > div{ border-bottom-color:rgba(36,23,25,.12); }
+html[data-theme="light"] .kv--dark dt{ color:rgba(36,23,25,.5); }
+html[data-theme="light"] .pc{ box-shadow:0 3px 0 #E3D4CE, 0 22px 34px -14px rgba(0,0,0,.9); }
+html[data-theme="light"] .rcard{ box-shadow:0 1px 0 rgba(250,245,240,.09) inset, 0 3px 0 #E3D4CE,
+                   0 6px 0 #E3D4CE, 0 22px 34px -16px rgba(0,0,0,.9); }
+html[data-theme="light"] .rpc{ box-shadow:0 2px 0 #E3D4CE, 0 10px 16px -10px rgba(0,0,0,.85); }
+html[data-theme="light"] .rpc:focus-visible{ box-shadow:0 3px 0 #E3D4CE, 0 40px 66px -16px rgba(0,0,0,.96),
+             0 0 0 1px rgba(168,93,88,.22); }
 /* the caption still lies on a dark scrim over the photograph, so it keeps
    light ink in this theme rather than taking the page's dark body colour */
-html[data-theme="light"] .rpc figcaption b{ color:#F8FAFC; }
+html[data-theme="light"] .rpc figcaption b{ color:#F4EDE4; }
 /* the accent itself is only 4.23:1 even on paper, and this line does not
    lie on paper - it lies on a dark scrim over the photograph. So it takes
    the accent lifted, the way the dark theme's caption takes the cyan. */
-html[data-theme="light"] .rpc figcaption i{ color:#A5B4FC; }
+html[data-theme="light"] .rpc figcaption i{ color:#E0B3A4; }
 /* a white edge disappears on a pale chip, so the flag is outlined in ink here */
-html[data-theme="light"] .rem{ border-color:rgba(11,20,48,.3); }
-html[data-theme="light"] .player__in{ box-shadow:0 3px 0 #DCE6F7, 0 8px 0 #DCE6F7, 0 40px 60px -20px rgba(0,0,0,.95); }
-html[data-theme="light"] .mc{ box-shadow:0 3px 0 #DCE6F7, 0 22px 36px -14px rgba(0,0,0,.9); }
-html[data-theme="light"] .gi{ box-shadow:0 3px 0 #DCE6F7, 0 20px 34px -14px rgba(0,0,0,.9); }
-html[data-theme="light"] .flip__f span{ color:rgba(11,20,48,.62); }
-html[data-theme="light"] .wbox{ border:1px solid rgba(11,20,48,.12); box-shadow:0 3px 0 #DCE6F7, 0 20px 34px -16px rgba(11,20,48,.3); }
-html[data-theme="light"] .wbox h3{ border-bottom:1px solid rgba(11,20,48,.12); }
+html[data-theme="light"] .rem{ border-color:rgba(36,23,25,.3); }
+html[data-theme="light"] .player__in{ box-shadow:0 3px 0 #E3D4CE, 0 8px 0 #E3D4CE, 0 40px 60px -20px rgba(0,0,0,.95); }
+html[data-theme="light"] .mc{ box-shadow:0 3px 0 #E3D4CE, 0 22px 36px -14px rgba(0,0,0,.9); }
+html[data-theme="light"] .gi{ box-shadow:0 3px 0 #E3D4CE, 0 20px 34px -14px rgba(0,0,0,.9); }
+html[data-theme="light"] .flip__f span{ color:rgba(36,23,25,.62); }
+html[data-theme="light"] .wbox{ border:1px solid rgba(36,23,25,.12); box-shadow:0 3px 0 #E3D4CE, 0 20px 34px -16px rgba(36,23,25,.3); }
+html[data-theme="light"] .wbox h3{ border-bottom:1px solid rgba(36,23,25,.12); }
 
 /* The two surfaces the recovered sheet repainted but left standing on a
    dark drop shadow: on white the shadow has to lift rather than sink. */
 html[data-theme="light"] .btn--dark{
-  box-shadow:0 3px 0 #DCE6F7, 0 12px 24px -8px rgba(11,20,48,.28); }
+  box-shadow:0 3px 0 #E3D4CE, 0 12px 24px -8px rgba(36,23,25,.28); }
 html[data-theme="light"] .flip__b{
-  box-shadow:0 3px 0 #DCE6F7, 0 16px 28px -12px rgba(11,20,48,.26); }
+  box-shadow:0 3px 0 #E3D4CE, 0 16px 28px -12px rgba(36,23,25,.26); }
