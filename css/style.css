@@ -486,11 +486,10 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
   color:transparent; -webkit-text-fill-color:transparent;
   user-select:none; }
 
-.hero__cut{ position:absolute; left:58%; bottom:0; z-index:2; margin:0;
-  /* a chest-up portrait puts the face high in its own frame, so this is
-     set off-centre and a little smaller than a standing figure would be:
-     enough that the first half of the name reads clear of him */
-  width:clamp(280px,38vw,520px); height:min(70vh,760px);
+.hero__cut{ position:absolute; left:50%; bottom:0; z-index:2; margin:0;
+  /* short enough that his head clears the header, tall enough that he
+     still owns the middle of the page */
+  width:clamp(300px,42vw,560px); height:min(74vh,820px);
   transform:translate3d(calc(-50% + var(--px,0px)), var(--py,0px), 0) scale(var(--pz,1));
   transition:scale .6s var(--e); }
 /* The picture is a cut-out with a real alpha channel, so there is no sky to
@@ -501,8 +500,8 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
   filter:drop-shadow(0 26px 42px rgba(0,0,0,.5)); }
 
 .hero__script{ position:absolute; z-index:3; margin:0;
-  left:50%; top:57%;
-  transform:translate3d(calc(17vw + var(--px,0px)), var(--py,0px), 0) rotate(-6deg);
+  left:50%; top:54%;
+  transform:translate3d(calc(11vw + var(--px,0px)), var(--py,0px), 0) rotate(-6deg);
   font-family:'Dancing Script', 'Segoe Script', cursive; font-weight:700; font-style:normal;
   font-size:clamp(2rem,6.4vw,5.4rem); line-height:1;
   color:var(--gold); text-shadow:0 8px 30px rgba(0,0,0,.7);
@@ -544,17 +543,14 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
      half at low strength and the reading column takes the lower half
      outright, so nothing is set over a face. */
   .hero{ align-items:flex-end; padding-bottom:92px; }
-  /* a bust puts the face in the upper third on a phone too, so the name
-     drops to cross his chest rather than his mouth */
-  .hero__giant{ top:44%; font-size:clamp(2.2rem,16.5vw,5rem); }
+  .hero__giant{ top:26%; font-size:clamp(2.2rem,16.5vw,5rem); }
   .hero__cut{ width:min(96vw,460px); height:58vh; bottom:auto; top:5vh;
               opacity:.5; }
   .hero__cut img{ object-position:50% 0;
     -webkit-mask-image:linear-gradient(180deg,#000 62%,transparent 97%);
             mask-image:linear-gradient(180deg,#000 62%,transparent 97%); }
-  /* over the shoulder, clear of the face above it and the name below */
-  .hero__script{ top:33%; font-size:clamp(1.6rem,10vw,2.6rem);
-    transform:translate3d(calc(14vw + var(--px,0px)), var(--py,0px), 0) rotate(-6deg); }
+  .hero__script{ top:34%;
+    transform:translate3d(calc(-4vw + var(--px,0px)), var(--py,0px), 0) rotate(-6deg); }
   .hero__lead{ position:relative; }
   .hero__lede br{ display:none; }
   .hero__lede{ font-size:.94rem; line-height:1.7; }
