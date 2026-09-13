@@ -169,7 +169,7 @@
          an upright is measured from the strip's proportion rather than its
          own, and the picture is cropped into it. Landscapes keep theirs. */
       const ar = parseFloat(tile.dataset.ar);
-      const shape = (ar > 0 && ar < 1) ? 0.55 : ar;
+      const shape = (ar > 0 && ar < 1) ? 0.32 : ar;   // the reference strip
       const want = shape > 0 ? w / shape : w * ih / iw;
       const rows = clamp(Math.round((want + gap) / (row + gap)), 3, 44);
       tile.style.gridRow = 'span ' + rows;   // shorthand, as the sheet writes it
@@ -181,7 +181,7 @@
        a step in the row and the run of strips stops reading as a run. */
     const strip = $$('.gi', gg).find((t) => parseFloat(t.dataset.ar) < 1);
     const stripRows = strip
-      ? clamp(Math.round((strip.getBoundingClientRect().width / 0.55 + gap) / (row + gap)), 3, 44)
+      ? clamp(Math.round((strip.getBoundingClientRect().width / 0.32 + gap) / (row + gap)), 3, 44)
       : 0;
     $$('.gnote', gg).forEach((note) => {
       const pad = parseFloat(getComputedStyle(note).paddingTop) * 2;

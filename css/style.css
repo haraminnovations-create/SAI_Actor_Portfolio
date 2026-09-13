@@ -996,17 +996,17 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
    photographs actually are — a standing portrait at 3:4, a stage frame wide —
    so the blurred fill behind each picture is a margin, not half the frame.
    -------------------------------------------------------------------------- */
-.gg{ display:grid; grid-template-columns:repeat(12,1fr); grid-auto-rows:22px;
+.gg{ display:grid; grid-template-columns:repeat(10,1fr); grid-auto-rows:22px;
      grid-auto-flow:row dense; gap:16px; }
-.gi{ position:relative; grid-column:span 3; grid-row:span 11;
+.gi{ position:relative; grid-column:span 2; grid-row:span 11;
      border-radius:16px; overflow:hidden; cursor:pointer;
      border:1px solid var(--hairw); background:var(--card);
      transform-style:preserve-3d;
      box-shadow:0 3px 0 #071612, 0 20px 34px -14px rgba(0,0,0,.9);
      animation:pop .5s var(--eo) both;
      transition:box-shadow .5s var(--e), border-color .4s var(--e); }
-.gi--t { grid-row:span 15; } .gi--w { grid-column:span 6; grid-row:span 10; }
-.gi--xl{ grid-column:span 6; grid-row:span 22; }
+.gi--t { grid-row:span 15; } .gi--w { grid-column:span 5; grid-row:span 10; }
+.gi--xl{ grid-column:span 5; grid-row:span 22; }
 .gi.hide{ display:none; }
 @keyframes pop{ from{ opacity:0; transform:translateY(16px) scale(.97); } }
 .gi img{ position:relative; z-index:1; width:100%; height:100%; object-fit:contain; object-position:center;
@@ -1034,7 +1034,7 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
    light — an off-round radial wash, blurred, that reads as glow rather than
    as an edge — with the line set in the display face so it carries like a
    line of copy on a poster instead of a caption. */
-.gnote{ position:relative; grid-column:span 3; grid-row:span 7;
+.gnote{ position:relative; grid-column:span 2; grid-row:span 7;
         display:flex; flex-direction:column; justify-content:center; gap:11px;
         padding:20px 22px; background:none; border:0; box-shadow:none;
         text-align:center; animation:pop .5s var(--eo) both; }
@@ -1387,10 +1387,10 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
   .duo--rev > .cards{ order:2; }
   .cue{ display:none; }
   .gg{ grid-template-columns:repeat(6,1fr); }
-  .gi{ grid-column:span 3; } .gi--t{ grid-row:span 16; }
+  .gi{ grid-column:span 2; } .gi--t{ grid-row:span 16; }
   .gi--port,.gi--tallx,.gi--xtall,.gi--strip{ grid-column:span 2; }
   .gi--w,.gi--xl{ grid-column:span 6; grid-row:span 16; }
-  .gnote,.gnote--tall{ grid-column:span 3; grid-row:span 8; }
+  .gnote,.gnote--tall{ grid-column:span 2; grid-row:span 8; }
   .cards--9{ grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 
@@ -1889,16 +1889,16 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
    to the frame it is given. Widths above one column belong to landscape
    frames only, so the wall never grows a hero.
    ====================================================================== */
-.gi--band { grid-column:span 12; }   /* the cinematic frame, edge to edge */
-.gi--wide { grid-column:span 6;  }   /* half the wall, 16:9              */
-.gi--sq{ grid-column:span 3; }       /* the square keeps its own width   */
+.gi--band { grid-column:span 10; }   /* the cinematic frame, edge to edge */
+.gi--wide { grid-column:span 5;  }   /* half the wall, 16:9              */
+.gi--sq{ grid-column:span 2; }       /* the square keeps its own width   */
 /* EVERY UPRIGHT, ONE COLUMN WIDTH — four across, all the same strip. They
    used to be three widths and four heights, which made a ragged masonry;
    one width and one height makes a row. */
 .gi--port,
 .gi--tallx,
 .gi--xtall,
-.gi--strip{ grid-column:span 3; }
+.gi--strip{ grid-column:span 2; }   /* five across, as the reference has  */
 
 /* --- and butted together, the way a contact strip is ---------------------
    The wall sets a 16px gutter between every cell. An upright pulls half of
@@ -1931,8 +1931,8 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
    uprights go half, and the strip drops from six across to three */
 @media (max-width:900px){
   .gi--band,.gi--wide{ grid-column:span 6; }
-  .gi--sq,.gi--port,.gi--tallx,.gi--xtall{ grid-column:span 3; }
-  .gi--strip{ grid-column:span 2; }
+  .gi--sq{ grid-column:span 2; }
+  .gi--port,.gi--tallx,.gi--xtall,.gi--strip{ grid-column:span 2; }
 }
 
 /* four columns: two uprights to a row, the strip likewise, and a band
