@@ -470,10 +470,14 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
 .hero__stage{ position:absolute; inset:0; z-index:1; pointer-events:none;
               transform:translate3d(0,var(--sy,0px),0); }
 
-.hero__giant{ position:absolute; left:50%; top:32%; z-index:1; margin:0;
+.hero__giant{ position:absolute; left:50%; top:30%; z-index:1; margin:0;
   transform:translate3d(calc(-50% + var(--px,0px)), calc(-50% + var(--py,0px)), 0);
-  font-family:var(--fd); font-weight:800; line-height:.8;
-  font-size:clamp(2.4rem,12.6vw,11.4rem); letter-spacing:-.03em; white-space:nowrap;
+  font-family:var(--fd); font-weight:800; line-height:.82;
+  /* three words, one on top of the other, so the whole name reads at the
+     size a single word used to - each line is its own block and the
+     texture below is clipped across all three as one surface */
+  font-size:clamp(1.5rem,8.4vw,7.4rem); letter-spacing:-.03em;
+  white-space:nowrap; text-align:center;
   /* stone rather than paint: a fine noise laid over the fall of light, both
      clipped to the letterforms so the name reads as a surface, not a fill */
   --g1:rgba(245,241,232,.46); --g2:rgba(245,241,232,.26);
@@ -485,6 +489,7 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
   -webkit-background-clip:text; background-clip:text;
   color:transparent; -webkit-text-fill-color:transparent;
   user-select:none; }
+.hero__giant span{ display:block; }
 
 .hero__cut{ position:absolute; left:57%; bottom:0; z-index:2; margin:0;
   /* he is seated, so his silhouette is nearly square rather than tall:
@@ -533,7 +538,10 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
 
 /* --- narrower screens: the name steps back, the column takes the room --- */
 @media (max-width:900px){
-  .hero__giant{ top:38%; font-size:clamp(3rem,21vw,9rem); }
+  /* Syne at 800 runs about one em to the character, so the longest of the
+     three lines is the measure: sized off the viewport it has to fit, not
+     off the one word the name used to be. */
+  .hero__giant{ top:34%; font-size:clamp(2rem,10.8vw,6rem); }
   .hero__cut{ width:min(74vw,420px); height:min(64vh,620px); opacity:.85; }
   .hero__script{ top:48%; }
   .hero__in{ align-items:flex-start; }
@@ -546,7 +554,7 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
   .hero{ align-items:flex-end; padding-bottom:92px; }
   /* there is no room above his head on a phone, so the name crosses his
      lap instead - which is where it sits behind him on a laptop anyway */
-  .hero__giant{ top:41%; font-size:clamp(2.2rem,16.5vw,5rem); }
+  .hero__giant{ top:44%; font-size:clamp(1.5rem,11.4vw,4.4rem); }
   /* a seated figure is wide, so he takes more than the full measure here
      rather than being shrunk to fit inside it */
   .hero__cut{ width:min(112vw,520px); height:48vh; bottom:auto; top:4vh;
