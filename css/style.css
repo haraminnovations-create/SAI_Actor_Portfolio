@@ -1002,38 +1002,97 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
    photographs actually are — a standing portrait at 3:4, a stage frame wide —
    so the blurred fill behind each picture is a margin, not half the frame.
    -------------------------------------------------------------------------- */
-.gg{ display:grid; grid-template-columns:repeat(10,1fr); grid-auto-rows:22px;
-     grid-auto-flow:row dense; gap:16px; }
-.gi{ position:relative; grid-column:span 2; grid-row:span 11;
-     border-radius:16px; overflow:hidden; cursor:pointer;
-     border:1px solid var(--hairw); background:var(--card);
-     transform-style:preserve-3d;
-     box-shadow:0 3px 0 #071612, 0 20px 34px -14px rgba(0,0,0,.9);
-     animation:pop .5s var(--eo) both;
-     transition:box-shadow .5s var(--e), border-color .4s var(--e); }
-.gi--t { grid-row:span 15; } .gi--w { grid-column:span 5; grid-row:span 10; }
-.gi--xl{ grid-column:span 5; grid-row:span 22; }
-.gi.hide{ display:none; }
-@keyframes pop{ from{ opacity:0; transform:translateY(16px) scale(.97); } }
-.gi img{ position:relative; z-index:1; width:100%; height:100%; object-fit:contain; object-position:center;
-         filter:saturate(.92) contrast(1.06) brightness(.94);
-         transition:filter .55s var(--e); }
-.gi:hover{ border-color:var(--gold);
-           box-shadow:0 3px 0 #071612, 0 26px 44px -14px rgba(0,0,0,.95),
-                      0 0 0 1px rgba(var(--accent-rgb),.3) inset; }
-.gi:hover img{ filter:saturate(1.08) contrast(1.02) brightness(1.06); }
-/* the frame's number rests in the corner and the caption arrives with the
-   pointer, so a quiet wall still tells you what you are looking at */
-.gi::after{ content:attr(data-cat);
-            position:absolute; left:12px; bottom:11px; z-index:4;
-            font-size:.53rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase;
-            color:var(--gold); opacity:.34; transform:translateZ(24px);
-            transition:opacity .4s var(--e); }
-.gi::before{ content:''; position:absolute; inset:0; z-index:3;
-             background:linear-gradient(transparent 45%,rgba(5,15,12,.85));
-             opacity:.34; transition:opacity .4s var(--e); }
-.gi:hover::after{ opacity:1; }
-.gi:hover::before{ opacity:1; }
+/* ==========================================================================
+   THE GALLERY — a band, a stage, a band
+
+   Not a wall any more. Four uprights edge to edge across the top, four
+   across the bottom, and between them one wide frame on the left, one
+   upright on the right, and the rest of the collection turning inside a
+   circle in the space they leave.
+   ========================================================================== */
+.gg{ display:grid; gap:clamp(28px,4vw,54px); }
+
+/* --- the two bands: four strips, butted, the seam lit ------------------- */
+.gal__band{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+.gal__s{ position:relative; aspect-ratio:.62; overflow:hidden; cursor:pointer;
+         border-radius:0; border:0; background:var(--card);
+         transform-style:preserve-3d; }
+/* the frame-fitting pass drops a blurred copy of the photograph behind
+   every picture to fill a letterbox. These frames crop rather than
+   letterbox, so there is nothing to fill - and without a stacking order of
+   its own the real picture ends up underneath that copy. */
+.gal__s img,.gal__side img{ position:relative; z-index:1; }
+.gal__s .fitbg,.gal__side .fitbg{ display:none; }
+.gal__s img{ width:100%; height:100%; object-fit:cover; object-position:center 18%;
+             transition:filter .5s var(--e); }
+.gal__s:hover img{ filter:saturate(1.12) contrast(1.02) brightness(1.14); }
+/* the same lit seam the band had before: a line on the right edge of each
+   strip, and a short bright run travelling down it */
+.gal__s::before{ content:''; position:absolute; inset:0; z-index:3; pointer-events:none;
+  background:
+    linear-gradient(180deg, transparent, rgba(var(--accent-rgb),0) 18%,
+                    var(--gold-lt) 50%, rgba(var(--accent-rgb),0) 82%, transparent) no-repeat,
+    linear-gradient(180deg, rgba(var(--accent-rgb),.55), rgba(var(--accent-rgb),.18)) no-repeat,
+    linear-gradient(transparent 55%, rgba(0,0,0,.6));
+  background-size:2px 34%, 2px 100%, 100% 100%;
+  animation:seamspark 5.5s linear infinite; }
+.gal__band > :last-child::before{ background-size:0 0, 0 0, 100% 100%; }
+.gal__s:nth-child(2)::before{ animation-delay:-1.8s; }
+.gal__s:nth-child(3)::before{ animation-delay:-3.6s; }
+@keyframes seamspark{
+  from{ background-position:100% -40%, 100% 0, 50% 50%; }
+  to  { background-position:100% 140%, 100% 0, 50% 50%; }
+}
+
+/* --- the stage between them -------------------------------------------- */
+.gal__mid{ display:grid; align-items:center;
+           grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+           gap:clamp(16px,3vw,44px); }
+.gal__side{ position:relative; overflow:hidden; cursor:pointer;
+            border-radius:14px; border:1px solid var(--hairw);
+            box-shadow:0 3px 0 rgba(0,0,0,.5), 0 22px 40px -18px rgba(0,0,0,.9); }
+.gal__side img{ width:100%; height:100%; object-fit:cover; display:block;
+                transition:filter .5s var(--e); }
+.gal__side:first-child{ aspect-ratio:16/10; }
+.gal__side:last-child { aspect-ratio:.72; }
+.gal__side:hover{ border-color:var(--gold); }
+.gal__side:hover img{ filter:saturate(1.1) brightness(1.08); }
+
+/* --- and the circle in the gap ----------------------------------------- */
+.gal__orbit{ position:relative; width:clamp(170px,21vw,290px); aspect-ratio:1;
+             border-radius:50%; overflow:hidden; justify-self:center;
+             box-shadow:0 0 0 1px rgba(var(--accent-rgb),.4),
+                        0 0 60px -10px rgba(var(--accent-rgb),.45),
+                        0 30px 60px -24px rgba(0,0,0,.9); }
+/* one photograph at a time, the next fading up under the one going out */
+.gal__o{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+         opacity:0; transform:scale(1.06);
+         transition:opacity 1.1s var(--e), transform 6s linear; }
+.gal__o.on{ opacity:1; transform:scale(1); }
+/* a rim that keeps turning, so the circle reads as a thing in motion even
+   between one photograph and the next */
+.gal__ring{ position:absolute; inset:-2px; z-index:3; border-radius:50%;
+            pointer-events:none;
+            background:conic-gradient(from 0deg, transparent 0 62%,
+                       rgba(var(--accent-rgb),.85) 78%, transparent 92%);
+            -webkit-mask:radial-gradient(circle, transparent 0 calc(50% - 3px), #000 calc(50% - 3px));
+                    mask:radial-gradient(circle, transparent 0 calc(50% - 3px), #000 calc(50% - 3px));
+            animation:galspin 7s linear infinite; }
+@keyframes galspin{ to{ transform:rotate(360deg); } }
+
+@media (max-width:900px){
+  .gal__band{ grid-template-columns:repeat(2,1fr); }
+  .gal__mid{ grid-template-columns:1fr; justify-items:center; gap:24px; }
+  .gal__side{ width:100%; }
+}
+@media (prefers-reduced-motion:reduce){
+  .gal__s::before,.gal__ring{ animation:none; }
+  .gal__o{ transition:opacity .3s; transform:none; }
+}
+@media print{
+  .gal__orbit{ display:none; }
+  .gal__s::before{ animation:none; background:linear-gradient(transparent 55%, rgba(0,0,0,.6)); }
+}
 
 /* --- the slogans between the frames ---
    Not cards: no border, no plate, no box. Each one sits on a soft cloud of
@@ -1538,14 +1597,9 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
      leaves the holes behind, which is how eighty-seven photographs came to
      need twenty pages with half of each one empty. Held to a common height
      and allowed to wrap, they fill the sheet instead. */
-  .gg{ display:flex !important; flex-wrap:wrap; gap:3.5mm;
-       align-content:flex-start; grid-template-columns:none !important;
-       grid-auto-rows:auto !important; }
-  .gi,.gnote{ grid-row:auto !important; grid-column:auto !important;
-              height:44mm !important; width:auto !important; margin:0 !important; }
-  .gi img{ height:100% !important; width:auto !important; object-fit:cover; }
-  .gnote{ width:58mm; display:grid; place-content:center; }
-  .gi::after{ display:none !important; }
+  .gal__band{ gap:2mm; }
+  .gal__s{ aspect-ratio:.62; }
+  .gal__mid{ gap:4mm; }
 
   /* the theatre stack the same way, rather than one plate to a sheet */
   .pl__art{ height:96mm !important; width:auto !important; }
@@ -1814,25 +1868,10 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
 /* on the lit filter the tab reverses out of the gold rather than onto it */
 .fb.on i{ background:rgba(26,20,5,.26); color:#231a06; }
 
-/* A number and a category told you where you were, not what you were
-   looking at. The caption the viewer already carries says both, so the
-   corner now reads "07 · Karuna — Compassion" and the wall can be read
-   without opening anything. */
-.gi::after{
-  content:attr(data-cap);
-  right:12px; max-width:calc(100% - 24px);
-  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
-}
-
-/* eighty-seven frames need a little more air between them than twenty-one
-   did, and a slightly finer row so the wall packs without gaps */
-.gg{ gap:18px; }
-
 @media (max-width:640px){
   .fb{ padding:9px 13px; font-size:.55rem; letter-spacing:.12em; }
   .fb i{ margin-left:6px; padding:2px 5px; }
   .gg{ gap:10px; }
-  .gi::after{ font-size:.48rem; letter-spacing:.14em; left:9px; right:9px; bottom:8px; }
 }
 
 /* ======================================================================

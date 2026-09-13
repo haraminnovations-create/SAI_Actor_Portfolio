@@ -152,6 +152,11 @@
     const gap = parseFloat(cs.rowGap) || 14;
     if (!row) return;
 
+    /* the wall these were measured for is gone - the gallery is three fixed
+       pieces now, and a row span written onto a flex child does nothing but
+       confuse the next person to read it */
+    if (!gg.classList.contains('scene')) return;
+
     $$('.gi', gg).forEach((tile) => {
       const img = tile.querySelector('img');
       if (!img || img.classList.contains('ph')) return;
@@ -1238,6 +1243,55 @@
   }
 
   /* ======================================================================
+     10d. THE TURNING CIRCLE — the rest of the collection, in the gap
+
+     Ten frames are placed in the gallery; the other twenty-six live here,
+     one at a time, inside the circle between the wide frame and the tall
+     one. The order is shuffled once rather than random per step, so the
+     same photograph cannot come up twice running and every one of them is
+     seen before any is seen again.
+
+     It stops when it is off screen - there is no reason to keep swapping
+     photographs nobody is looking at - and it stops for anyone who has
+     asked the system for less movement.
+     ====================================================================== */
+  function initOrbit() {
+    const box = $('#galOrbit');
+    if (!box) return;
+    const shots = $$('.gal__o', box);
+    if (shots.length < 2) return;
+
+    /* every lazy picture in here has to be fetched, or the first turn of
+       the circle is a blank one */
+    shots.forEach((im) => { im.loading = 'eager'; });
+
+    const order = shots.map((_, i) => i);
+    for (let i = order.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [order[i], order[j]] = [order[j], order[i]];
+    }
+
+    let at = 0, timer = null;
+    const show = (k) => shots.forEach((im, i) => im.classList.toggle('on', i === k));
+    show(order[0]);
+
+    const step = () => { at = (at + 1) % order.length; show(order[at]); };
+    const start = () => { if (!timer && !REDUCED) timer = setInterval(step, 3200); };
+    const stop  = () => { clearInterval(timer); timer = null; };
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((es) => {
+        es.forEach((e) => (e.isIntersecting ? start() : stop()));
+      }, { threshold: 0.15 }).observe(box);
+    } else {
+      start();
+    }
+    document.addEventListener('visibilitychange', () => {
+      document.hidden ? stop() : start();
+    });
+  }
+
+  /* ======================================================================
      11. FORM · vCARD · PDF
      ====================================================================== */
   const CONTACT = {
@@ -1556,6 +1610,7 @@
     initAura();
     initMagnetic();
     initHeroStage();
+    initOrbit();
     initVcard();
     initForm();
     initPdf();
