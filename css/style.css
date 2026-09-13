@@ -1910,7 +1910,11 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
    The quote cards take the same treatment, since they stand in the same
    rows and a gap under one of them would break the band just as surely. */
 .gi--port,.gi--tallx,.gi--xtall,.gi--strip{
-  margin:-8px; border-radius:0; border:0; box-shadow:none; }
+  /* not closed shut: the reference leaves a hairline of ground showing
+     between one face and the next. The wall's gutter is 16px, so each
+     strip pulls five of it back on either side and six are left - enough
+     to read as a seam, not enough to read as a margin. */
+  margin:-5px; border-radius:0; border:0; box-shadow:none; }
 .gi--port::before,.gi--tallx::before,.gi--xtall::before,.gi--strip::before{
   border-radius:0; }
 .gi--port:hover,.gi--tallx:hover,.gi--xtall:hover,.gi--strip:hover{
