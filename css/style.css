@@ -782,6 +782,12 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
 /* the width/height attributes on the tag are presentational hints; height:auto
    hands the box back to the ratio so a frame is a frame with or without JS */
 .rpc img{ width:100%; height:auto; aspect-ratio:3/4; object-fit:contain; }
+/* Every other frame in every quad is an upright, and contain is what keeps
+   a 2:3 photograph whole inside a 3:4 frame. A 16:9 one contained in the
+   same frame is a third picture and two thirds nothing, so the wide ones
+   fill instead - cropped to the frame rather than floated in it, with the
+   bias high where the face is. */
+.rpc--wide img{ object-fit:cover; object-position:50% 38%; }
 /* a pop opens away from the sub-frame's own edge, so it stays on the page */
 .rquad > .rpc:nth-child(odd) { transform-origin:left center; }
 .rquad > .rpc:nth-child(even){ transform-origin:right center; }
