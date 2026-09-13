@@ -1051,17 +1051,20 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
 /* each side of the circle is a column: an upright, and a wide frame under
    it. Two of them, so the stage carries four photographs rather than two,
    and the circle sits in the gap the two columns leave. */
-.gal__col{ display:grid; gap:clamp(10px,1.4vw,18px); align-content:center; }
-.gal__up,.gal__wide{ position:relative; overflow:hidden; cursor:pointer;
+/* Each side is two wide frames with the space of a third left empty
+   between them. The gap is the circle's own height, so the hole in the
+   left column, the circle, and the hole in the right column all sit on
+   the same line across the stage. */
+.gal__col{ display:grid; gap:clamp(150px,19vw,270px); align-content:center; }
+.gal__wide{ position:relative; overflow:hidden; cursor:pointer;
             border-radius:14px; border:1px solid var(--hairw);
             box-shadow:0 3px 0 rgba(0,0,0,.5), 0 22px 40px -18px rgba(0,0,0,.9); }
-.gal__up img,.gal__wide img{ width:100%; height:100%; object-fit:cover; display:block;
+.gal__wide img{ width:100%; height:100%; object-fit:cover; display:block;
                 position:relative; z-index:1; transition:filter .5s var(--e); }
-.gal__up .fitbg,.gal__wide .fitbg{ display:none; }
-.gal__up  { aspect-ratio:.78; }
+.gal__wide .fitbg{ display:none; }
 .gal__wide{ aspect-ratio:16/10; }
-.gal__up:hover,.gal__wide:hover{ border-color:var(--gold); }
-.gal__up:hover img,.gal__wide:hover img{ filter:saturate(1.1) brightness(1.08); }
+.gal__wide:hover{ border-color:var(--gold); }
+.gal__wide:hover img{ filter:saturate(1.1) brightness(1.08); }
 
 /* --- and the circle in the gap ----------------------------------------- */
 .gal__orbit{ position:relative; width:clamp(170px,21vw,290px); aspect-ratio:1;
@@ -1088,7 +1091,7 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
 @media (max-width:900px){
   .gal__band{ grid-template-columns:repeat(2,1fr); }
   .gal__mid{ grid-template-columns:1fr; justify-items:center; gap:24px; }
-  .gal__col{ width:100%; }
+  .gal__col{ width:100%; gap:14px; }
 }
 @media (prefers-reduced-motion:reduce){
   .gal__s::before,.gal__ring{ animation:none; }
