@@ -1914,11 +1914,57 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
      between one face and the next. The wall's gutter is 16px, so each
      strip pulls five of it back on either side and six are left - enough
      to read as a seam, not enough to read as a margin. */
-  margin:-5px; border-radius:0; border:0; box-shadow:none; }
+  margin:-5px; border-radius:0; border:0;
+  /* the light does not stop at the edge - it carries across the seam */
+  box-shadow:7px 0 20px -7px rgba(var(--accent-rgb),.55); }
+/* --- THE SEAM LIGHT -------------------------------------------------------
+   The eight pixels between two strips are just ground showing through, and
+   ground is the one thing that cannot tell you where one face ends. So the
+   right edge of every strip carries a thin line of the accent and throws a
+   glow across the gap into its neighbour, and a short bright run travels
+   down it - the spark.
+
+   It is laid into ::before, which was already carrying the caption scrim,
+   because ::after is spent on the category and a strip has only the two.
+   The starts are staggered so the sparks fall down the wall rather than
+   marching in step. -------------------------------------------------- */
 .gi--port::before,.gi--tallx::before,.gi--xtall::before,.gi--strip::before{
-  border-radius:0; }
+  border-radius:0; opacity:1;
+  background:
+    /* the spark */
+    linear-gradient(180deg, transparent, rgba(var(--accent-rgb),0) 18%,
+                    var(--gold-lt) 50%, rgba(var(--accent-rgb),0) 82%, transparent)
+      no-repeat,
+    /* the line it runs down */
+    linear-gradient(180deg, rgba(var(--accent-rgb),.55), rgba(var(--accent-rgb),.18))
+      no-repeat,
+    /* and the scrim that was here before it */
+    linear-gradient(transparent 45%, rgba(5,15,12,.85));
+  background-size:2px 34%, 2px 100%, 100% 100%;
+  animation:seamspark 5.5s linear infinite;
+}
+@keyframes seamspark{
+  from{ background-position:100% -40%, 100% 0, 50% 50%; }
+  to  { background-position:100% 140%, 100% 0, 50% 50%; }
+}
+/* the last strip in a row has no neighbour to light, but the wall does not
+   know where its rows break, so every strip lights its own right edge and
+   the band ends on one. */
+.gi--port:nth-child(3n)::before,.gi--tallx:nth-child(3n)::before,
+.gi--xtall:nth-child(3n)::before,.gi--strip:nth-child(3n)::before{ animation-delay:-1.8s; }
+.gi--port:nth-child(3n+1)::before,.gi--tallx:nth-child(3n+1)::before,
+.gi--xtall:nth-child(3n+1)::before,.gi--strip:nth-child(3n+1)::before{ animation-delay:-3.6s; }
+
+@media (prefers-reduced-motion:reduce){
+  .gi--port::before,.gi--tallx::before,.gi--xtall::before,.gi--strip::before{
+    animation:none; background-position:100% 50%, 100% 0, 50% 50%; }
+}
+@media print{
+  .gi--port::before,.gi--tallx::before,.gi--xtall::before,.gi--strip::before{
+    animation:none; background:linear-gradient(transparent 45%, rgba(5,15,12,.85)); }
+}
 .gi--port:hover,.gi--tallx:hover,.gi--xtall:hover,.gi--strip:hover{
-  border:0; box-shadow:none; }
+  border:0; box-shadow:9px 0 26px -6px rgba(var(--accent-rgb),.8); }
 /* with the border gone the hover needs something else to say "this one":
    the frame lifts its own picture out of the grade instead */
 .gi--port:hover img,.gi--tallx:hover img,
