@@ -1055,7 +1055,7 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
    between them. The gap is the circle's own height, so the hole in the
    left column, the circle, and the hole in the right column all sit on
    the same line across the stage. */
-.gal__col{ display:grid; gap:clamp(150px,19vw,270px); align-content:center; }
+.gal__col{ display:grid; gap:clamp(190px,24vw,350px); align-content:center; }
 .gal__wide{ position:relative; overflow:hidden; cursor:pointer;
             border-radius:14px; border:1px solid var(--hairw);
             box-shadow:0 3px 0 rgba(0,0,0,.5), 0 22px 40px -18px rgba(0,0,0,.9); }
@@ -1067,7 +1067,7 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
 .gal__wide:hover img{ filter:saturate(1.1) brightness(1.08); }
 
 /* --- and the circle in the gap ----------------------------------------- */
-.gal__orbit{ position:relative; width:clamp(170px,21vw,290px); aspect-ratio:1;
+.gal__orbit{ position:relative; width:clamp(210px,26vw,370px); aspect-ratio:1;
              border-radius:50%; overflow:hidden; justify-self:center;
              box-shadow:0 0 0 1px rgba(var(--accent-rgb),.4),
                         0 0 60px -10px rgba(var(--accent-rgb),.45),
