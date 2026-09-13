@@ -1242,7 +1242,7 @@
      ====================================================================== */
   const CONTACT = {
     name: 'Yorvik Sharjith Shaank', first: 'Yorvik', last: 'Sharjith Shaank',
-    role: 'Actor · Direction · Choreographer',
+    role: 'Actor · Director · Choreographer',
     email: 'yorviksharjithshaank@gmail.com', phone: '+916305068693',
     city: 'Hyderabad', state: 'Telangana', land: 'India',
     // the profiles, in one place: the contact card in index.html links to
