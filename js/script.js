@@ -163,21 +163,34 @@
          the picture in it. The wall is laid out as a wall - bands, halves,
          squares, columns - and the picture is cropped to the frame it was
          given, which is what keeps the rows from all being the same. */
+      /* Every upright frame is cut to one strip. A wall of uprights each
+         keeping its own height is a masonry of ragged columns; the row of
+         identical strips only reads as a row if they agree on a shape. So
+         an upright is measured from the strip's proportion rather than its
+         own, and the picture is cropped into it. Landscapes keep theirs. */
       const ar = parseFloat(tile.dataset.ar);
-      const want = ar > 0 ? w / ar : w * ih / iw;
+      const shape = (ar > 0 && ar < 1) ? 0.55 : ar;
+      const want = shape > 0 ? w / shape : w * ih / iw;
       const rows = clamp(Math.round((want + gap) / (row + gap)), 3, 44);
       tile.style.gridRow = 'span ' + rows;   // shorthand, as the sheet writes it
     });
 
-    // the text tiles between the pictures are sized from what they actually
-    // say, so the finer row step never clips or strands them
+    /* The text tiles are sized from what they actually say, so the finer
+       row step never clips or strands them - but never shorter than an
+       upright strip. A quote half the height of the frames beside it puts
+       a step in the row and the run of strips stops reading as a run. */
+    const strip = $$('.gi', gg).find((t) => parseFloat(t.dataset.ar) < 1);
+    const stripRows = strip
+      ? clamp(Math.round((strip.getBoundingClientRect().width / 0.55 + gap) / (row + gap)), 3, 44)
+      : 0;
     $$('.gnote', gg).forEach((note) => {
       const pad = parseFloat(getComputedStyle(note).paddingTop) * 2;
       const kids = $$(':scope > *', note);
       if (!kids.length) return;
       const inner = kids.reduce((s, k) => s + k.getBoundingClientRect().height, 0);
       const lead = (kids.length - 1) * (parseFloat(getComputedStyle(note).rowGap) || 0);
-      note.style.gridRow = 'span ' + clamp(Math.ceil((inner + lead + pad + gap) / (row + gap)), 1, 40);
+      const own = clamp(Math.ceil((inner + lead + pad + gap) / (row + gap)), 1, 40);
+      note.style.gridRow = 'span ' + Math.max(own, stripRows);
     });
   }
 

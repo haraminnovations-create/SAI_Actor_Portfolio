@@ -1388,6 +1388,7 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
   .cue{ display:none; }
   .gg{ grid-template-columns:repeat(6,1fr); }
   .gi{ grid-column:span 3; } .gi--t{ grid-row:span 16; }
+  .gi--port,.gi--tallx,.gi--xtall,.gi--strip{ grid-column:span 2; }
   .gi--w,.gi--xl{ grid-column:span 6; grid-row:span 16; }
   .gnote,.gnote--tall{ grid-column:span 3; grid-row:span 8; }
   .cards--9{ grid-template-columns:repeat(2,minmax(0,1fr)); }
@@ -1405,6 +1406,7 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
   .cf__i{ width:min(64vw,240px); }
   .gg{ grid-template-columns:repeat(4,1fr); grid-auto-rows:14px; gap:9px; }
   .gi{ grid-column:span 2; } .gi--t{ grid-row:span 16; }
+  .gi--port,.gi--tallx,.gi--xtall,.gi--strip{ grid-column:span 2; }
   .gi--w,.gi--xl{ grid-column:span 4; grid-row:span 16; }
   .gi::after,.gi::before{ opacity:1; }
   .gnote,.gnote--tall{ grid-column:span 4; grid-row:span 8; }
@@ -1889,11 +1891,14 @@ body.lock .aura,body.lock-init .aura{ opacity:0; }
    ====================================================================== */
 .gi--band { grid-column:span 12; }   /* the cinematic frame, edge to edge */
 .gi--wide { grid-column:span 6;  }   /* half the wall, 16:9              */
-.gi--sq,
+.gi--sq{ grid-column:span 3; }       /* the square keeps its own width   */
+/* EVERY UPRIGHT, ONE COLUMN WIDTH — four across, all the same strip. They
+   used to be three widths and four heights, which made a ragged masonry;
+   one width and one height makes a row. */
 .gi--port,
 .gi--tallx,
-.gi--xtall{ grid-column:span 3;  }   /* square, upright, tall, 9:20      */
-.gi--strip{ grid-column:span 2;  }   /* six across: the nine emotions    */
+.gi--xtall,
+.gi--strip{ grid-column:span 3; }
 
 /* A designed frame crops. The bias is high on the face because these are
    portraits: centred, a square taken out of a 2:3 upright cuts the head. */
