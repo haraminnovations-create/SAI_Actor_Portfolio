@@ -179,10 +179,9 @@
        row step never clips or strands them - but never shorter than an
        upright strip. A quote half the height of the frames beside it puts
        a step in the row and the run of strips stops reading as a run. */
-    const strip = $$('.gi', gg).find((t) => parseFloat(t.dataset.ar) < 1);
-    const stripRows = strip
-      ? clamp(Math.round((strip.getBoundingClientRect().width / 0.32 + gap) / (row + gap)), 3, 44)
-      : 0;
+    /* the quote cards stand among the landscapes now, not in the band of
+       strips, so they are sized from their own words again */
+    const stripRows = 0;
     $$('.gnote', gg).forEach((note) => {
       const pad = parseFloat(getComputedStyle(note).paddingTop) * 2;
       const kids = $$(':scope > *', note);
