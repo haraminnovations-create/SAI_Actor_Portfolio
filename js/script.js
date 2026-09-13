@@ -1086,8 +1086,8 @@
        ground, and the deeper emerald over the paper one */
     function paintTail() {
       const forest = document.documentElement.getAttribute('data-theme') === 'light';
-      // the paper ground takes the deeper emerald, the night the brighter
-      const tint = forest ? '4,120,87' : '16,185,129';
+      // the paper ground takes the emerald, the black one the crimson
+      const tint = forest ? '4,120,87' : '225,29,72';
       beads.forEach(({ el, i }) => {
         el.style.boxShadow = '0 0 ' + (18 - i) + 'px rgba(' + tint + ',.85)';
       });
@@ -1490,7 +1490,7 @@
   }
 
   /* ======================================================================
-     11b. THEME — the forest night by default, paper on request
+     11b. THEME — the black ground by default, paper on request
      The inline script in <head> has already written data-theme on <html>
      before the first paint, so the page never flashes the wrong ground.
      This wires the header button to it, keeps the icon and the labels
@@ -1513,7 +1513,7 @@
         btn.title = light ? 'Dark theme' : 'Light theme';
       }
       if (icon) icon.setAttribute('href', light ? '#i-moon' : '#i-sun');
-      if (meta) meta.setAttribute('content', light ? '#F0F8F5' : '#05100A');
+      if (meta) meta.setAttribute('content', light ? '#F0F8F5' : '#0B0B0B');
       if (window.__ysAuraPaint) window.__ysAuraPaint();   // the pointer's tail changes tint with the ground
       if (remember) { try { localStorage.setItem('ys-theme', light ? 'light' : 'dark'); } catch (e) {} }
     }
