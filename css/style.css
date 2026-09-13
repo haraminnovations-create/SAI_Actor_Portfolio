@@ -1175,6 +1175,45 @@ img.ph--bg{ object-fit:cover !important; min-height:0 !important; }
           color:rgba(255,255,255,.1);
           text-shadow:1px 1px 0 rgba(var(--accent-rgb),.16), 2px 2px 0 rgba(var(--accent-rgb),.11),
                       3px 3px 0 rgba(var(--accent-rgb),.07), 4px 4px 10px rgba(0,0,0,.5); }
+/* --------------------------------------------------------------------------
+   THE SIGN-OFF — the page closes on the shape it opened with
+
+   The same six-faced cube the intro gate turns, built the same way: six
+   real faces pushed out on the Z axis inside a preserve-3d parent, so it
+   is an object being rotated rather than a picture of one. Half the size,
+   half the speed, and it stops entirely for anyone who has asked the
+   system for less movement.
+   -------------------------------------------------------------------------- */
+.thx{ display:grid; place-items:center; text-align:center;
+      gap:16px; margin-top:clamp(36px,5vw,60px); }
+.thx__stage{ perspective:700px; width:74px; height:74px; }
+.thx__cube{ position:relative; width:74px; height:74px; transform-style:preserve-3d;
+            animation:spin 22s linear infinite; }
+.thx__f{ position:absolute; inset:0; display:grid; place-items:center;
+         border:1px solid var(--hair); border-radius:8px;
+         background:linear-gradient(158deg,var(--card-hi),var(--card));
+         box-shadow:0 0 22px rgba(var(--accent-rgb),.16) inset;
+         font-family:var(--fd); font-weight:800; font-size:1.05rem;
+         color:var(--gold); letter-spacing:.06em; }
+.thx__f svg{ width:60%; height:60%; }
+.thx__f--fr{ transform:translateZ(37px); }
+.thx__f--bk{ transform:rotateY(180deg) translateZ(37px); }
+.thx__f--ri{ transform:rotateY(90deg)  translateZ(37px); }
+.thx__f--le{ transform:rotateY(-90deg) translateZ(37px); }
+.thx__f--tp{ transform:rotateX(90deg)  translateZ(37px); }
+.thx__f--bt{ transform:rotateX(-90deg) translateZ(37px); }
+
+.thx__t{ font-family:var(--fd); font-weight:800;
+         font-size:clamp(.86rem,2.1vw,1.22rem); letter-spacing:.26em;
+         color:var(--ink); margin:0; }
+.thx__s{ max-width:52ch; margin:0; font-size:.82rem; line-height:1.75;
+         color:var(--mute); }
+
+@media (prefers-reduced-motion:reduce){
+  .thx__cube{ animation:none; transform:rotateX(-18deg) rotateY(-28deg); }
+}
+@media print{ .thx__stage{ display:none; } }
+
 .foot__b{ display:flex; align-items:center; justify-content:space-between;
           flex-wrap:wrap; gap:20px; margin-top:clamp(32px,5vw,56px);
           padding-top:24px; border-top:1px solid var(--hairw); }
